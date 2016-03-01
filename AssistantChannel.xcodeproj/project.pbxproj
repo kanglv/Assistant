@@ -91,6 +91,7 @@
 		2E9CEA981C8567B90062EAD5 /* Operate_listTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9CEA961C8567B90062EAD5 /* Operate_listTableViewCell.xib */; };
 		2E9CEA9B1C8568160062EAD5 /* Operate_listEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9CEA9A1C8568160062EAD5 /* Operate_listEntity.m */; };
 		2E9CEAA11C8574440062EAD5 /* Remuneration_listView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9CEAA01C8574440062EAD5 /* Remuneration_listView.m */; };
+		652E0B971C85D56A00FB1638 /* LBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652E0B961C85D56A00FB1638 /* LBJViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +277,8 @@
 		2E9CEA9A1C8568160062EAD5 /* Operate_listEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operate_listEntity.m; sourceTree = "<group>"; };
 		2E9CEA9F1C8574440062EAD5 /* Remuneration_listView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remuneration_listView.h; sourceTree = "<group>"; };
 		2E9CEAA01C8574440062EAD5 /* Remuneration_listView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remuneration_listView.m; sourceTree = "<group>"; };
+		652E0B951C85D56A00FB1638 /* LBJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBJViewController.h; sourceTree = "<group>"; };
+		652E0B961C85D56A00FB1638 /* LBJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBJViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +410,8 @@
 		2E3EA2751C7EE78400A9B776 /* visits */ = {
 			isa = PBXGroup;
 			children = (
+				652E0B951C85D56A00FB1638 /* LBJViewController.h */,
+				652E0B961C85D56A00FB1638 /* LBJViewController.m */,
 			);
 			name = visits;
 			sourceTree = "<group>";
@@ -855,6 +860,7 @@
 				2E3EA2A21C7FF00E00A9B776 /* AFJSONRequestOperation.m in Sources */,
 				2E3EA2C71C7FF04100A9B776 /* NSString+MJExtension.m in Sources */,
 				2E9CEA601C8410C80062EAD5 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				652E0B971C85D56A00FB1638 /* LBJViewController.m in Sources */,
 				2E9CEA2D1C83DB430062EAD5 /* InformationViewController.m in Sources */,
 				2E9CEA7B1C853F710062EAD5 /* information_DetailViewController.m in Sources */,
 				2E9CEA771C8441EC0062EAD5 /* dateChange.m in Sources */,
