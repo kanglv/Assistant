@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6643D91C85D4620030A385 /* lvkangtestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6643D81C85D4620030A385 /* lvkangtestViewController.m */; };
 		2CDAA8331C81AF8400709277 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAA8311C81AF8400709277 /* MainViewController.m */; };
 		2CDAA8341C81AF8400709277 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAA8321C81AF8400709277 /* MainViewController.xib */; };
 		2E3EA2421C7EE66200A9B776 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EA2411C7EE66200A9B776 /* main.m */; };
@@ -110,6 +111,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C6643D71C85D4620030A385 /* lvkangtestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lvkangtestViewController.h; sourceTree = "<group>"; };
+		2C6643D81C85D4620030A385 /* lvkangtestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lvkangtestViewController.m; sourceTree = "<group>"; };
 		2CDAA8301C81AF8400709277 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2CDAA8311C81AF8400709277 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2CDAA8321C81AF8400709277 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 				2E3EA27D1C7EEAAA00A9B776 /* LoginViewController.h */,
 				2E3EA27E1C7EEAAA00A9B776 /* LoginViewController.m */,
 				2E3EA27F1C7EEAAA00A9B776 /* LoginViewController.xib */,
+				2C6643D71C85D4620030A385 /* lvkangtestViewController.h */,
+				2C6643D81C85D4620030A385 /* lvkangtestViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				2E3EA3661C8036BD00A9B776 /* NewsViewController.m in Sources */,
 				2E9CEA661C8410F90062EAD5 /* NIDropDown.m in Sources */,
 				2E3EA2801C7EEAAA00A9B776 /* LoginViewController.m in Sources */,
+				2C6643D91C85D4620030A385 /* lvkangtestViewController.m in Sources */,
 				2E9CEA621C8410C80062EAD5 /* ViewController+MASAdditions.m in Sources */,
 				2E9CEA691C8413220062EAD5 /* tableViewHeader.m in Sources */,
 				2E3EA36F1C803D3900A9B776 /* NewsModel.m in Sources */,
