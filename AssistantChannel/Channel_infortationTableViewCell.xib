@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="Channel_infortationTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC1-IK-bTK">
+                        <rect key="frame" x="13" y="8" width="386" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="FZc-uY-2cg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-Hv-BZw">
+                        <rect key="frame" x="13" y="48" width="159" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star_1" translatesAutoresizingMaskIntoConstraints="NO" id="bns-5h-64I">
+                        <rect key="frame" x="279" y="49" width="14" height="14"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star_1" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-hY-a9e">
+                        <rect key="frame" x="231" y="49" width="14" height="14"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star_1" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-gq-OgR">
+                        <rect key="frame" x="247" y="49" width="14" height="14"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star_1" translatesAutoresizingMaskIntoConstraints="NO" id="ofe-kq-uDf">
+                        <rect key="frame" x="263" y="49" width="14" height="14"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star_1" translatesAutoresizingMaskIntoConstraints="NO" id="5D3-BH-dfh">
+                        <rect key="frame" x="215" y="49" width="14" height="14"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NJD-Hv-BZw" firstAttribute="top" secondItem="OC1-IK-bTK" secondAttribute="bottom" id="4Wg-VB-6h9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OC1-IK-bTK" secondAttribute="trailing" id="4fO-Qe-AZZ"/>
+                    <constraint firstItem="NJD-Hv-BZw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="6PA-Tn-Pjv"/>
+                    <constraint firstItem="OC1-IK-bTK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="LFg-L4-vnc"/>
+                    <constraint firstItem="OC1-IK-bTK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="hu0-L6-UPG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="star_1" destination="5D3-BH-dfh" id="Ng6-Hu-ymU"/>
+                <outlet property="star_2" destination="Pst-hY-a9e" id="EK3-0U-ePH"/>
+                <outlet property="star_3" destination="fbN-gq-OgR" id="6kX-LT-6Nt"/>
+                <outlet property="star_4" destination="ofe-kq-uDf" id="YZa-oR-ZCn"/>
+                <outlet property="star_5" destination="bns-5h-64I" id="Y4M-TS-rnR"/>
+                <outlet property="telLabel" destination="NJD-Hv-BZw" id="H4h-xt-8h7"/>
+                <outlet property="titleLabel" destination="OC1-IK-bTK" id="Ary-Ko-BIF"/>
+            </connections>
+            <point key="canvasLocation" x="370.5" y="332.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star_1" width="20" height="20"/>
+    </resources>
+</document>
