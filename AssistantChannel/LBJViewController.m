@@ -10,6 +10,7 @@
 /**
  *  qhefiueqfjkqbwiuafgqiueg
  *  abababababab
+ *  test
  */
 @interface LBJViewController ()
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"");
     NSLog(@"");
 }
 
