@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C27DA941C8867B40049C0E7 /* MyMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA931C8867B40049C0E7 /* MyMethod.m */; };
+		2C27DA971C886C920049C0E7 /* MyDetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA961C886C920049C0E7 /* MyDetailInformationViewController.m */; };
+		2C27DA9D1C886D250049C0E7 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA9C1C886D250049C0E7 /* MyFeedbackViewController.m */; };
+		2C27DAA01C886DA90049C0E7 /* MyIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA9F1C886DA90049C0E7 /* MyIntroduceViewController.m */; };
 		2C5C40561C8725AE001954E8 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C40551C8725AE001954E8 /* MyViewController.m */; };
 		2C5C405C1C872970001954E8 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C405B1C872970001954E8 /* MyTableViewCell.m */; };
 		2C5C406A1C8732C3001954E8 /* ico_inform.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C40631C8732C3001954E8 /* ico_inform.png */; };
@@ -123,6 +127,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C27DA921C8867B40049C0E7 /* MyMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMethod.h; sourceTree = "<group>"; };
+		2C27DA931C8867B40049C0E7 /* MyMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMethod.m; sourceTree = "<group>"; };
+		2C27DA951C886C920049C0E7 /* MyDetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailInformationViewController.h; sourceTree = "<group>"; };
+		2C27DA961C886C920049C0E7 /* MyDetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailInformationViewController.m; sourceTree = "<group>"; };
+		2C27DA9B1C886D250049C0E7 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
+		2C27DA9C1C886D250049C0E7 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
+		2C27DA9E1C886DA90049C0E7 /* MyIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIntroduceViewController.h; sourceTree = "<group>"; };
+		2C27DA9F1C886DA90049C0E7 /* MyIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIntroduceViewController.m; sourceTree = "<group>"; };
 		2C5C40541C8725AE001954E8 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		2C5C40551C8725AE001954E8 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		2C5C405A1C872970001954E8 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
@@ -334,6 +346,12 @@
 			children = (
 				2C5C40541C8725AE001954E8 /* MyViewController.h */,
 				2C5C40551C8725AE001954E8 /* MyViewController.m */,
+				2C27DA951C886C920049C0E7 /* MyDetailInformationViewController.h */,
+				2C27DA961C886C920049C0E7 /* MyDetailInformationViewController.m */,
+				2C27DA9B1C886D250049C0E7 /* MyFeedbackViewController.h */,
+				2C27DA9C1C886D250049C0E7 /* MyFeedbackViewController.m */,
+				2C27DA9E1C886DA90049C0E7 /* MyIntroduceViewController.h */,
+				2C27DA9F1C886DA90049C0E7 /* MyIntroduceViewController.m */,
 			);
 			name = MyController;
 			sourceTree = "<group>";
@@ -350,6 +368,8 @@
 		2C5C40591C872619001954E8 /* MyModel */ = {
 			isa = PBXGroup;
 			children = (
+				2C27DA921C8867B40049C0E7 /* MyMethod.h */,
+				2C27DA931C8867B40049C0E7 /* MyMethod.m */,
 			);
 			name = MyModel;
 			sourceTree = "<group>";
@@ -933,6 +953,7 @@
 				2E3EA2BE1C7FF04100A9B776 /* MJExtensionConst.m in Sources */,
 				2C5C40561C8725AE001954E8 /* MyViewController.m in Sources */,
 				2E3EA2BF1C7FF04100A9B776 /* MJFoundation.m in Sources */,
+				2C27DA9D1C886D250049C0E7 /* MyFeedbackViewController.m in Sources */,
 				2E9CEA5F1C8410C80062EAD5 /* NSArray+MASAdditions.m in Sources */,
 				2E9CEA591C8410C80062EAD5 /* MASCompositeConstraint.m in Sources */,
 				2E3EA2A21C7FF00E00A9B776 /* AFJSONRequestOperation.m in Sources */,
@@ -946,6 +967,7 @@
 				2E3EA2C11C7FF04100A9B776 /* MJPropertyKey.m in Sources */,
 				2E3EA3661C8036BD00A9B776 /* NewsViewController.m in Sources */,
 				2E9CEA661C8410F90062EAD5 /* NIDropDown.m in Sources */,
+				2C27DA941C8867B40049C0E7 /* MyMethod.m in Sources */,
 				2E3EA2801C7EEAAA00A9B776 /* LoginViewController.m in Sources */,
 				2E9CEA621C8410C80062EAD5 /* ViewController+MASAdditions.m in Sources */,
 				2E9CEA691C8413220062EAD5 /* tableViewHeader.m in Sources */,
@@ -965,6 +987,7 @@
 				2E9CEA611C8410C80062EAD5 /* View+MASAdditions.m in Sources */,
 				2E9CEA311C83E41B0062EAD5 /* ZXYBaseViewController.m in Sources */,
 				2E3EA2C21C7FF04100A9B776 /* MJPropertyType.m in Sources */,
+				2C27DA971C886C920049C0E7 /* MyDetailInformationViewController.m in Sources */,
 				2E9CEA5B1C8410C80062EAD5 /* MASConstraintMaker.m in Sources */,
 				2E3EA3461C80017B00A9B776 /* MBProgressHUD.m in Sources */,
 				2E3EA37C1C803E2700A9B776 /* MJRefreshConst.m in Sources */,
@@ -975,6 +998,7 @@
 				2E3EA37E1C803E2700A9B776 /* MJRefreshHeaderView.m in Sources */,
 				2E3EA2A01C7FF00D00A9B776 /* AFHTTPRequestOperationLogger.m in Sources */,
 				2E3EA2A11C7FF00E00A9B776 /* AFImageRequestOperation.m in Sources */,
+				2C27DAA01C886DA90049C0E7 /* MyIntroduceViewController.m in Sources */,
 				2E9CEA5D1C8410C80062EAD5 /* MASViewAttribute.m in Sources */,
 				2E9CEA5E1C8410C80062EAD5 /* MASViewConstraint.m in Sources */,
 				2E3EA2A31C7FF00E00A9B776 /* AFNetworkActivityIndicatorManager.m in Sources */,

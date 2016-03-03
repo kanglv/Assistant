@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的";
     _dataArr = [self setDataObject];
     _imgArr = [self setImgObject];
     [self initView];
@@ -34,6 +35,7 @@
     _myTable.dataSource=self;
     _myTable.delegate=self;
     _myTable.separatorStyle = NO;
+    _myTable.scrollEnabled = NO;
     [self.view addSubview:_myTable];
     
 }
@@ -47,7 +49,7 @@
     }
     [arr addObject:@"通知"];
     [arr addObject:@"版本更新"];
-    [arr addObject:@"清楚缓存"];
+    [arr addObject:@"清除缓存"];
     [arr addObject:@"意见反馈"];
     [arr addObject:@"关于渠道助手"];
     return  arr;
@@ -76,6 +78,7 @@
 //    if(''''){
 //        ret = YES;
 //    }
+    ret = YES;
     return ret;
 }
 
@@ -97,28 +100,105 @@
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT/9;
+    return SCREEN_HEIGHT/15;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section==0){
+        return 120;
+    }
     return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if(section==0){
-        return 10;
-    }
-    else {
-        return 100;
-    }
+    return 10;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIImageView *view = [[UIImageView alloc]init];
+    if(section == 0){
+        view.frame = CGRectMake(0, 0, self.view.frame.size.width, 120);
+        view.image = [UIImage imageNamed:@"img_setting_image.jpg"];
+    }
+    return view;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"tab1";
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if(cell == nil){
         cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
+    if(indexPath.section == 0){
+        cell.imgView.image = [UIImage imageNamed:_imgArr[indexPath.row]];
+        cell.nameLabel.text = _dataArr[indexPath.row];
+        if([cell.nameLabel.text isEqualToString:@"通知"]){
+//            if(有通知){通过接口请求
+//            cell.informLabel.text = @"0";//具体通知数由接口返回
+//            cell.imgView.image = [UIImage imageNamed:@"ico_inform"];
+//            }
+           
+        }
+        
+    }
+    else if (indexPath.section == 1){
+        NSInteger actualIndex = indexPath.row+2;
+        if([self showLearningClub]){
+            actualIndex = actualIndex+1;
+        }
+        cell.imgView.image = [UIImage imageNamed:_imgArr[actualIndex]];
+        cell.nameLabel.text = _dataArr[actualIndex];
+        if(indexPath.row==1){
+            cell.cacheLabel.text = @"200B";//具体数值，通过method的方法计算
+        }
+    }
+    else{
+        NSInteger index = indexPath.row+4;
+        if([self showLearningClub]){
+            index = index+1;
+        }
+        cell.imgView.image = [UIImage imageNamed:_imgArr[index]];
+        cell.nameLabel.text = _dataArr[index];
+    }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //处理各个位置的点击事件
+    if(indexPath.section==0){
+        if([self showLearningClub]){
+            if (indexPath.row==0) {
+                //个人中心
+            }
+            else if(indexPath.row==1){
+                //学习园地
+                
+            }else{
+                //通知
+                
+            }
+        }else{
+            if (indexPath.row==0) {
+                //个人中心
+                
+            }else {
+                //通知
+                
+            }
+        }
+    }
+    else if (indexPath.section==1){
+        if (indexPath.row==0) {
+            //版本更新
+        }else{
+            //清除缓存
+        }
+    }else{
+        if (indexPath.row==0) {
+            //意见反馈
+        }else{
+            //关于助手
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

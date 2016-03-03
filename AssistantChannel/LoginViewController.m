@@ -11,6 +11,7 @@
 #import "UserEntity.h"
 #import "NewsViewController.h"
 #import "InformationViewController.h"
+#import "MyViewController.h"
 
 @interface LoginViewController ()<MBProgressHUDDelegate,UITabBarControllerDelegate>
 {
@@ -129,7 +130,7 @@
     newsVC.tabBarItem.title = @"公告";
     newsVC.tabBarItem.image = [UIImage imageNamed:@"gonggao_normal"];
     
-    MainViewController *mvc = [[MainViewController alloc]init];
+    MyViewController *mvc = [[MyViewController alloc]init];
     mvc.tabBarItem.title = @"我的";
     mvc.tabBarItem.image = [UIImage imageNamed:@"wode_normal"];
     
