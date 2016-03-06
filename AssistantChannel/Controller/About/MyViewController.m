@@ -34,10 +34,7 @@
 }
 
 - (void)initView {
-    CGFloat width = self.view.frame.size.width;
-    CGFloat height = self.view.frame.size.height;
-    
-    _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, width,height) style:UITableViewStyleGrouped];
+    _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
     _myTable.dataSource=self;
     _myTable.delegate=self;
     _myTable.separatorStyle = NO;
@@ -79,12 +76,11 @@
 
 //是否需要展示学习园地
 - (BOOL)showLearningClub{
-    BOOL ret = NO;
-    //需要判断是否有显示学习园地的需求
-//    if(''''){
-//        ret = YES;
-//    }
-    ret = YES;
+    BOOL ret = YES;
+    UserEntity *userEntity = [UserEntity sharedInstance];
+    if ([userEntity.roles isEqualToString:@"13"]) {
+        ret = NO;
+    }
     return ret;
 }
 

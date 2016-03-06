@@ -59,12 +59,13 @@
     CGSize maximumLabelSize = CGSizeMake(100, 9999);//labelsize的最大值
     //关键语句
     CGSize expectSize = [_nameLabel sizeThatFits:maximumLabelSize];
+   CGFloat onePixel = 1 / [[UIScreen mainScreen] scale];
     _imgView.frame = CGRectMake(12,height/3 , height/3, height/3);
     _nameLabel.frame = CGRectMake(22+height/3,height/3 , expectSize.width, expectSize.height);
     _informLabel.frame = CGRectMake(22+height/3+expectSize.width,height/3-10 , 20, 20);
-    _lineLabel.frame = CGRectMake(22+height/3, height-1, width-(22+height/3), 1);
+    _lineLabel.frame = CGRectMake(22+height/3, height-onePixel, width-(22+height/3), onePixel);
     _cacheLabel.frame = CGRectMake(width-100, height/3,40 ,height/3 );
-    _arrowView.frame = CGRectMake(width-50, (height-20)/2, 20, 20);
+    _arrowView.frame = CGRectMake(width-30, (height-10)/2, 10, 10);
 
 }
 

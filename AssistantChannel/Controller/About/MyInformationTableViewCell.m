@@ -49,9 +49,9 @@
     
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
-    
-    _topLine.frame = CGRectMake(0, 0, width, 1);
-    _bottomLine.frame = CGRectMake(0, height-1, width, 1);
+    CGFloat onePixel = 1 / [[UIScreen mainScreen] scale];
+    _topLine.frame = CGRectMake(0, 0, width, onePixel);
+    _bottomLine.frame = CGRectMake(0, height-onePixel, width, onePixel);
     
     _leftLabel.frame = CGRectMake(15, height/3, (width-30)/2, height/3);
     _rightLabel.frame = CGRectMake((width-30)/2+15, height/3, (width-30)/2, height/3);
