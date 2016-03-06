@@ -47,7 +47,7 @@
     
     _cacheLabel = [[UILabel alloc]init];
     _cacheLabel.textAlignment = NSTextAlignmentRight;
-    _cacheLabel.textColor = [UIColor grayColor];
+    _cacheLabel.textColor = [UIColor blueColor];
     _cacheLabel.font = [UIFont fontWithName:@"Arial" size:15];
     [self.contentView addSubview:_cacheLabel];
     

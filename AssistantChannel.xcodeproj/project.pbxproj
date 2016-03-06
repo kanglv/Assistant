@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1F99CC1C89EDD6004F56B2 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F99CB1C89EDD6004F56B2 /* MyInformationTableViewCell.m */; };
 		2C27DA941C8867B40049C0E7 /* MyMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA931C8867B40049C0E7 /* MyMethod.m */; };
 		2C27DA971C886C920049C0E7 /* MyDetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA961C886C920049C0E7 /* MyDetailInformationViewController.m */; };
 		2C27DA9D1C886D250049C0E7 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C27DA9C1C886D250049C0E7 /* MyFeedbackViewController.m */; };
@@ -23,6 +24,7 @@
 		2C5C40721C8732CE001954E8 /* img_setting_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C40711C8732CE001954E8 /* img_setting_image.jpg */; };
 		2C5C40741C873390001954E8 /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C40731C873390001954E8 /* feedback.png */; };
 		2C5C40761C87344A001954E8 /* arrows_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C40751C87344A001954E8 /* arrows_right.png */; };
+		2C7211271C8BF7C8008F00A1 /* MyResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7211261C8BF7C8008F00A1 /* MyResetViewController.m */; };
 		2CDAA8331C81AF8400709277 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAA8311C81AF8400709277 /* MainViewController.m */; };
 		2CDAA8341C81AF8400709277 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAA8321C81AF8400709277 /* MainViewController.xib */; };
 		2E3EA2421C7EE66200A9B776 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3EA2411C7EE66200A9B776 /* main.m */; };
@@ -127,6 +129,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1F99CA1C89EDD6004F56B2 /* MyInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationTableViewCell.h; sourceTree = "<group>"; };
+		2C1F99CB1C89EDD6004F56B2 /* MyInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationTableViewCell.m; sourceTree = "<group>"; };
 		2C27DA921C8867B40049C0E7 /* MyMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMethod.h; sourceTree = "<group>"; };
 		2C27DA931C8867B40049C0E7 /* MyMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMethod.m; sourceTree = "<group>"; };
 		2C27DA951C886C920049C0E7 /* MyDetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailInformationViewController.h; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		2C5C40711C8732CE001954E8 /* img_setting_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_setting_image.jpg; sourceTree = "<group>"; };
 		2C5C40731C873390001954E8 /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		2C5C40751C87344A001954E8 /* arrows_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows_right.png; sourceTree = "<group>"; };
+		2C7211251C8BF7C8008F00A1 /* MyResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyResetViewController.h; sourceTree = "<group>"; };
+		2C7211261C8BF7C8008F00A1 /* MyResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyResetViewController.m; sourceTree = "<group>"; };
 		2CDAA8301C81AF8400709277 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2CDAA8311C81AF8400709277 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2CDAA8321C81AF8400709277 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -352,6 +358,8 @@
 				2C27DA9C1C886D250049C0E7 /* MyFeedbackViewController.m */,
 				2C27DA9E1C886DA90049C0E7 /* MyIntroduceViewController.h */,
 				2C27DA9F1C886DA90049C0E7 /* MyIntroduceViewController.m */,
+				2C7211251C8BF7C8008F00A1 /* MyResetViewController.h */,
+				2C7211261C8BF7C8008F00A1 /* MyResetViewController.m */,
 			);
 			name = MyController;
 			sourceTree = "<group>";
@@ -361,6 +369,8 @@
 			children = (
 				2C5C405A1C872970001954E8 /* MyTableViewCell.h */,
 				2C5C405B1C872970001954E8 /* MyTableViewCell.m */,
+				2C1F99CA1C89EDD6004F56B2 /* MyInformationTableViewCell.h */,
+				2C1F99CB1C89EDD6004F56B2 /* MyInformationTableViewCell.m */,
 			);
 			name = MyView;
 			sourceTree = "<group>";
@@ -977,8 +987,10 @@
 				2E3EA3561C802FDE00A9B776 /* UIColor+Hex.m in Sources */,
 				2E9CEA6C1C8422F60062EAD5 /* Information_baseView.m in Sources */,
 				2E9CEA281C83D3450062EAD5 /* NewsContentViewController.m in Sources */,
+				2C1F99CC1C89EDD6004F56B2 /* MyInformationTableViewCell.m in Sources */,
 				2E3EA3011C7FF17D00A9B776 /* UserService.m in Sources */,
 				2E3EA29D1C7FF00D00A9B776 /* AFHTTPClient+Synchronous.m in Sources */,
+				2C7211271C8BF7C8008F00A1 /* MyResetViewController.m in Sources */,
 				2E3EA29F1C7FF00D00A9B776 /* AFHTTPRequestOperation+ResponseObject.m in Sources */,
 				2E3EA2C61C7FF04100A9B776 /* NSObject+MJProperty.m in Sources */,
 				2E3EA3841C80434E00A9B776 /* UserEntity.m in Sources */,

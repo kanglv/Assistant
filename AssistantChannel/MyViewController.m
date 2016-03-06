@@ -8,11 +8,16 @@
 
 #import "MyViewController.h"
 #import "MyTableViewCell.h"
+#import "MyDetailInformationViewController.h"
+#import "MyFeedbackViewController.h"
+#import "MyIntroduceViewController.h"
+#import "MyMethod.h"
 
 @interface MyViewController ()<UITableViewDelegate , UITableViewDataSource>
 
 @property (strong , nonatomic) UITableView *myTable;
 @property (strong , nonatomic) NSMutableArray *dataArr,*imgArr;
+@property (strong , nonatomic) MyMethod *method;
 
 @end
 
@@ -147,7 +152,9 @@
         cell.imgView.image = [UIImage imageNamed:_imgArr[actualIndex]];
         cell.nameLabel.text = _dataArr[actualIndex];
         if(indexPath.row==1){
-            cell.cacheLabel.text = @"200B";//具体数值，通过method的方法计算
+            NSArray *paths= NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+            NSString*path = [paths lastObject];
+            cell.cacheLabel.text = [NSString stringWithFormat:@"%.1fM", [self.method folderSizeAtPath:path]];//具体数值，通过method的方法计算
         }
     }
     else{
@@ -164,38 +171,38 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //处理各个位置的点击事件
     if(indexPath.section==0){
+        if (indexPath.row==0) {
+            //个人中心
+            MyDetailInformationViewController *mvc = [[MyDetailInformationViewController alloc]init];
+            [self.navigationController pushViewController:mvc animated:YES];
+        }
         if([self showLearningClub]){
-            if (indexPath.row==0) {
-                //个人中心
-            }
-            else if(indexPath.row==1){
+             if(indexPath.row==1){
                 //学习园地
-                
-            }else{
-                //通知
                 
             }
         }else{
-            if (indexPath.row==0) {
-                //个人中心
-                
-            }else {
                 //通知
                 
             }
-        }
+
     }
     else if (indexPath.section==1){
         if (indexPath.row==0) {
             //版本更新
         }else{
             //清除缓存
+            [self.method clearCache];
         }
     }else{
         if (indexPath.row==0) {
             //意见反馈
+            MyFeedbackViewController *mfvc = [[MyFeedbackViewController alloc]init];
+            [self.navigationController pushViewController:mfvc animated:YES];
         }else{
             //关于助手
+            MyIntroduceViewController *mivc = [[MyIntroduceViewController alloc]init];
+            [self.navigationController pushViewController:mivc animated:YES];
         }
     }
 }
