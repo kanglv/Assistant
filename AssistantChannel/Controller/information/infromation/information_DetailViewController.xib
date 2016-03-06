@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="information_DetailViewController">
+            <connections>
+                <outlet property="tableView" destination="Lz3-mm-sKS" id="59a-Dh-xa7"/>
+                <outlet property="titleImage" destination="B1F-eh-a46" id="IDL-i2-gcp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_setting_image" translatesAutoresizingMaskIntoConstraints="NO" id="B1F-eh-a46">
+                    <rect key="frame" x="8" y="17" width="304" height="93"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="105" id="AEU-yc-ROg"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lz3-mm-sKS">
+                    <rect key="frame" x="0.0" y="118" width="320" height="450"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Sbw-BP-lxt"/>
+                        <outlet property="delegate" destination="-1" id="tpH-ed-Oev"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Lz3-mm-sKS" firstAttribute="top" secondItem="B1F-eh-a46" secondAttribute="bottom" constant="2" id="6P6-6I-m9g"/>
+                <constraint firstAttribute="bottom" secondItem="Lz3-mm-sKS" secondAttribute="bottom" id="GND-LW-Xw1"/>
+                <constraint firstItem="B1F-eh-a46" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QU9-KM-Kmm"/>
+                <constraint firstItem="B1F-eh-a46" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="dtI-IM-zWv"/>
+                <constraint firstAttribute="trailing" secondItem="B1F-eh-a46" secondAttribute="trailing" constant="8" id="rWe-Pm-Jyb"/>
+                <constraint firstAttribute="trailing" secondItem="Lz3-mm-sKS" secondAttribute="trailing" id="xxW-9p-8CA"/>
+                <constraint firstItem="Lz3-mm-sKS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yh1-SQ-7XW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_setting_image" width="480" height="160"/>
+    </resources>
+</document>

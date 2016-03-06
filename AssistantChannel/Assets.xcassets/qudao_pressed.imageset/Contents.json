@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "qudao_pressed.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "qudao_pressed.png",
       "scale" : "2x"
     },
     {
