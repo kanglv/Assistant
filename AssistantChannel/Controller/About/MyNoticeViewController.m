@@ -10,7 +10,8 @@
 #import "MyNoticeTableViewCell.h"
 @interface MyNoticeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong , nonatomic)UITableView *myTable;
-@property int numberOfNotice;
+@property (strong , nonatomic)NSArray *dataArr;
+@property NSInteger numberOfNotice;
 @end
 
 @implementation MyNoticeViewController
@@ -22,11 +23,6 @@
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self getData];
-    
-    _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    _myTable.dataSource=self;
-    _myTable.delegate=self;
-    [self.view addSubview:_myTable];
     
 }
 
@@ -45,6 +41,12 @@
         if ([strState isEqualToString:@"1"]) {
             NSNumber *num = [[entity objectForKey:@"data"] objectForKey:@"total"];
             _numberOfNotice = [num intValue];
+            _dataArr = [entity objectForKey:@"ls"];
+            _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+            _myTable.dataSource=self;
+            _myTable.delegate=self;
+            [self.view addSubview:_myTable];
+
         }
     }Failed:^(int errorCode, NSString *message) {
         
@@ -58,13 +60,25 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _numberOfNotice;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.view.frame.size.height/7;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str =@"lvkang";
     MyNoticeTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:str];
     if(cell == nil){
         cell = [[MyNoticeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
-    
+    NSDictionary *information = _dataArr[indexPath.row];
+    cell.inforLabel.text =[information objectForKey:@"title"];
+    if([[information objectForKey:@"1"] isEqualToString:@"1"]){
+        cell.stateLabel.text = @"已读";
+    }else{
+        cell.stateLabel.text = @"未读";
+    }
+    NSString *time = [information objectForKey:@"create_time"];
+    NSString *actualtime =[dateChange NsstringChangeDate:time];
+    cell.timeLabel.text = actualtime;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
