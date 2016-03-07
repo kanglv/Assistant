@@ -53,9 +53,10 @@
 - (void)backBtnClicked:(id)sender
 {
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    [app.hVC setNavigationBarHidden:YES animated:NO];
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [app.hVC setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)addRefreshView
@@ -162,6 +163,7 @@
     
     [tableViewheader.searchText resignFirstResponder];
     [self searchQuDao:tableViewheader.searchText.text];
+    
 }
 
 - (void)searchQuDao:(NSString*)name{

@@ -90,7 +90,7 @@
         
         [self.searchText addSubview:searchImg];
         
-        self.searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(VIEWWIDTH - 75, 40, 70, 30)];
+        self.searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(VIEWWIDTH - 75, 35, 70, 40)];
         [self.searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
         [self.searchBtn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1] forState:UIControlStateNormal];
         self.searchBtn.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -134,7 +134,7 @@
         
         [self.searchText addSubview:searchImg];
         
-        self.searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(VIEWWIDTH - 75, 5, 70, 30)];
+        self.searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(VIEWWIDTH - 75, 0, 70, 40)];
         [self.searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
         [self.searchBtn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1] forState:UIControlStateNormal];
         self.searchBtn.titleLabel.font = [UIFont systemFontOfSize:15];

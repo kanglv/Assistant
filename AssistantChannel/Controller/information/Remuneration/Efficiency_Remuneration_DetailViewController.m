@@ -1,19 +1,18 @@
 //
-//  Remuneration_DetailViewController.m
+//  Efficiency_Remuneration_DetailViewController.m
 //  AssistantChannel
 //
-//  Created by 张晓烨 on 16/3/2.
+//  Created by 张晓烨 on 16/3/7.
 //  Copyright © 2016年 dxw. All rights reserved.
 //
 
-#import "Remuneration_DetailViewController.h"
+#import "Efficiency_Remuneration_DetailViewController.h"
 #import "Remuneration_Detail_1TableViewCell.h"
 #import "Remuneration_Detail_2TableViewCell.h"
 #import "Remuneration_Detail_3TableViewCell.h"
 #import "Remuneration_Detail_4TableViewCell.h"
-#import "Remuneration_DetailEntity.h"
 
-@interface Remuneration_DetailViewController ()
+@interface Efficiency_Remuneration_DetailViewController ()
 {
     Remuneration_Detail_1TableViewCell *cell1;
     Remuneration_Detail_2TableViewCell *cell2;
@@ -22,20 +21,15 @@
 }
 @end
 
-@implementation Remuneration_DetailViewController
+@implementation Efficiency_Remuneration_DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     [app.hVC setNavigationBarHidden:NO animated:YES];
     
     UIButton *backBtn = [self setNaviCommonBackBtn];
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.arrayContact = [[NSMutableArray alloc]init];
-    
-    [self getData];
     
     self.navigationItem.title = @"渠道酬金详情";
 }
@@ -48,7 +42,6 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -110,108 +103,105 @@
     cell4.bgView.layer.borderWidth = 1.0;
     cell4.bgView.layer.borderColor = [UIColor colorWithRed:210.0/255 green:210.0/255 blue:210.0/255 alpha:1].CGColor;
     
-    if (self.arrayContact.count == 1) {
-        
-        Remuneration_DetailEntity *entity = [self.arrayContact objectAtIndex:0];
         [self setTabelViewCell:indexPath.row];
         switch (indexPath.row) {
             case 0:
                 
-                cell1.nameLabel.text = [NSString stringWithFormat:@"名称：%@",entity.name];
-                cell1.codeLabel.text = [NSString stringWithFormat:@"编码：%@",entity.code];
-                cell1.Payment_timeLabel.text = [NSString stringWithFormat:@"酬金时间：%@－－%@",entity.from_time,entity.to_time];
-                cell1.Fee_deductionLabel.text = [NSString stringWithFormat:@"酬金扣减金额：%@",[dateChange NsstringChangeYuan:[entity.reduce_fee stringValue]]];
-                cell1.Total_remunerationLabel.text = [NSString stringWithFormat:@"酬金总计：%@",[dateChange NsstringChangeYuan:[entity.total_fee stringValue]]];
+                cell1.nameLabel.text = [NSString stringWithFormat:@"名称：%@",self.name];
+                cell1.codeLabel.text = [NSString stringWithFormat:@"编码：%@",self.code];
+                cell1.Payment_timeLabel.text = [NSString stringWithFormat:@"酬金时间：%@",self.entity.stat_month];
+                cell1.Fee_deductionLabel.text = [NSString stringWithFormat:@"酬金扣减金额：%@",[dateChange NsstringChangeYuan:[self.entity.reduce_fee stringValue]]];
+                cell1.Total_remunerationLabel.text = [NSString stringWithFormat:@"酬金总计：%@",[dateChange NsstringChangeYuan:[self.entity.total_fee stringValue]]];
                 
                 return cell1;
                 break;
             case 1:
- 
-                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"放号酬金总计：%@", [dateChange NsstringChangeYuan:[entity.fh_total stringValue]]];
-                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", entity.fh_qqt_num];
-                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.fh_qqt_fee stringValue]]];
-                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", entity.fh_szx_num];
-                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.fh_szx_fee stringValue]]];
-                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", entity.fh_dgdd_num];
-                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.fh_dgdd_fee stringValue]]];
+                
+                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"放号酬金总计：%@", [dateChange NsstringChangeYuan:[self.entity.fh_total stringValue]]];
+                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.fh_qqt_num];
+                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.fh_qqt_fee stringValue]]];
+                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.fh_szx_num];
+                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.fh_szx_fee stringValue]]];
+                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.fh_dgdd_num];
+                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.fh_dgdd_fee stringValue]]];
                 
                 return cell2;
                 break;
             case 2:
-   
                 
-                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", entity.card_total];
-                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.card_fee stringValue]]];
+                
+                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.card_total];
+                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.card_fee stringValue]]];
                 
                 return cell3;
                 break;
             case 3:
-
-                cell4.Remuneration_totalLabel.text = [NSString stringWithFormat:@"增值业务总计：%@",[dateChange NsstringChangeYuan:[entity.zz_total stringValue]]];
                 
-                cell4.One_NumLabel.text = [NSString stringWithFormat:@"%@", entity.zz_sx_num];
-                cell4.One_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.zz_sx_fee stringValue]]];
-                cell4.Two_NumLabel.text = [NSString stringWithFormat:@"%@", entity.zz_kd_num];
-                cell4.Two_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.zz_kd_fee stringValue]]];
+                cell4.Remuneration_totalLabel.text = [NSString stringWithFormat:@"增值业务总计：%@",[dateChange NsstringChangeYuan:[self.entity.zz_total stringValue]]];
+                
+                cell4.One_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.zz_sx_num];
+                cell4.One_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.zz_sx_fee stringValue]]];
+                cell4.Two_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.zz_kd_num];
+                cell4.Two_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.zz_kd_fee stringValue]]];
                 
                 return cell4;
                 break;
             case 4:
-
-                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", entity.service_num];
-                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.service_fee stringValue]]];
+                
+                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.service_num];
+                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.service_fee stringValue]]];
                 
                 return cell3;
                 break;
             case 5:
-            
-
-                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"话费服务酬金总金额：%@",[dateChange NsstringChangeYuan:[entity.phone_total stringValue]]];
-                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", entity.phone_tc_num];
-                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.phone_tc_fee stringValue]]];
-                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", entity.phone_dshf_num];
-                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.phone_dshf_fee stringValue]]];
-                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", entity.phone_kzcz_num];
-                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.phone_kzcz_fee stringValue]]];
+                
+                
+                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"话费服务酬金总金额：%@",[dateChange NsstringChangeYuan:[self.entity.phone_total stringValue]]];
+                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.phone_tc_num];
+                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.phone_tc_fee stringValue]]];
+                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.phone_dshf_num];
+                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.phone_dshf_fee stringValue]]];
+                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.phone_kzcz_num];
+                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.phone_kzcz_fee stringValue]]];
                 
                 return cell2;
                 break;
             case 6:
                 
-
                 
-                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", entity.contract_num];
-                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.contract_fee stringValue]]];
+                
+                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.contract_num];
+                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.contract_fee stringValue]]];
                 
                 return cell3;
                 break;
             case 7:
-
-                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"激励酬金总计：%@",[dateChange NsstringChangeYuan:[entity.jl_total stringValue]]];
-                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", entity.jl_hz_num];
-                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.jl_hz_fee stringValue]]];
-                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", entity.jl_qt_num];
-                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.jl_qt_fee stringValue]]];
-                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", entity.jl_td_num];
-                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.jl_td_fee stringValue]]];
+                
+                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"激励酬金总计：%@",[dateChange NsstringChangeYuan:[self.entity.jl_total stringValue]]];
+                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.jl_hz_num];
+                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.jl_hz_fee stringValue]]];
+                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.jl_qt_num];
+                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.jl_qt_fee stringValue]]];
+                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.jl_td_num];
+                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.jl_td_fee stringValue]]];
                 return cell2;
                 break;
             case 8:
-
-                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"终端服务酬金总计：%@",[dateChange NsstringChangeYuan:[entity.terminal_total stringValue]]];
-                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", entity.terminal_4g_num];
-                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.terminal_4g_fee stringValue]]];
-                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", entity.terminal_qt_num];
-                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.terminal_qt_fee stringValue]]];
-                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", entity.terminal_ls_num];
-                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.terminal_ls_fee stringValue]]];
+                
+                cell2.Remuneration_totalLabel.text = [NSString stringWithFormat:@"终端服务酬金总计：%@",[dateChange NsstringChangeYuan:[self.entity.terminal_total stringValue]]];
+                cell2.GSM_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.terminal_4g_num];
+                cell2.GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.terminal_4g_fee stringValue]]];
+                cell2.EasyOwn_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.terminal_qt_num];
+                cell2.EasyOwn_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.terminal_qt_fee stringValue]]];
+                cell2.M_Zone_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.terminal_ls_num];
+                cell2.M_Zone_GSM_RemunerationLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.terminal_ls_fee stringValue]]];
                 
                 return cell2;
                 break;
             case 9:
                 
-                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", entity.other_num];
-                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[entity.other_fee stringValue]]];
+                cell3.total_free_NumLabel.text = [NSString stringWithFormat:@"%@", self.entity.other_num];
+                cell3.total_Remuneration_NumLabel.text = [NSString stringWithFormat:@"%@", [dateChange NsstringChangeYuan:[self.entity.other_fee stringValue]]];
                 
                 return cell3;
                 break;
@@ -219,63 +209,6 @@
             default:
                 break;
         }
-    }else{
-        [self setTabelViewCell:indexPath.row];
-        
-        switch (indexPath.row) {
-            case 0:
-                
-                return cell1;
-                break;
-            case 1:
-                
-                
-                return cell2;
-                break;
-            case 2:
-                
-                
-                return cell3;
-                break;
-            case 3:
-
-                return cell4;
-                break;
-            case 4:
-                
-      
-                return cell3;
-                break;
-            case 5:
-                
-
-                return cell2;
-                break;
-            case 6:
-                
-
-                return cell3;
-                break;
-            case 7:
-                
-
-                return cell2;
-                break;
-            case 8:
-                
-                return cell2;
-                break;
-            case 9:
-                
-                return cell3;
-                break;
-                
-            default:
-                break;
-        }
-    }
-   
-    
     return nil;
 }
 
@@ -289,7 +222,7 @@
             cell1.Payment_timeLabel.text = @"酬金时间：";
             cell1.Fee_deductionLabel.text = @"酬金扣减金额";
             cell1.Total_remunerationLabel.text = @"酬金总计：";
-
+            
             break;
         case 1:
             
@@ -309,7 +242,7 @@
             cell3.titleLabel.text = @"充值卡";
             cell3.title_total_freeLabel.text = @"总金额";
             cell3.title_Total_remunerationLabel.text = @"总酬金";
-
+            
             break;
         case 3:
             
@@ -320,14 +253,14 @@
             cell4.Remuneration_oneLabel.text = @"酬金";
             cell4.num_twoLabel.text = @"数量";
             cell4.Remuneration_twoLabel.text = @"酬金";
-   
+            
             break;
         case 4:
             
             cell3.titleLabel.text = @"其他业务";
             cell3.title_total_freeLabel.text = @"数量";
             cell3.title_Total_remunerationLabel.text = @"酬金";
-
+            
             break;
         case 5:
             
@@ -341,14 +274,14 @@
             cell2.Remuneration_twoLabel.text = @"酬金";
             cell2.num_threeLabel.text = @"总金额";
             cell2.Remuneration_threeLabel.text = @"酬金";
-
+            
             break;
         case 6:
             
             cell3.titleLabel.text = @"合作计划服务业务";
             cell3.title_total_freeLabel.text = @"数量";
             cell3.title_Total_remunerationLabel.text = @"酬金";
-
+            
             break;
         case 7:
             
@@ -389,45 +322,6 @@
         default:
             break;
     }
-}
-
-- (void)getData{
-    
-    CommonService *service = [[CommonService alloc] init];
-    UserEntity *userEntity = [UserEntity sharedInstance];
-    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
-                           @"channel",@"m",
-                           @"reward_detail",@"a",
-                           userEntity.sn,@"sn",
-                           self.channel_id,@"id",
-                           self.startDate,@"from_time",
-                           self.endDate,@"to_time",
-                           nil
-                           ];
-    
-    [service getNetWorkData:param Successed:^(id entity) {
-        
-        NSNumber *state = [entity valueForKeyPath:@"success"];
-        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
-        
-        if ([strState isEqualToString:@"1"]) {
-            NSDictionary *attributes = [entity objectForKey:@"data"];
-            
-            [self.arrayContact removeAllObjects];
-            
-            Remuneration_DetailEntity *entity = [[Remuneration_DetailEntity alloc] init];
-            entity = [entity initWithAttributes:attributes];
-            [self.arrayContact addObject:entity];
-            
-            [self.tabelView reloadData];
-            
-        }else{
-            
-        }
-        
-    } Failed:^(int errorCode, NSString *message) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="KGk-i7-Jjw" customClass="EfficiencyTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="328" height="103"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jre-49-SfY">
+                        <rect key="frame" x="8" y="8" width="307" height="89"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-ce-fzP">
+                                <rect key="frame" x="0.0" y="0.0" width="307" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tT4-fp-fHv">
+                                <rect key="frame" x="0.0" y="24" width="307" height="11"/>
+                                <color key="backgroundColor" white="0.90997273489999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="aYH-T3-vIT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="总计入网量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-C3-DMr">
+                                <rect key="frame" x="0.0" y="39" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="终端总计销量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAJ-bb-mFy">
+                                <rect key="frame" x="76" y="39" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="缴费金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYG-3A-6Y9">
+                                <rect key="frame" x="166" y="39" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="铺卡率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdB-rU-4ai">
+                                <rect key="frame" x="237" y="39" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBq-tp-0yC">
+                                <rect key="frame" x="80" y="61" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-Gb-FIv">
+                                <rect key="frame" x="166" y="61" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-xj-oya">
+                                <rect key="frame" x="8" y="61" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHA-Yg-xwN">
+                                <rect key="frame" x="240" y="61" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tT4-fp-fHv" firstAttribute="top" secondItem="nbm-ce-fzP" secondAttribute="bottom" id="H2s-Ui-NmG"/>
+                            <constraint firstItem="nbm-ce-fzP" firstAttribute="leading" secondItem="Jre-49-SfY" secondAttribute="leading" id="TrT-xf-97J"/>
+                            <constraint firstAttribute="trailing" secondItem="nbm-ce-fzP" secondAttribute="trailing" id="ac1-2D-b2M"/>
+                            <constraint firstAttribute="trailing" secondItem="tT4-fp-fHv" secondAttribute="trailing" id="fHG-fN-CmJ"/>
+                            <constraint firstItem="nbm-ce-fzP" firstAttribute="top" secondItem="Jre-49-SfY" secondAttribute="top" constant="3" id="fJ8-Go-gRa"/>
+                            <constraint firstItem="tT4-fp-fHv" firstAttribute="leading" secondItem="Jre-49-SfY" secondAttribute="leading" id="sbw-PI-vZ3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Jre-49-SfY" secondAttribute="bottom" constant="-5" id="0yy-QV-0F6"/>
+                    <constraint firstItem="Jre-49-SfY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1UG-6N-xmS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jre-49-SfY" secondAttribute="trailing" id="49f-bR-tKi"/>
+                    <constraint firstItem="Jre-49-SfY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="ibQ-5D-tN2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="Card_rateLabel" destination="kdB-rU-4ai" id="91l-Sq-dJe"/>
+                <outlet property="Card_rate_numLabel" destination="oHA-Yg-xwN" id="06e-l9-fzH"/>
+                <outlet property="Payment_amountLebel" destination="hYG-3A-6Y9" id="Cxj-4Q-4lC"/>
+                <outlet property="Payment_amount_numLebel" destination="hcq-Gb-FIv" id="Oba-qe-6Ys"/>
+                <outlet property="Terminal__numtotalLabel" destination="OBq-tp-0yC" id="ry9-Yv-WRs"/>
+                <outlet property="Terminal_totalLabel" destination="MAJ-bb-mFy" id="hO2-KD-hNL"/>
+                <outlet property="bgView" destination="Jre-49-SfY" id="1KB-Yi-6MP"/>
+                <outlet property="net_totalLabel" destination="Pfz-C3-DMr" id="BRf-0L-4pK"/>
+                <outlet property="net_total_numLabel" destination="FVF-xj-oya" id="5eA-vF-PzD"/>
+                <outlet property="titleLabel" destination="nbm-ce-fzP" id="TiW-dA-KGn"/>
+            </connections>
+            <point key="canvasLocation" x="350" y="431"/>
+        </tableViewCell>
+    </objects>
+</document>

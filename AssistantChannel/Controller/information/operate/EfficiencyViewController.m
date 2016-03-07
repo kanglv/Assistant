@@ -1,62 +1,62 @@
 //
-//  Operate_manage_listViewController.m
+//  EfficiencyViewController.m
 //  AssistantChannel
 //
-//  Created by 张晓烨 on 16/3/4.
+//  Created by 张晓烨 on 16/3/7.
 //  Copyright © 2016年 dxw. All rights reserved.
 //
 
-#import "Operate_manage_listViewController.h"
-#import "Operate_listTableViewCell.h"
-#import "Operate_listEntity.h"
-#import "Operate_manage_operate_listViewController.h"
+#import "EfficiencyViewController.h"
 #import "Utilies.h"
+#import "EfficiencyTableViewCell.h"
+#import "EfficiencyEntity.h"
 
-@interface Operate_manage_listViewController ()
+@interface EfficiencyViewController ()
 {
-    Operate_listTableViewCell *cell;
+    EfficiencyTableViewCell *cell;
 }
 @end
 
-@implementation Operate_manage_listViewController
+@implementation EfficiencyViewController
 
 - (void)dealloc
 {
     [_header free];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super init];
+    if(self)
+    {
+        self.tableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
+        
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        self.tableView.tableFooterView = [[UIView alloc]init];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        [self.view addSubview:self.tableView];
+        [self reloadTableViewHeader];
+        
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    [app.hVC setNavigationBarHidden:NO animated:YES];
-    
-    UIButton *backBtn = [self setNaviCommonBackBtn];
-    [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.tableView.tableFooterView = [[UITableView alloc]init];
-    
     self.arrayContact = [[NSMutableArray alloc]init];
-
-    [self addRefreshView];
     
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.delegate = self;
+    HUD.labelText = @"努力加载中...";
+    
+    [self addRefreshView];
     [self getData:nil andWithTime:nil];
     
-    [self reloadTableViewHeader];
     
-    self.navigationItem.title = @"渠道经理运营状况列表";
-    
-}
-
-#pragma mark - ButtonMethod
-- (void)backBtnClicked:(id)sender
-{
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    [app.hVC setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)addRefreshView
@@ -74,7 +74,10 @@
 - (void)reloadTableViewHeader
 {
     
+    self.titleview = [[UIView alloc]initWithFrame:CGRectMake(0 , 0, SCREEN_WIDTH, 40)];
+    
     tableViewheader = [[tableViewHeader alloc] initWithFrameanDate:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+    tableViewheader.searchText.delegate = self;
     
     self.startTime = [Utilies getLastMonth];
     
@@ -87,53 +90,42 @@
                              forState:UIControlStateNormal];
     [tableViewheader.DateBtn addTarget:self action:@selector(dateBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
-    self.tableView.tableHeaderView = tableViewheader;
+    [self.titleview addSubview:tableViewheader];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return [self.arrayContact count];
-    
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    return 90;
+    
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"Operate_listTableViewCell";
+    
+    static NSString *identifier = @"EfficiencyTableViewCell";
     cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:identifier owner:nil options:nil][0];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    Operate_listEntity *entity = [self.arrayContact objectAtIndex:indexPath.row];
+    EfficiencyEntity *entity = [self.arrayContact objectAtIndex:indexPath.row];
     
-    cell.title.text = entity.name;
+    cell.bgView.layer.borderWidth = 1.0;
+    cell.bgView.layer.borderColor = [UIColor colorWithRed:210.0/255 green:210.0/255 blue:210.0/255 alpha:1].CGColor;
     
-    cell.net_amountLabel.text = [NSString stringWithFormat:@"总计入网量：%@",entity.net_in_total];
-    cell.Total_salesLabel.text = [NSString stringWithFormat:@"终端总计销量：%@",entity.terminal_total];
-    cell.Payment_amountLabel.text = [NSString stringWithFormat:@"缴费金额：%@",[dateChange NsstringChangeYuan:entity.fee_total]];
-    cell.Spreading_rateLabel.text = [NSString stringWithFormat:@"铺开率：%@％",entity.card_rate];
+    cell.titleLabel.text = entity.stat_month;
+    
+    cell.net_total_numLabel.text = entity.net_in_total;
+    cell.Terminal__numtotalLabel.text = entity.terminal_total;
+    cell.Payment_amount_numLebel.text = [NSString stringWithFormat:@"%@",[dateChange NsstringChangeYuan:entity.fee_total]];
+    cell.Card_rate_numLabel.text = [NSString stringWithFormat:@"%@％",entity.card_rate];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    Operate_listEntity *entity = [self.arrayContact objectAtIndex:indexPath.row];
-    
-    Operate_manage_operate_listViewController *vc = [[Operate_manage_operate_listViewController alloc]init];
-    
-    vc.ref_id = entity.ref_id;
-    
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)dateBtnClicked{
@@ -173,11 +165,9 @@
     UserEntity *userEntity = [UserEntity sharedInstance];
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
                            @"channel",@"m",
-                           @"business_stat",@"a",
+                           @"business_list",@"a",
                            userEntity.sn,@"sn",
-                           self.ref_id,@"ref_id",
-                           @"0",@"ctype",
-                           @"1",@"level",
+                           @"0",@"id",
                            from_time?from_time:@"",@"from_time",
                            to_time?to_time:@"",@"to_time",
                            nil
@@ -191,16 +181,16 @@
         if ([strState isEqualToString:@"1"]) {
             NSMutableDictionary *dic = [entity objectForKey:@"data"];
             NSMutableArray *DataArr = [dic objectForKey:@"ls"];
-                        
+            
+            
+            
             [self.arrayContact removeAllObjects];
-
+            
             for (NSDictionary* attributes in DataArr) {
                 
-                Operate_listEntity *entity = [[Operate_listEntity alloc]init];
-
+                EfficiencyEntity *entity = [[EfficiencyEntity alloc] init];
                 entity = [entity initWithAttributes:attributes];
                 [self.arrayContact addObject:entity];
-
             }
             
             [self.tableView reloadData];
@@ -210,19 +200,18 @@
         }
         [_header endRefreshing];
         
-
+        [HUD hide:YES];
     } Failed:^(int errorCode, NSString *message) {
         
-//        iToast *toast = [iToast makeText:@"网络不给力，请检查网络"];
-//        [toast setGravity:iToastGravityBottom offsetLeft:0 offsetTop:-30];
-//        [toast setDuration:500];
-//        [toast show:iToastTypeNotice];
+        //        iToast *toast = [iToast makeText:@"网络不给力，请检查网络"];
+        //        [toast setGravity:iToastGravityBottom offsetLeft:0 offsetTop:-30];
+        //        [toast setDuration:500];
+        //        [toast show:iToastTypeNotice];
         
         [_header endRefreshing];
-
+        
+        [HUD hide:YES];
     }];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {

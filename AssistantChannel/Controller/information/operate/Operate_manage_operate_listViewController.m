@@ -27,6 +27,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    if (self.name.length > 0) {
+        AppDelegate *app = [[UIApplication sharedApplication] delegate];
+        [app.hVC setNavigationBarHidden:NO animated:YES];
+
+    }else{
+        
+    }
     
     UIButton *backBtn = [self setNaviCommonBackBtn];
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -48,6 +56,15 @@
 #pragma mark - ButtonMethod
 - (void)backBtnClicked:(id)sender
 {
+    
+    if (self.name.length > 0) {
+        
+        AppDelegate *app = [[UIApplication sharedApplication] delegate];
+        [app.hVC setNavigationBarHidden:YES animated:NO];
+        
+    }else{
+        
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -175,6 +192,7 @@
                            self.ref_id,@"ref_id",
                            @"0",@"ctype",
                            @"2",@"level",
+                           self.name,@"name",
                            from_time?from_time:@"",@"from_time",
                            to_time?to_time:@"",@"to_time",
                            nil

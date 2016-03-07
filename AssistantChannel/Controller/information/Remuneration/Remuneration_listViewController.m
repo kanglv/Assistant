@@ -11,10 +11,14 @@
 #import "Remuneration_listTableViewCell.h"
 #import "Remuneration_DetailViewController.h"
 #import "Remuneration_Entity.h"
+#import "EffIciency_RemunerationEntity.h"
+#import "Efficiency_Remuneration_DetailViewController.h"
 
 @interface Remuneration_listViewController ()
 {
     Remuneration_listTableViewCell *cell;
+    
+   
 }
 @end
 
@@ -45,6 +49,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _userEntity = [UserEntity sharedInstance];
+    
     self.arrayContact = [[NSMutableArray alloc]init];
     self.arrayCustomerTemp = [[NSMutableArray alloc]init];
     
@@ -55,7 +61,12 @@
     [self addRefreshView];
     [self reloadTableViewHeader];
     
-    [self getData:nil andWithTime:nil];
+    if ([_userEntity.roles isEqualToString:@"13"]) {
+        [self get_Efficiency_Data:nil andWithTime:nil];
+    }else{
+        [self getData:nil andWithTime:nil];
+    }
+    
 }
 
 - (void)addRefreshView
@@ -66,7 +77,13 @@
     _header.scrollView = _tableView;
     _header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
         
-        [weakSelf getData:weakSelf.startTime_1 andWithTime:weakSelf.endTime_1];
+        if ([weakSelf.userEntity.roles isEqualToString:@"13"]) {
+            [weakSelf get_Efficiency_Data:weakSelf.startTime_1 andWithTime:weakSelf.endTime_1];
+        }else{
+            [weakSelf getData:weakSelf.startTime_1 andWithTime:weakSelf.endTime_1];
+        }
+        
+        
     };
 }
 
@@ -111,20 +128,41 @@
         cell = [[NSBundle mainBundle] loadNibNamed:identifier owner:nil options:nil][0];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    Remuneration_Entity *entity = [self.arrayContact objectAtIndex:indexPath.row];
     
-    cell.titleLabel.text = entity.name;
+    
+    
+    
     cell.bgView.layer.borderWidth = 1.0;
     cell.bgView.layer.borderColor = [UIColor colorWithRed:210.0/255 green:210.0/255 blue:210.0/255 alpha:1].CGColor;
     
-    cell.fh_totalLabel.text = [NSString stringWithFormat:@"放号酬金\n%@",entity.fh_total];
-    cell.zz_sx_feeLabel.text = [NSString stringWithFormat:@"数信酬金\n%@",entity.zz_sx_fee];
-    cell.zz_kd_feeLebel.text = [NSString stringWithFormat:@"宽带酬金\n%@",entity.zz_kd_fee];
-    cell.reduce_feeLabel.text = [NSString stringWithFormat:@"扣减酬金\n%@",entity.reduce_fee];
-    cell.terminal_4g_feeLabel.text = [NSString stringWithFormat:@"4G终端\n%@",entity.terminal_4g_fee];
-    cell.jl_totalLabel.text = [NSString stringWithFormat:@"激励合作\n%@",entity.jl_total];
-    cell.other_feeLabel.text = [NSString stringWithFormat:@"其它金额\n%@",entity.other_fee];
-    cell.total_feeLabel.text = [NSString stringWithFormat:@"代办总计\n%@",entity.total_fee];
+    if ([_userEntity.roles isEqualToString:@"13"]) {
+       EffIciency_RemunerationEntity *entityEff = [self.arrayContact objectAtIndex:indexPath.row];
+        cell.titleLabel.text = entityEff.stat_month;
+        
+        cell.fh_totalLabel.text = [NSString stringWithFormat:@"放号酬金\n%@",entityEff.fh_total];
+        cell.zz_sx_feeLabel.text = [NSString stringWithFormat:@"数信酬金\n%@",entityEff.zz_sx_fee];
+        cell.zz_kd_feeLebel.text = [NSString stringWithFormat:@"宽带酬金\n%@",entityEff.zz_kd_fee];
+        cell.reduce_feeLabel.text = [NSString stringWithFormat:@"扣减酬金\n%@",entityEff.reduce_fee];
+        cell.terminal_4g_feeLabel.text = [NSString stringWithFormat:@"4G终端\n%@",entityEff.terminal_4g_fee];
+        cell.jl_totalLabel.text = [NSString stringWithFormat:@"激励合作\n%@",entityEff.jl_total];
+        cell.other_feeLabel.text = [NSString stringWithFormat:@"其它金额\n%@",entityEff.other_fee];
+        cell.total_feeLabel.text = [NSString stringWithFormat:@"代办总计\n%@",entityEff.total_fee];
+        
+    }else{
+       Remuneration_Entity *entity = [self.arrayContact objectAtIndex:indexPath.row];
+        cell.titleLabel.text = entity.name;
+        cell.fh_totalLabel.text = [NSString stringWithFormat:@"放号酬金\n%@",entity.fh_total];
+        cell.zz_sx_feeLabel.text = [NSString stringWithFormat:@"数信酬金\n%@",entity.zz_sx_fee];
+        cell.zz_kd_feeLebel.text = [NSString stringWithFormat:@"宽带酬金\n%@",entity.zz_kd_fee];
+        cell.reduce_feeLabel.text = [NSString stringWithFormat:@"扣减酬金\n%@",entity.reduce_fee];
+        cell.terminal_4g_feeLabel.text = [NSString stringWithFormat:@"4G终端\n%@",entity.terminal_4g_fee];
+        cell.jl_totalLabel.text = [NSString stringWithFormat:@"激励合作\n%@",entity.jl_total];
+        cell.other_feeLabel.text = [NSString stringWithFormat:@"其它金额\n%@",entity.other_fee];
+        cell.total_feeLabel.text = [NSString stringWithFormat:@"代办总计\n%@",entity.total_fee];
+        
+    }
+    
+  
     
     return cell;
 }
@@ -135,17 +173,35 @@
     
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     
-    Remuneration_DetailViewController *vc = [[Remuneration_DetailViewController alloc]init];
     
-    Remuneration_Entity *entity = [self.arrayContact objectAtIndex:indexPath.row];
+    if ([_userEntity.roles isEqualToString:@"13"]) {
+        
+        Efficiency_Remuneration_DetailViewController *vc = [[Efficiency_Remuneration_DetailViewController alloc]init];
+        
+        EffIciency_RemunerationEntity *entity = [self.arrayContact objectAtIndex:indexPath.row];
     
-    vc.channel_id = entity.channel_id;
-    vc.startDate = self.startTime_1;
-    vc.endDate = self.endTime_1;
-    
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    [app.hVC pushViewController:vc animated:YES];
+        vc.entity = entity;
+        vc.name = self.name;
+        vc.code = self.code;
+        
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        
+        [app.hVC pushViewController:vc animated:YES];
+
+    }else{
+        Remuneration_DetailViewController *vc = [[Remuneration_DetailViewController alloc]init];
+        
+        Remuneration_Entity *entity = [self.arrayContact objectAtIndex:indexPath.row];
+        
+        vc.channel_id = entity.channel_id;
+        vc.startDate = self.startTime_1;
+        vc.endDate = self.endTime_1;
+        
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        
+        [app.hVC pushViewController:vc animated:YES];
+
+    }
 
 }
 
@@ -203,11 +259,10 @@
 - (void)getData:(NSString *)from_time andWithTime:(NSString *)to_time{
     
     CommonService *service = [[CommonService alloc] init];
-    UserEntity *userEntity = [UserEntity sharedInstance];
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
                            @"channel",@"m",
                            @"reward_stat",@"a",
-                           userEntity.sn,@"sn",
+                           _userEntity.sn,@"sn",
                            @"0",@"dep_id",
                            @"",@"name",
                            @"0",@"page",
@@ -250,6 +305,57 @@
         [_header endRefreshing];
         [HUD hide:YES];
     }];
+}
+
+- (void)get_Efficiency_Data:(NSString *)from_time andWithTime:(NSString *)to_time{
+    
+    CommonService *service = [[CommonService alloc] init];
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"channel",@"m",
+                           @"reward_list",@"a",
+                           _userEntity.sn,@"sn",
+                           @"0",@"id",
+                           from_time?from_time:@"",@"from_time",
+                           to_time?to_time:@"",@"to_time",
+                           nil
+                           ];
+    
+    [service getNetWorkData:param Successed:^(id entity) {
+        
+        NSNumber *state = [entity valueForKeyPath:@"success"];
+        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+        
+        if ([strState isEqualToString:@"1"]) {
+            NSMutableDictionary *dic = [entity objectForKey:@"data"];
+            NSMutableArray *DataArr = [dic objectForKey:@"ls"];
+
+            self.name = [dic objectForKey:@"name"];
+            self.code= [dic objectForKey:@"code"];
+            
+            [self.arrayContact removeAllObjects];
+            [self.arrayCustomerTemp removeAllObjects];
+            
+            for (NSDictionary* attributes in DataArr) {
+                
+                EffIciency_RemunerationEntity *entity = [[EffIciency_RemunerationEntity alloc] init];
+                entity = [entity initWithAttributes:attributes];
+                [self.arrayContact addObject:entity];
+            }
+            
+            [self.tableView reloadData];
+            
+        }else{
+            
+        }
+        [_header endRefreshing];
+        
+        [HUD hide:YES];
+    } Failed:^(int errorCode, NSString *message) {
+        
+        [_header endRefreshing];
+        [HUD hide:YES];
+    }];
+    
 }
 
 - (void)seachBtnClick{

@@ -47,6 +47,12 @@
     return self;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    [app.hVC setNavigationBarHidden:YES animated:YES];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -255,12 +261,17 @@
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     
     if ([userEntity.roles isEqualToString:@"11"]) {
+        if (textField.text.length  == 0) {
+            
+            ALERT_ERR_MSG(@"请先输入你要搜索的内容");
+        }else if (textField.text.length > 0){
+            information_manage_DetailViewController *vc = [[information_manage_DetailViewController alloc]init];
+            vc.name = textField.text;
+            
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            [app.hVC pushViewController:vc animated:YES];
+        }
         
-        information_manage_DetailViewController *vc = [[information_manage_DetailViewController alloc]init];
-        vc.name = textField.text;
-        
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [app.hVC pushViewController:vc animated:YES];
         
     }else if([userEntity.roles isEqualToString:@"12"]){
         [self searchQuDao:textField.text];
@@ -275,13 +286,15 @@
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     
     if ([userEntity.roles isEqualToString:@"11"]) {
-        
-        information_manage_DetailViewController *vc = [[information_manage_DetailViewController alloc]init];
-        vc.name = tableViewheader.searchText.text;
-        
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [app.hVC pushViewController:vc animated:YES];
-        
+        if (tableViewheader.searchText.text.length  == 0) {
+            ALERT_ERR_MSG(@"请先输入你要搜索的内容");
+        }else if (tableViewheader.searchText.text.length > 0){
+            information_manage_DetailViewController *vc = [[information_manage_DetailViewController alloc]init];
+            vc.name = tableViewheader.searchText.text;
+            
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            [app.hVC pushViewController:vc animated:YES];
+        }
     }else if([userEntity.roles isEqualToString:@"12"]){
         
         [self searchQuDao:tableViewheader.searchText.text];

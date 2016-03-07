@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface Remuneration_DetailViewController : ZXYBaseViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tabelView;
@@ -16,5 +17,6 @@
 
 @property (strong, nonatomic) NSString *startDate;
 @property (strong, nonatomic) NSString *endDate;
+
 
 @end

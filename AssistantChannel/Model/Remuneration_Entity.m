@@ -31,12 +31,15 @@
     self.channel_id = [attributes valueForKey:@"channel_id"];
     self.zz_kd_fee = [attributes valueForKey:@"zz_kd_fee"];
     self.num = [attributes valueForKey:@"num"];
+    self.stat_month = [attributes valueForKey:@"stat_month"];
     self.name = [attributes valueForKey:@"name"];
     self.zz_total = [attributes valueForKey:@"zz_total"];
     self.jl_total = [attributes valueForKey:@"jl_total"];
     self.code = [attributes valueForKey:@"code"];
     self.service_fee = [attributes valueForKey:@"service_fee"];
     self.contract_fee = [attributes valueForKey:@"contract_fee"];
+    
+    self.ref_id = [attributes valueForKey:@"id"];
     
     return self;
 

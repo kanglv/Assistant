@@ -37,12 +37,14 @@
     self = [super init];
     if(self)
     {
+        
         self.tableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.tableFooterView = [[UIView alloc]init];
         
+        self.view.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:self.tableView];
     }
     return self;
@@ -181,6 +183,7 @@
         Operate_manage_operate_listViewController *vc = [[Operate_manage_operate_listViewController alloc]init];
         
         vc.name = textField.text;
+        vc.ref_id = @"0";
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [app.hVC pushViewController:vc animated:YES];
         
@@ -292,11 +295,17 @@
 
 - (void)seachBtnClick{
     
-    UserEntity *userEntity = [[UserEntity alloc]init];
+    UserEntity *userEntity = [UserEntity sharedInstance];
     [tableViewheader.searchText resignFirstResponder];
-    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
     if ([userEntity.roles isEqualToString:@"11"]) {
         
+        Operate_manage_operate_listViewController *vc = [[Operate_manage_operate_listViewController alloc]init];
+        
+        vc.name = tableViewheader.searchText.text;
+        vc.ref_id = @"0";
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [app.hVC pushViewController:vc animated:YES];
         
     }else if ([userEntity.roles isEqualToString:@"12"]){
         

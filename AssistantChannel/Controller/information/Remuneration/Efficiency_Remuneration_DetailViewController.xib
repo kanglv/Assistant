@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Operate_manage_listViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Efficiency_Remuneration_DetailViewController">
             <connections>
-                <outlet property="tableView" destination="FDx-hk-HGS" id="c4J-bo-4q2"/>
+                <outlet property="tableView" destination="HeP-V4-LZX" id="aH3-Ug-Cg5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,21 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FDx-hk-HGS">
-                    <rect key="frame" x="0.0" y="32" width="320" height="536"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HeP-V4-LZX">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="dsY-tO-kc7"/>
-                        <outlet property="delegate" destination="-1" id="e10-rZ-U98"/>
+                        <outlet property="dataSource" destination="-1" id="NlR-y2-dgR"/>
+                        <outlet property="delegate" destination="-1" id="vIV-hu-chk"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="FDx-hk-HGS" secondAttribute="bottom" id="Fh4-z4-scB"/>
-                <constraint firstItem="FDx-hk-HGS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="L4N-po-YWu"/>
-                <constraint firstItem="FDx-hk-HGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lgw-FX-7d6"/>
-                <constraint firstAttribute="trailing" secondItem="FDx-hk-HGS" secondAttribute="trailing" id="nsT-pp-b4b"/>
+                <constraint firstItem="HeP-V4-LZX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="O01-V2-AcR"/>
+                <constraint firstAttribute="trailing" secondItem="HeP-V4-LZX" secondAttribute="trailing" id="Trm-vs-SV2"/>
+                <constraint firstItem="HeP-V4-LZX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wya-SK-NlU"/>
+                <constraint firstAttribute="bottom" secondItem="HeP-V4-LZX" secondAttribute="bottom" id="gOC-tA-NDz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -56,20 +56,30 @@
     NSLog(@"%@",userEntity.roles);
     if ([userEntity.roles isEqualToString:@"13"]) {
 
+        self.information_DetailTableView = [[Information_detaileViewController alloc]initWithFrame:CGRectMake(0, 105, SCREEN_WIDTH, MAINSCROLLHEIGHT - 105)];
+        
+        [_Informationview addSubview:self.information_DetailTableView.tableview];
+        [_Informationview addSubview:self.information_DetailTableView.titleImg];
+        
+        self.EfficiencyTableView = [[EfficiencyViewController alloc]initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, MAINSCROLLHEIGHT - 40)];
+
+        [_Operateview addSubview:self.EfficiencyTableView.tableView];
+        [_Operateview addSubview:self.EfficiencyTableView.titleview];
+    }else{
+        self.InformationTableView = [[Information_baseViewController alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+        [self.InformationTableView getData:0 andWithPage:0 andWithPageSize:20];
+        [_Informationview addSubview:self.InformationTableView.tableview];
+        
+        self.Operate_listTableView = [[Operate_listViewController alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+//        [self.Operate_listTableView getData:nil andWithTime:nil];
+        [_Operateview addSubview:self.Operate_listTableView.tableView];
         
     }
     
-    self.InformationTableView = [[Information_baseViewController alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    [self.InformationTableView getData:0 andWithPage:0 andWithPageSize:20];
-    [_Informationview addSubview:self.InformationTableView.tableview];
-    
-    
-    self.Operate_listTableView = [[Operate_listViewController alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    [self.Operate_listTableView getData:nil andWithTime:nil];
-    [_Operateview addSubview:self.Operate_listTableView.tableView];
+   
     
     self.Remuneration_listTableView = [[Remuneration_listViewController alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    [self.Remuneration_listTableView getData:nil andWithTime:nil];
+//    [self.Remuneration_listTableView getData:nil andWithTime:nil];
     [_RemunerationView addSubview:self.Remuneration_listTableView.tableView];
 }
 

@@ -26,6 +26,14 @@
 		2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28511C8C059600B10378 /* MyTableViewCell.m */; };
 		2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */; };
 		2C4E28581C8C1E8A00B10378 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */; };
+		2E2BA2031C8D1BDD009432E7 /* Information_detaileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2021C8D1BDD009432E7 /* Information_detaileViewController.m */; };
+		2E2BA2071C8D2A33009432E7 /* EfficiencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2051C8D2A33009432E7 /* EfficiencyTableViewCell.m */; };
+		2E2BA2081C8D2A33009432E7 /* EfficiencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2061C8D2A33009432E7 /* EfficiencyTableViewCell.xib */; };
+		2E2BA20C1C8D3270009432E7 /* EfficiencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA20A1C8D3270009432E7 /* EfficiencyViewController.m */; };
+		2E2BA2101C8D40CB009432E7 /* EfficiencyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA20F1C8D40CB009432E7 /* EfficiencyEntity.m */; };
+		2E2BA2131C8D4D2B009432E7 /* EffIciency_RemunerationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2121C8D4D2B009432E7 /* EffIciency_RemunerationEntity.m */; };
+		2E2BA2171C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2151C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.m */; };
+		2E2BA2181C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2161C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.xib */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -200,6 +208,20 @@
 		2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationTableViewCell.m; sourceTree = "<group>"; };
 		2C4E28561C8C1E8A00B10378 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		2E2BA2011C8D1BDD009432E7 /* Information_detaileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information_detaileViewController.h; sourceTree = "<group>"; };
+		2E2BA2021C8D1BDD009432E7 /* Information_detaileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information_detaileViewController.m; sourceTree = "<group>"; };
+		2E2BA2041C8D2A33009432E7 /* EfficiencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficiencyTableViewCell.h; sourceTree = "<group>"; };
+		2E2BA2051C8D2A33009432E7 /* EfficiencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EfficiencyTableViewCell.m; sourceTree = "<group>"; };
+		2E2BA2061C8D2A33009432E7 /* EfficiencyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EfficiencyTableViewCell.xib; sourceTree = "<group>"; };
+		2E2BA2091C8D3270009432E7 /* EfficiencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficiencyViewController.h; sourceTree = "<group>"; };
+		2E2BA20A1C8D3270009432E7 /* EfficiencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EfficiencyViewController.m; sourceTree = "<group>"; };
+		2E2BA20E1C8D40CB009432E7 /* EfficiencyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficiencyEntity.h; sourceTree = "<group>"; };
+		2E2BA20F1C8D40CB009432E7 /* EfficiencyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EfficiencyEntity.m; sourceTree = "<group>"; };
+		2E2BA2111C8D4D2B009432E7 /* EffIciency_RemunerationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffIciency_RemunerationEntity.h; sourceTree = "<group>"; };
+		2E2BA2121C8D4D2B009432E7 /* EffIciency_RemunerationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffIciency_RemunerationEntity.m; sourceTree = "<group>"; };
+		2E2BA2141C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Efficiency_Remuneration_DetailViewController.h; sourceTree = "<group>"; };
+		2E2BA2151C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Efficiency_Remuneration_DetailViewController.m; sourceTree = "<group>"; };
+		2E2BA2161C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Efficiency_Remuneration_DetailViewController.xib; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -642,6 +664,8 @@
 				B648E28F1C8AD8E7003DAF4D /* InformationViewController.h */,
 				B648E2901C8AD8E7003DAF4D /* InformationViewController.m */,
 				B648E2911C8AD8E7003DAF4D /* InformationViewController.xib */,
+				2E2BA2011C8D1BDD009432E7 /* Information_detaileViewController.h */,
+				2E2BA2021C8D1BDD009432E7 /* Information_detaileViewController.m */,
 			);
 			path = infromation;
 			sourceTree = "<group>";
@@ -660,6 +684,8 @@
 				B648E2B71C8B07CE003DAF4D /* Operate_manage_operate_listViewController.h */,
 				B648E2B81C8B07CE003DAF4D /* Operate_manage_operate_listViewController.m */,
 				B648E2B91C8B07CE003DAF4D /* Operate_manage_operate_listViewController.xib */,
+				2E2BA2091C8D3270009432E7 /* EfficiencyViewController.h */,
+				2E2BA20A1C8D3270009432E7 /* EfficiencyViewController.m */,
 			);
 			path = operate;
 			sourceTree = "<group>";
@@ -672,6 +698,9 @@
 				B648E2AA1C8AD91A003DAF4D /* Remuneration_DetailViewController.xib */,
 				B648E2AB1C8AD91A003DAF4D /* Remuneration_listViewController.h */,
 				B648E2AC1C8AD91A003DAF4D /* Remuneration_listViewController.m */,
+				2E2BA2141C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.h */,
+				2E2BA2151C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.m */,
+				2E2BA2161C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.xib */,
 			);
 			path = Remuneration;
 			sourceTree = "<group>";
@@ -734,6 +763,10 @@
 				B648E2651C8AD7DC003DAF4D /* Remuneration_Entity.m */,
 				B648E2531C8AD791003DAF4D /* UserEntity.h */,
 				B648E2541C8AD791003DAF4D /* UserEntity.m */,
+				2E2BA20E1C8D40CB009432E7 /* EfficiencyEntity.h */,
+				2E2BA20F1C8D40CB009432E7 /* EfficiencyEntity.m */,
+				2E2BA2111C8D4D2B009432E7 /* EffIciency_RemunerationEntity.h */,
+				2E2BA2121C8D4D2B009432E7 /* EffIciency_RemunerationEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -829,6 +862,9 @@
 				B648E2261C8AD6ED003DAF4D /* Remuneration_listTableViewCell.xib */,
 				B648E2271C8AD6ED003DAF4D /* tableViewHeader.h */,
 				B648E2281C8AD6ED003DAF4D /* tableViewHeader.m */,
+				2E2BA2041C8D2A33009432E7 /* EfficiencyTableViewCell.h */,
+				2E2BA2051C8D2A33009432E7 /* EfficiencyTableViewCell.m */,
+				2E2BA2061C8D2A33009432E7 /* EfficiencyTableViewCell.xib */,
 				B648E02C1C8ACA76003DAF4D /* DatePicker */,
 			);
 			path = View;
@@ -1052,7 +1088,7 @@
 				TargetAttributes = {
 					B648DF461C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HY2JF7VN6E;
+						DevelopmentTeam = C2QBXRMTCP;
 					};
 					B648DF5F1C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1108,6 +1144,7 @@
 				2C4E28341C8C054C00B10378 /* arrows_right.png in Resources */,
 				B648E0781C8ACAE0003DAF4D /* LoginViewController.xib in Resources */,
 				B648E2431C8AD6ED003DAF4D /* Remuneration_Detail_4TableViewCell.xib in Resources */,
+				2E2BA2181C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.xib in Resources */,
 				B648E23F1C8AD6ED003DAF4D /* Remuneration_Detail_2TableViewCell.xib in Resources */,
 				B648E1C51C8AD332003DAF4D /* MJRefresh.bundle in Resources */,
 				B648E2331C8AD6ED003DAF4D /* Infortiong_Detail_3TableViewCell.xib in Resources */,
@@ -1116,6 +1153,7 @@
 				2C4E28381C8C054C00B10378 /* ico_personalcenter.png in Resources */,
 				B648E22C1C8AD6ED003DAF4D /* Channel_infortationTableViewCell.xib in Resources */,
 				B648E2351C8AD6ED003DAF4D /* NewsTableViewCell.xib in Resources */,
+				2E2BA2081C8D2A33009432E7 /* EfficiencyTableViewCell.xib in Resources */,
 				B648E2981C8AD8E7003DAF4D /* information_manager_listViewController.xib in Resources */,
 				B648E2AE1C8AD91A003DAF4D /* Remuneration_DetailViewController.xib in Resources */,
 				B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */,
@@ -1157,11 +1195,13 @@
 			files = (
 				B648E12C1C8ACFE1003DAF4D /* UIImage+GIF.m in Sources */,
 				B648E1C91C8AD332003DAF4D /* MJRefreshHeaderView.m in Sources */,
+				2E2BA2031C8D1BDD009432E7 /* Information_detaileViewController.m in Sources */,
 				B648E22D1C8AD6ED003DAF4D /* FilterDateView.m in Sources */,
 				B648E1B81C8AD302003DAF4D /* UIColor+Hex.m in Sources */,
 				B648E0B91C8ACE3C003DAF4D /* AFImageRequestOperation.m in Sources */,
 				B648E1221C8ACFE1003DAF4D /* MKAnnotationView+WebCache.m in Sources */,
 				B648E2691C8AD7DC003DAF4D /* NewsModel.m in Sources */,
+				2E2BA2131C8D4D2B009432E7 /* EffIciency_RemunerationEntity.m in Sources */,
 				B648E2341C8AD6ED003DAF4D /* NewsTableViewCell.m in Sources */,
 				B648E2551C8AD791003DAF4D /* UserEntity.m in Sources */,
 				B648E1291C8ACFE1003DAF4D /* SDWebImageManager.m in Sources */,
@@ -1197,12 +1237,14 @@
 				B648E1B91C8AD302003DAF4D /* Utilies.m in Sources */,
 				2C4E284D1C8C058A00B10378 /* MyFeedbackViewController.m in Sources */,
 				B648E2791C8AD830003DAF4D /* NewsViewController.m in Sources */,
+				2E2BA20C1C8D3270009432E7 /* EfficiencyViewController.m in Sources */,
 				B648E1F91C8AD6D2003DAF4D /* XYDatePicker.m in Sources */,
 				B648E2A61C8AD911003DAF4D /* Operate_manage_listViewController.m in Sources */,
 				B648E2921C8AD8E7003DAF4D /* Information_baseViewController.m in Sources */,
 				B648E12B1C8ACFE1003DAF4D /* UIButton+WebCache.m in Sources */,
 				B648E0B11C8ACE3C003DAF4D /* NSObject+MJKeyValue.m in Sources */,
 				2C4E284F1C8C058A00B10378 /* MyResetViewController.m in Sources */,
+				2E2BA2101C8D40CB009432E7 /* EfficiencyEntity.m in Sources */,
 				B648E2381C8AD6ED003DAF4D /* Operate_Detail_2TableViewCell.m in Sources */,
 				B648E2461C8AD6ED003DAF4D /* tableViewHeader.m in Sources */,
 				B648E1241C8ACFE1003DAF4D /* SDImageCache.m in Sources */,
@@ -1247,6 +1289,8 @@
 				B648E1281C8ACFE1003DAF4D /* SDWebImageDownloaderOperation.m in Sources */,
 				B648E1271C8ACFE1003DAF4D /* SDWebImageDownloader.m in Sources */,
 				B648E2321C8AD6ED003DAF4D /* Infortiong_Detail_3TableViewCell.m in Sources */,
+				2E2BA2071C8D2A33009432E7 /* EfficiencyTableViewCell.m in Sources */,
+				2E2BA2171C8D54B8009432E7 /* Efficiency_Remuneration_DetailViewController.m in Sources */,
 				2C4E28401C8C055E00B10378 /* MyMethod.m in Sources */,
 				B648E2661C8AD7DC003DAF4D /* Channel_informationEntity.m in Sources */,
 				B648E2671C8AD7DC003DAF4D /* Channel_infortation_DirectorEntity.m in Sources */,
@@ -1396,12 +1440,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dxw.AssistantChannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1409,12 +1457,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dxw.AssistantChannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

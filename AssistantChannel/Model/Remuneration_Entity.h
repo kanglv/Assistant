@@ -44,6 +44,8 @@
 @property (nonatomic, copy) NSString *channel_id;
 @property (nonatomic, copy) NSString *zz_kd_fee;
 @property (nonatomic, copy) NSString *num;
+@property (nonatomic, copy) NSString *stat_month;
+@property (nonatomic, copy) NSString *ref_id;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *zz_total;
 @property (nonatomic, copy) NSString *jl_total;

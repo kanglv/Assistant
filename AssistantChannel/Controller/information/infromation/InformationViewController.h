@@ -10,7 +10,8 @@
 #import "Information_baseViewController.h"
 #import "Operate_listViewController.h"
 #import "Remuneration_listViewController.h"
-//#import "information_DetailViewController.h"
+#import "Information_detaileViewController.h"
+#import "EfficiencyViewController.h"
 
 @interface InformationViewController : UIViewController
 
@@ -30,9 +31,10 @@
 @property (nonatomic,strong) UIView *Operateview;
 @property (nonatomic,strong) UIView *RemunerationView;
 
-//@property (nonatomic,strong) information_DetailViewController *information_DetailTableView;
+@property (nonatomic,strong) Information_detaileViewController *information_DetailTableView;
 @property (nonatomic,strong) Information_baseViewController *InformationTableView;
 @property (nonatomic,strong) Operate_listViewController *Operate_listTableView;
+@property (nonatomic,strong) EfficiencyViewController *EfficiencyTableView;
 @property (nonatomic,strong) Remuneration_listViewController *Remuneration_listTableView;
 
 @end
