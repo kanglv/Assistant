@@ -34,7 +34,7 @@
     [self.contentView addSubview:_nameLabel];
     
     _informLabel = [[UILabel alloc]init];
-    _informLabel.textAlignment = NSTextAlignmentNatural;
+    _informLabel.textAlignment = NSTextAlignmentCenter;
     _informLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _informLabel.font = [UIFont fontWithName:@"Arial" size:12];
     _informLabel.textColor = [UIColor redColor];

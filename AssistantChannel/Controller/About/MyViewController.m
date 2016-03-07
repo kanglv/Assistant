@@ -12,6 +12,7 @@
 #import "MyFeedbackViewController.h"
 #import "MyIntroduceViewController.h"
 #import "MyMethod.h"
+#import "MyNoticeViewController.h"
 
 
 @interface MyViewController ()<UITableViewDelegate , UITableViewDataSource>
@@ -133,12 +134,28 @@
         cell.imgView.image = [UIImage imageNamed:_imgArr[indexPath.row]];
         cell.nameLabel.text = _dataArr[indexPath.row];
         if([cell.nameLabel.text isEqualToString:@"通知"]){
-            
-//            if(有通知){通过接口请求
-//            cell.informLabel.text = @"0";//具体通知数由接口返回
-//            cell.imgView.image = [UIImage imageNamed:@"ico_inform"];
-//            }
-           
+            CommonService *service = [[CommonService alloc] init];
+            UserEntity *userEntity = [UserEntity sharedInstance];
+            NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   @"notification",@"m",
+                                   @"new_num",@"a",
+                                   userEntity.sn,@"sn",
+                                   nil
+                                   ];
+            [service getNetWorkData:param Successed:^(id entity) {
+                NSNumber *state = [entity valueForKeyPath:@"success"];
+                NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+                if ([strState isEqualToString:@"1"]) {
+                    NSNumber *str= [[entity objectForKey:@"data"]objectForKey:@"num"];
+                    NSString *str1 = [NSString stringWithFormat:@"%d", [str intValue]];
+                    if(![str1 isEqualToString:@"0"]){
+                        cell.informLabel.text = str1;//具体通知数由接口返回
+                        cell.imgView.image = [UIImage imageNamed:@"ico_inform"];
+                    }
+                }
+            }Failed:^(int errorCode, NSString *message) {
+                
+            }];
         }
         
     }
@@ -170,22 +187,38 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     //处理各个位置的点击事件
     if(indexPath.section==0){
-        if (indexPath.row==0) {
-            //个人中心
-            MyDetailInformationViewController *mvc = [[MyDetailInformationViewController alloc]init];
-            mvc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:mvc animated:YES];
-        }
         if([self showLearningClub]){
-             if(indexPath.row==1){
+            if (indexPath.row==0) {
+                //个人中心
+                MyDetailInformationViewController *mvc = [[MyDetailInformationViewController alloc]init];
+                mvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:mvc animated:YES];
+            }
+            else if(indexPath.row==1){
                 //学习园地
+                 NSLog(@"111");
                 
+            }
+            else{
+                //通知
+                MyNoticeViewController *mnvc = [[MyNoticeViewController alloc]init];
+                mnvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:mnvc animated:YES];
             }
         }else{
+            if (indexPath.row==0) {
+                //个人中心
+                MyDetailInformationViewController *mvc = [[MyDetailInformationViewController alloc]init];
+                mvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:mvc animated:YES];
+            }else{
                 //通知
+                MyNoticeViewController *mnvc = [[MyNoticeViewController alloc]init];
+                mnvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:mnvc animated:YES];
                 
             }
-
+        }
     }
     else if (indexPath.section==1){
         if (indexPath.row==0) {
