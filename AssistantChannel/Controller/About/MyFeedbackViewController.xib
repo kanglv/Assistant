@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFeedbackViewController">
+            <connections>
+                <outlet property="TextView" destination="SgY-MF-uwB" id="A30-wv-J42"/>
+                <outlet property="doSendbtn" destination="Zkb-J0-RgL" id="uaK-3I-8yw"/>
+                <outlet property="textFileLabel" destination="R0N-g6-lIb" id="DxK-7w-YKS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="mFB-7O-547">
+                    <rect key="frame" x="0.0" y="0.0" width="325" height="568"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SgY-MF-uwB">
+                    <rect key="frame" x="22" y="79" width="276" height="207"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="k2r-5y-7DF"/>
+                    </connections>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkb-J0-RgL">
+                    <rect key="frame" x="22" y="318" width="270" height="34"/>
+                    <color key="backgroundColor" red="0.14228224754333496" green="0.75378328561782837" blue="0.94811350107192993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doSendFeedback:" destination="-1" eventType="touchUpInside" id="2cc-uV-RBC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请输入您宝贵的意见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0N-g6-lIb">
+                    <rect key="frame" x="27" y="84" width="146" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.42634369080000001" green="0.45079009799999997" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SgY-MF-uwB" secondAttribute="trailing" constant="15" id="3jS-h8-n5z"/>
+                <constraint firstItem="SgY-MF-uwB" firstAttribute="centerX" secondItem="mFB-7O-547" secondAttribute="centerX" id="8Qc-YR-aaa"/>
+                <constraint firstItem="Zkb-J0-RgL" firstAttribute="top" secondItem="SgY-MF-uwB" secondAttribute="bottom" constant="20" id="G7q-ND-QOJ"/>
+                <constraint firstItem="SgY-MF-uwB" firstAttribute="top" secondItem="R0N-g6-lIb" secondAttribute="bottom" constant="-26" id="Or2-lL-0sZ"/>
+                <constraint firstItem="SgY-MF-uwB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="XRv-Ov-eF0"/>
+                <constraint firstAttribute="trailing" secondItem="Zkb-J0-RgL" secondAttribute="trailing" constant="15" id="ZqB-CI-0ZH"/>
+                <constraint firstItem="mFB-7O-547" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jME-ZC-OuL"/>
+                <constraint firstItem="Zkb-J0-RgL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="mUx-DM-rbm"/>
+                <constraint firstItem="Zkb-J0-RgL" firstAttribute="centerX" secondItem="mFB-7O-547" secondAttribute="centerX" id="ogA-6K-YMT"/>
+                <constraint firstItem="SgY-MF-uwB" firstAttribute="leading" secondItem="R0N-g6-lIb" secondAttribute="trailing" constant="-150" id="sqx-DT-Nlg"/>
+                <constraint firstItem="mFB-7O-547" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vB1-1l-MUp"/>
+                <constraint firstAttribute="bottom" secondItem="mFB-7O-547" secondAttribute="bottom" id="vE8-JJ-tXG"/>
+                <constraint firstAttribute="trailing" secondItem="mFB-7O-547" secondAttribute="trailing" id="xOJ-8Z-zka"/>
+                <constraint firstItem="SgY-MF-uwB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="zkU-oQ-W5p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="514" y="215"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg.png" width="640" height="1446"/>
+    </resources>
+</document>

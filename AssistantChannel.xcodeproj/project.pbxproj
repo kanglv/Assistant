@@ -20,7 +20,6 @@
 		2C4E28401C8C055E00B10378 /* MyMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E283F1C8C055E00B10378 /* MyMethod.m */; };
 		2C4E284B1C8C058A00B10378 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28421C8C058A00B10378 /* MyViewController.m */; };
 		2C4E284C1C8C058A00B10378 /* MyDetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */; };
-		2C4E284D1C8C058A00B10378 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */; };
 		2C4E284F1C8C058A00B10378 /* MyResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E284A1C8C058A00B10378 /* MyResetViewController.m */; };
 		2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28511C8C059600B10378 /* MyTableViewCell.m */; };
 		2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */; };
@@ -32,6 +31,8 @@
 		2E2BA2231C8E9BDA009432E7 /* MyIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */; };
 		2E2BA2241C8E9BDA009432E7 /* MyIntroduceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */; };
 		2E2BA2261C8E9F9D009432E7 /* btn_back1_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */; };
+		2E2BA22A1C8EAD07009432E7 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */; };
+		2E2BA22B1C8EAD07009432E7 /* MyFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -194,8 +195,6 @@
 		2C4E28421C8C058A00B10378 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		2C4E28431C8C058A00B10378 /* MyDetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailInformationViewController.h; sourceTree = "<group>"; };
 		2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailInformationViewController.m; sourceTree = "<group>"; };
-		2C4E28451C8C058A00B10378 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
-		2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
 		2C4E28491C8C058A00B10378 /* MyResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyResetViewController.h; sourceTree = "<group>"; };
 		2C4E284A1C8C058A00B10378 /* MyResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyResetViewController.m; sourceTree = "<group>"; };
 		2C4E28501C8C059600B10378 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
@@ -214,6 +213,9 @@
 		2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIntroduceViewController.m; sourceTree = "<group>"; };
 		2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyIntroduceViewController.xib; sourceTree = "<group>"; };
 		2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back1_normal.png; sourceTree = "<group>"; };
+		2E2BA2271C8EAD07009432E7 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
+		2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
+		2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFeedbackViewController.xib; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -520,8 +522,9 @@
 				2C4E28421C8C058A00B10378 /* MyViewController.m */,
 				2C4E28431C8C058A00B10378 /* MyDetailInformationViewController.h */,
 				2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */,
-				2C4E28451C8C058A00B10378 /* MyFeedbackViewController.h */,
-				2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */,
+				2E2BA2271C8EAD07009432E7 /* MyFeedbackViewController.h */,
+				2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */,
+				2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */,
 				2E2BA2201C8E9BDA009432E7 /* MyIntroduceViewController.h */,
 				2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */,
 				2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */,
@@ -1149,6 +1152,7 @@
 				B648E2A71C8AD911003DAF4D /* Operate_manage_listViewController.xib in Resources */,
 				2E2BA21F1C8E998E009432E7 /* bg.png in Resources */,
 				B648E2371C8AD6ED003DAF4D /* Operate_Detail_1TableViewCell.xib in Resources */,
+				2E2BA22B1C8EAD07009432E7 /* MyFeedbackViewController.xib in Resources */,
 				B648E22A1C8AD6ED003DAF4D /* Channel_infortation_DirectorTableViewCell.xib in Resources */,
 				B648E23B1C8AD6ED003DAF4D /* Operate_listTableViewCell.xib in Resources */,
 				B648E2BB1C8B07CE003DAF4D /* Operate_manage_operate_listViewController.xib in Resources */,
@@ -1192,6 +1196,7 @@
 				B648E2551C8AD791003DAF4D /* UserEntity.m in Sources */,
 				B648E1291C8ACFE1003DAF4D /* SDWebImageManager.m in Sources */,
 				B648E0AF1C8ACE3C003DAF4D /* NSObject+MJClass.m in Sources */,
+				2E2BA22A1C8EAD07009432E7 /* MyFeedbackViewController.m in Sources */,
 				B648E2991C8AD8E7003DAF4D /* InformationViewController.m in Sources */,
 				B648E1C61C8AD332003DAF4D /* MJRefreshBaseView.m in Sources */,
 				B648E0AA1C8ACE3C003DAF4D /* MJExtensionConst.m in Sources */,
@@ -1223,7 +1228,6 @@
 				2E2BA2231C8E9BDA009432E7 /* MyIntroduceViewController.m in Sources */,
 				B648E1301C8ACFE1003DAF4D /* UIImageView+WebCache.m in Sources */,
 				B648E1B91C8AD302003DAF4D /* Utilies.m in Sources */,
-				2C4E284D1C8C058A00B10378 /* MyFeedbackViewController.m in Sources */,
 				B648E2791C8AD830003DAF4D /* NewsViewController.m in Sources */,
 				B648E1F91C8AD6D2003DAF4D /* XYDatePicker.m in Sources */,
 				B648E2A61C8AD911003DAF4D /* Operate_manage_listViewController.m in Sources */,
