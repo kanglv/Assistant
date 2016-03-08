@@ -135,7 +135,16 @@
                         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                         [userDefaults setObject:self.codeText.text forKey:@"password"];
                         [userDefaults synchronize];
-                        ALERT_ERR_MSG(@"修改成功");
+                        
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                        message:@"修改成功"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"确定"
+                                                              otherButtonTitles:nil, nil];
+                        [alert showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
+                            [self.navigationController popViewControllerAnimated:YES];
+                        }];
+                        
                     }else{
                         
                         ALERT_ERR_MSG([entity valueForKeyPath:@"msg"]);
