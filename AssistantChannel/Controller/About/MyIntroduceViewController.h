@@ -2,12 +2,17 @@
 //  MyIntroduceViewController.h
 //  AssistantChannel
 //
-//  Created by lvkang on 16/3/3.
+//  Created by 张晓烨 on 16/3/8.
 //  Copyright © 2016年 dxw. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MyIntroduceViewController : ZXYBaseViewController
+@interface MyIntroduceViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *backbutton;
+
+@property (weak, nonatomic) IBOutlet UILabel *visson;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @end

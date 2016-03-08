@@ -21,7 +21,6 @@
 		2C4E284B1C8C058A00B10378 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28421C8C058A00B10378 /* MyViewController.m */; };
 		2C4E284C1C8C058A00B10378 /* MyDetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */; };
 		2C4E284D1C8C058A00B10378 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */; };
-		2C4E284E1C8C058A00B10378 /* MyIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28481C8C058A00B10378 /* MyIntroduceViewController.m */; };
 		2C4E284F1C8C058A00B10378 /* MyResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E284A1C8C058A00B10378 /* MyResetViewController.m */; };
 		2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28511C8C059600B10378 /* MyTableViewCell.m */; };
 		2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */; };
@@ -29,6 +28,10 @@
 		2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */; };
 		2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */; };
 		2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */; };
+		2E2BA21F1C8E998E009432E7 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21E1C8E998E009432E7 /* bg.png */; };
+		2E2BA2231C8E9BDA009432E7 /* MyIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */; };
+		2E2BA2241C8E9BDA009432E7 /* MyIntroduceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */; };
+		2E2BA2261C8E9F9D009432E7 /* btn_back1_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -193,8 +196,6 @@
 		2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailInformationViewController.m; sourceTree = "<group>"; };
 		2C4E28451C8C058A00B10378 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
 		2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
-		2C4E28471C8C058A00B10378 /* MyIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIntroduceViewController.h; sourceTree = "<group>"; };
-		2C4E28481C8C058A00B10378 /* MyIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIntroduceViewController.m; sourceTree = "<group>"; };
 		2C4E28491C8C058A00B10378 /* MyResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyResetViewController.h; sourceTree = "<group>"; };
 		2C4E284A1C8C058A00B10378 /* MyResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyResetViewController.m; sourceTree = "<group>"; };
 		2C4E28501C8C059600B10378 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
@@ -208,6 +209,11 @@
 		2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
 		2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeTableViewCell.m; sourceTree = "<group>"; };
 		2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNoticeTableViewCell.xib; sourceTree = "<group>"; };
+		2E2BA21E1C8E998E009432E7 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		2E2BA2201C8E9BDA009432E7 /* MyIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIntroduceViewController.h; sourceTree = "<group>"; };
+		2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIntroduceViewController.m; sourceTree = "<group>"; };
+		2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyIntroduceViewController.xib; sourceTree = "<group>"; };
+		2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back1_normal.png; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -478,6 +484,8 @@
 				2C4E28311C8C054C00B10378 /* img_setting_about.png */,
 				2C4E28321C8C054C00B10378 /* img_setting_clear.png */,
 				2C4E28331C8C054C00B10378 /* img_setting_update.png */,
+				2E2BA21E1C8E998E009432E7 /* bg.png */,
+				2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -514,8 +522,9 @@
 				2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */,
 				2C4E28451C8C058A00B10378 /* MyFeedbackViewController.h */,
 				2C4E28461C8C058A00B10378 /* MyFeedbackViewController.m */,
-				2C4E28471C8C058A00B10378 /* MyIntroduceViewController.h */,
-				2C4E28481C8C058A00B10378 /* MyIntroduceViewController.m */,
+				2E2BA2201C8E9BDA009432E7 /* MyIntroduceViewController.h */,
+				2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */,
+				2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */,
 				2C4E28491C8C058A00B10378 /* MyResetViewController.h */,
 				2C4E284A1C8C058A00B10378 /* MyResetViewController.m */,
 				2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */,
@@ -1120,6 +1129,7 @@
 				2C4E28391C8C054C00B10378 /* icon_norinform.png in Resources */,
 				2C4E283B1C8C054C00B10378 /* img_setting_about.png in Resources */,
 				2C4E28341C8C054C00B10378 /* arrows_right.png in Resources */,
+				2E2BA2261C8E9F9D009432E7 /* btn_back1_normal.png in Resources */,
 				B648E0781C8ACAE0003DAF4D /* LoginViewController.xib in Resources */,
 				B648E2431C8AD6ED003DAF4D /* Remuneration_Detail_4TableViewCell.xib in Resources */,
 				B648E23F1C8AD6ED003DAF4D /* Remuneration_Detail_2TableViewCell.xib in Resources */,
@@ -1127,6 +1137,7 @@
 				B648E2331C8AD6ED003DAF4D /* Infortiong_Detail_3TableViewCell.xib in Resources */,
 				B648E2411C8AD6ED003DAF4D /* Remuneration_Detail_3TableViewCell.xib in Resources */,
 				2C4E28361C8C054C00B10378 /* img_setting_image.jpg in Resources */,
+				2E2BA2241C8E9BDA009432E7 /* MyIntroduceViewController.xib in Resources */,
 				2C4E28381C8C054C00B10378 /* ico_personalcenter.png in Resources */,
 				B648E22C1C8AD6ED003DAF4D /* Channel_infortationTableViewCell.xib in Resources */,
 				B648E2351C8AD6ED003DAF4D /* NewsTableViewCell.xib in Resources */,
@@ -1136,6 +1147,7 @@
 				2C4E283A1C8C054C00B10378 /* img_school.png in Resources */,
 				2C4E283D1C8C054C00B10378 /* img_setting_update.png in Resources */,
 				B648E2A71C8AD911003DAF4D /* Operate_manage_listViewController.xib in Resources */,
+				2E2BA21F1C8E998E009432E7 /* bg.png in Resources */,
 				B648E2371C8AD6ED003DAF4D /* Operate_Detail_1TableViewCell.xib in Resources */,
 				B648E22A1C8AD6ED003DAF4D /* Channel_infortation_DirectorTableViewCell.xib in Resources */,
 				B648E23B1C8AD6ED003DAF4D /* Operate_listTableViewCell.xib in Resources */,
@@ -1208,6 +1220,7 @@
 				2C4E284C1C8C058A00B10378 /* MyDetailInformationViewController.m in Sources */,
 				B648E0BF1C8ACE3C003DAF4D /* UIImageView+AFNetworking.m in Sources */,
 				B648E26A1C8AD7DC003DAF4D /* Operate_DetailEntiey.m in Sources */,
+				2E2BA2231C8E9BDA009432E7 /* MyIntroduceViewController.m in Sources */,
 				B648E1301C8ACFE1003DAF4D /* UIImageView+WebCache.m in Sources */,
 				B648E1B91C8AD302003DAF4D /* Utilies.m in Sources */,
 				2C4E284D1C8C058A00B10378 /* MyFeedbackViewController.m in Sources */,
@@ -1226,7 +1239,6 @@
 				B648E2501C8AD76C003DAF4D /* CommonService.m in Sources */,
 				B648E2421C8AD6ED003DAF4D /* Remuneration_Detail_4TableViewCell.m in Sources */,
 				B648E2491C8AD723003DAF4D /* NIDropDown.m in Sources */,
-				2C4E284E1C8C058A00B10378 /* MyIntroduceViewController.m in Sources */,
 				B648E2931C8AD8E7003DAF4D /* information_DetailViewController.m in Sources */,
 				2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */,
 				B648E2511C8AD76C003DAF4D /* dateChange.m in Sources */,

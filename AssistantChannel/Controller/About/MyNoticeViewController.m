@@ -97,6 +97,7 @@
         cell.stateLabel.text = @"已读";
     }else{
         cell.stateLabel.text = @"未读";
+        cell.stateLabel.textColor = [UIColor colorWithRed:31.0/255 green:146.0/255 blue:218.0/255 alpha:1];
     }
     
     NSString *time = [information objectForKey:@"create_time"];

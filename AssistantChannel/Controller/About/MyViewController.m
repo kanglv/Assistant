@@ -169,7 +169,7 @@
         if(indexPath.row==1){
             NSArray *paths= NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
             NSString*path = [paths lastObject];
-            cell.cacheLabel.text = [NSString stringWithFormat:@"%.1fM", [self.method folderSizeAtPath:path]];//具体数值，通过method的方法计算
+            cell.cacheLabel.text = [NSString stringWithFormat:@"%.1fKB", [self.method folderSizeAtPath:path]];//具体数值，通过method的方法计算
         }
     }
     else{
@@ -284,7 +284,7 @@
             //关于助手
             MyIntroduceViewController *mivc = [[MyIntroduceViewController alloc]init];
             mivc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:mivc animated:YES];
+            [self presentViewController:mivc animated:YES completion:nil];
         }
     }
 }
