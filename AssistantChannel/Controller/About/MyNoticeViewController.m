@@ -51,7 +51,7 @@
             _dataArr = [[entity objectForKey:@"data"] objectForKey:@"ls"];
             
             _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-            
+            _myTable.tableFooterView = [[UITableView alloc]init];
             _myTable.dataSource=self;
             _myTable.delegate=self;
             [self.view addSubview:_myTable];

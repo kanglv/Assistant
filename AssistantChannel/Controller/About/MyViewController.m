@@ -31,7 +31,6 @@
     _dataArr = [self setDataObject];
     _imgArr = [self setImgObject];
     [self initView];
-    
 }
 
 - (void)initView {
@@ -151,6 +150,7 @@
                     if(![str1 isEqualToString:@"0"]){
                         cell.informLabel.text = str1;//具体通知数由接口返回
                         cell.imgView.image = [UIImage imageNamed:@"ico_inform"];
+                        self.tabBarItem.badgeValue = str1;
                     }
                 }
             }Failed:^(int errorCode, NSString *message) {
