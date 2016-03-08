@@ -8,9 +8,12 @@
 
 #import "MyNoticeViewController.h"
 #import "MyNoticeTableViewCell.h"
-@interface MyNoticeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MyNoticeViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    
+    MyNoticeTableViewCell *cell;
+}
 @property (strong , nonatomic)UITableView *myTable;
-@property (strong , nonatomic)NSArray *dataArr;
+@property (strong , nonatomic)NSMutableArray *dataArr;
 @property NSInteger numberOfNotice;
 @end
 
@@ -18,7 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dataArr = [[NSMutableArray alloc]init];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.navigationItem.title = @"通知";
+    
     UIButton *backBtn = [self setNaviCommonBackBtn];
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -41,8 +48,10 @@
         if ([strState isEqualToString:@"1"]) {
             NSNumber *num = [[entity objectForKey:@"data"] objectForKey:@"total"];
             _numberOfNotice = [num intValue];
-            _dataArr = [entity objectForKey:@"ls"];
+            _dataArr = [[entity objectForKey:@"data"] objectForKey:@"ls"];
+            
             _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+            
             _myTable.dataSource=self;
             _myTable.delegate=self;
             [self.view addSubview:_myTable];
@@ -61,26 +70,42 @@
     return _numberOfNotice;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return self.view.frame.size.height/7;
+    
+    CGFloat cellheight;
+    cellheight = cell.inforLabel.layer.frame.size.height;
+    CGSize size = [cell.inforLabel sizeThatFits:CGSizeMake(cell.inforLabel.frame
+                                                              .size.width, MAXFLOAT)];
+    if (size.height == 0) {
+        return 70;
+    }
+    return size.height + 40;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *str =@"lvkang";
-    MyNoticeTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:str];
-    if(cell == nil){
-        cell = [[MyNoticeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+    
+    static NSString *identifier =@"MyNoticeTableViewCell";
+    cell =[tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:nil options:nil] firstObject];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+
     NSDictionary *information = _dataArr[indexPath.row];
     cell.inforLabel.text =[information objectForKey:@"title"];
-    if([[information objectForKey:@"1"] isEqualToString:@"1"]){
+
+    if([[information objectForKey:@"is_read"] isEqualToString:@"1"]){
         cell.stateLabel.text = @"已读";
     }else{
         cell.stateLabel.text = @"未读";
     }
+    
     NSString *time = [information objectForKey:@"create_time"];
     NSString *actualtime =[dateChange NsstringChangeDate:time];
     cell.timeLabel.text = actualtime;
+    
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
@@ -89,6 +114,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -27,7 +27,8 @@
 		2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */; };
 		2C4E28581C8C1E8A00B10378 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */; };
 		2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */; };
-		2CA7F1421C8DCFEB0088F102 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F1411C8DCFEB0088F102 /* MyNoticeTableViewCell.m */; };
+		2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */; };
+		2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -204,8 +205,9 @@
 		2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeViewController.h; sourceTree = "<group>"; };
 		2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeViewController.m; sourceTree = "<group>"; };
-		2CA7F1401C8DCFEB0088F102 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
-		2CA7F1411C8DCFEB0088F102 /* MyNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeTableViewCell.m; sourceTree = "<group>"; };
+		2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
+		2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeTableViewCell.m; sourceTree = "<group>"; };
+		2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNoticeTableViewCell.xib; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -496,8 +498,9 @@
 				2C4E28511C8C059600B10378 /* MyTableViewCell.m */,
 				2C4E28521C8C059600B10378 /* MyInformationTableViewCell.h */,
 				2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */,
-				2CA7F1401C8DCFEB0088F102 /* MyNoticeTableViewCell.h */,
-				2CA7F1411C8DCFEB0088F102 /* MyNoticeTableViewCell.m */,
+				2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */,
+				2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */,
+				2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */,
 			);
 			name = MyView;
 			sourceTree = "<group>";
@@ -1062,7 +1065,7 @@
 				TargetAttributes = {
 					B648DF461C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = HY2JF7VN6E;
+						DevelopmentTeam = C2QBXRMTCP;
 					};
 					B648DF5F1C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1102,6 +1105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4E283C1C8C054C00B10378 /* img_setting_clear.png in Resources */,
+				2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */,
 				B648DF5A1C8AC7FE003DAF4D /* LaunchScreen.storyboard in Resources */,
 				B648E22F1C8AD6ED003DAF4D /* Infortiong_Detail_1TableViewCell.xib in Resources */,
 				B648DF571C8AC7FE003DAF4D /* Assets.xcassets in Resources */,
@@ -1184,7 +1188,7 @@
 				B648E23C1C8AD6ED003DAF4D /* Remuneration_Detail_1TableViewCell.m in Sources */,
 				B648E0AE1C8ACE3C003DAF4D /* MJPropertyType.m in Sources */,
 				2C4E284B1C8C058A00B10378 /* MyViewController.m in Sources */,
-				2CA7F1421C8DCFEB0088F102 /* MyNoticeTableViewCell.m in Sources */,
+				2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */,
 				B648E2A31C8AD911003DAF4D /* Operate_DetailViewController.m in Sources */,
 				2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */,
 				B648E0BE1C8ACE3C003DAF4D /* AFXMLRequestOperation.m in Sources */,
@@ -1408,7 +1412,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1423,7 +1428,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
