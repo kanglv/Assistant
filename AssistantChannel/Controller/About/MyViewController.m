@@ -13,7 +13,7 @@
 #import "MyIntroduceViewController.h"
 #import "MyMethod.h"
 #import "MyNoticeViewController.h"
-
+#import "MyStudyViewController.h"
 
 @interface MyViewController ()<UITableViewDelegate , UITableViewDataSource>
 
@@ -196,8 +196,9 @@
             }
             else if(indexPath.row==1){
                 //学习园地
-                 NSLog(@"111");
-                
+                MyStudyViewController *msvc = [[MyStudyViewController alloc]init];
+                msvc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:msvc animated:YES];
             }
             else{
                 //通知

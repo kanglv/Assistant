@@ -24,6 +24,10 @@
 		2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28511C8C059600B10378 /* MyTableViewCell.m */; };
 		2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */; };
 		2C4E28581C8C1E8A00B10378 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */; };
+		2C51A33E1C90473E0029D0B1 /* MyStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A33D1C90473E0029D0B1 /* MyStudyViewController.m */; };
+		2C51A3421C905DBD0029D0B1 /* LearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3411C905DBD0029D0B1 /* LearningViewController.m */; };
+		2C51A3451C905E2F0029D0B1 /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */; };
+		2C51A3481C905E920029D0B1 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3471C905E920029D0B1 /* TestViewController.m */; };
 		2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */; };
 		2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */; };
 		2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */; };
@@ -203,6 +207,14 @@
 		2C4E28531C8C059600B10378 /* MyInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationTableViewCell.m; sourceTree = "<group>"; };
 		2C4E28561C8C1E8A00B10378 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		2C4E28571C8C1E8A00B10378 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		2C51A33C1C90473E0029D0B1 /* MyStudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStudyViewController.h; sourceTree = "<group>"; };
+		2C51A33D1C90473E0029D0B1 /* MyStudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStudyViewController.m; sourceTree = "<group>"; };
+		2C51A3401C905DBD0029D0B1 /* LearningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearningViewController.h; sourceTree = "<group>"; };
+		2C51A3411C905DBD0029D0B1 /* LearningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearningViewController.m; sourceTree = "<group>"; };
+		2C51A3431C905E2F0029D0B1 /* PracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeViewController.h; sourceTree = "<group>"; };
+		2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeViewController.m; sourceTree = "<group>"; };
+		2C51A3461C905E920029D0B1 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		2C51A3471C905E920029D0B1 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeViewController.h; sourceTree = "<group>"; };
 		2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeViewController.m; sourceTree = "<group>"; };
 		2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -532,8 +544,24 @@
 				2C4E284A1C8C058A00B10378 /* MyResetViewController.m */,
 				2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */,
 				2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */,
+				2C51A33C1C90473E0029D0B1 /* MyStudyViewController.h */,
+				2C51A33D1C90473E0029D0B1 /* MyStudyViewController.m */,
+				2C51A33F1C905D5B0029D0B1 /* StudyGroups */,
 			);
 			name = MyController;
+			sourceTree = "<group>";
+		};
+		2C51A33F1C905D5B0029D0B1 /* StudyGroups */ = {
+			isa = PBXGroup;
+			children = (
+				2C51A3401C905DBD0029D0B1 /* LearningViewController.h */,
+				2C51A3411C905DBD0029D0B1 /* LearningViewController.m */,
+				2C51A3431C905E2F0029D0B1 /* PracticeViewController.h */,
+				2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */,
+				2C51A3461C905E920029D0B1 /* TestViewController.h */,
+				2C51A3471C905E920029D0B1 /* TestViewController.m */,
+			);
+			name = StudyGroups;
 			sourceTree = "<group>";
 		};
 		B648DF3E1C8AC7FE003DAF4D = {
@@ -1189,10 +1217,12 @@
 				B648E1C91C8AD332003DAF4D /* MJRefreshHeaderView.m in Sources */,
 				B648E22D1C8AD6ED003DAF4D /* FilterDateView.m in Sources */,
 				B648E1B81C8AD302003DAF4D /* UIColor+Hex.m in Sources */,
+				2C51A33E1C90473E0029D0B1 /* MyStudyViewController.m in Sources */,
 				B648E0B91C8ACE3C003DAF4D /* AFImageRequestOperation.m in Sources */,
 				B648E1221C8ACFE1003DAF4D /* MKAnnotationView+WebCache.m in Sources */,
 				B648E2691C8AD7DC003DAF4D /* NewsModel.m in Sources */,
 				B648E2341C8AD6ED003DAF4D /* NewsTableViewCell.m in Sources */,
+				2C51A3481C905E920029D0B1 /* TestViewController.m in Sources */,
 				B648E2551C8AD791003DAF4D /* UserEntity.m in Sources */,
 				B648E1291C8ACFE1003DAF4D /* SDWebImageManager.m in Sources */,
 				B648E0AF1C8ACE3C003DAF4D /* NSObject+MJClass.m in Sources */,
@@ -1213,6 +1243,7 @@
 				B648E12E1C8ACFE1003DAF4D /* UIImage+WebP.m in Sources */,
 				B648E0B41C8ACE3C003DAF4D /* AFHTTPClient+Synchronous.m in Sources */,
 				B648E22B1C8AD6ED003DAF4D /* Channel_infortationTableViewCell.m in Sources */,
+				2C51A3451C905E2F0029D0B1 /* PracticeViewController.m in Sources */,
 				B648E0BB1C8ACE3C003DAF4D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B648E0B61C8ACE3C003DAF4D /* AFHTTPRequestOperation+ResponseObject.m in Sources */,
 				B648E2401C8AD6ED003DAF4D /* Remuneration_Detail_3TableViewCell.m in Sources */,
@@ -1277,6 +1308,7 @@
 				B648E23E1C8AD6ED003DAF4D /* Remuneration_Detail_2TableViewCell.m in Sources */,
 				B648E0BA1C8ACE3C003DAF4D /* AFJSONRequestOperation.m in Sources */,
 				B648E1281C8ACFE1003DAF4D /* SDWebImageDownloaderOperation.m in Sources */,
+				2C51A3421C905DBD0029D0B1 /* LearningViewController.m in Sources */,
 				B648E1271C8ACFE1003DAF4D /* SDWebImageDownloader.m in Sources */,
 				B648E2321C8AD6ED003DAF4D /* Infortiong_Detail_3TableViewCell.m in Sources */,
 				2C4E28401C8C055E00B10378 /* MyMethod.m in Sources */,
