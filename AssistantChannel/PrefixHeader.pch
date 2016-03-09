@@ -35,6 +35,7 @@
 #define VIEWHEIGHT self.frame.size.height
 
 #define MANAGERNEXT 1 //渠道网点
+#define NOTIFICATIONJUMP 2 //通知跳转
 
 #ifndef NDEBUG
 #define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)

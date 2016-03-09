@@ -10,4 +10,6 @@
 
 @interface MyNoticeViewController :ZXYBaseViewController
 
+@property (assign, nonatomic) int type;
+
 @end

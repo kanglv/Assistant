@@ -113,7 +113,14 @@
 
 - (void)backBtnClicked:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.type  == NOTIFICATIONJUMP) {
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }else{
+        
+        [self dismissViewControllerAnimated:NO completion:nil];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

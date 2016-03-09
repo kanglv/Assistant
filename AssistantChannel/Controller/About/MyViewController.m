@@ -203,6 +203,7 @@
                 //通知
                 MyNoticeViewController *mnvc = [[MyNoticeViewController alloc]init];
                 mnvc.hidesBottomBarWhenPushed = YES;
+                mnvc.type = NOTIFICATIONJUMP;
                 [self.navigationController pushViewController:mnvc animated:YES];
             }
         }else{
@@ -215,6 +216,7 @@
                 //通知
                 MyNoticeViewController *mnvc = [[MyNoticeViewController alloc]init];
                 mnvc.hidesBottomBarWhenPushed = YES;
+                mnvc.type = NOTIFICATIONJUMP;
                 [self.navigationController pushViewController:mnvc animated:YES];
                 
             }
