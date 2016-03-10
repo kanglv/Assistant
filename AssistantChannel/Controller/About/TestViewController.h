@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TestViewController : UIViewController
+#import "tableViewHeader.h"
+@interface TestViewController : UIViewController<tableViewHeaderDelegate,MBProgressHUDDelegate,UITextFieldDelegate>
+{
+    
+    MBProgressHUD *HUD;
+    MJRefreshHeaderView *_header;
+    
+    NSMutableArray *cateArr;
+    tableViewHeader *tableViewheader;
+}
+@property (strong, nonatomic) UITableView *tableview;
+@property(nonatomic, assign) int currentPage;
 
 @end

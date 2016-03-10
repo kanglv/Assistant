@@ -28,6 +28,9 @@
 		2C51A3421C905DBD0029D0B1 /* LearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3411C905DBD0029D0B1 /* LearningViewController.m */; };
 		2C51A3451C905E2F0029D0B1 /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */; };
 		2C51A3481C905E920029D0B1 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C51A3471C905E920029D0B1 /* TestViewController.m */; };
+		2C6CAB801C919C58008CCDB9 /* LearnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB7F1C919C58008CCDB9 /* LearnCell.m */; };
+		2C6CAB831C919C8C008CCDB9 /* PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */; };
+		2C6CAB861C91BCAC008CCDB9 /* LearnDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */; };
 		2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */; };
 		2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */; };
 		2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */; };
@@ -215,6 +218,12 @@
 		2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeViewController.m; sourceTree = "<group>"; };
 		2C51A3461C905E920029D0B1 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		2C51A3471C905E920029D0B1 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		2C6CAB7E1C919C58008CCDB9 /* LearnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnCell.h; sourceTree = "<group>"; };
+		2C6CAB7F1C919C58008CCDB9 /* LearnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnCell.m; sourceTree = "<group>"; };
+		2C6CAB811C919C8C008CCDB9 /* PracticeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeCell.h; sourceTree = "<group>"; };
+		2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeCell.m; sourceTree = "<group>"; };
+		2C6CAB841C91BCAC008CCDB9 /* LearnDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnDetailViewController.h; sourceTree = "<group>"; };
+		2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnDetailViewController.m; sourceTree = "<group>"; };
 		2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeViewController.h; sourceTree = "<group>"; };
 		2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeViewController.m; sourceTree = "<group>"; };
 		2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -554,14 +563,28 @@
 		2C51A33F1C905D5B0029D0B1 /* StudyGroups */ = {
 			isa = PBXGroup;
 			children = (
+				2C6CAB7D1C919C1C008CCDB9 /* views */,
 				2C51A3401C905DBD0029D0B1 /* LearningViewController.h */,
 				2C51A3411C905DBD0029D0B1 /* LearningViewController.m */,
 				2C51A3431C905E2F0029D0B1 /* PracticeViewController.h */,
 				2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */,
 				2C51A3461C905E920029D0B1 /* TestViewController.h */,
 				2C51A3471C905E920029D0B1 /* TestViewController.m */,
+				2C6CAB841C91BCAC008CCDB9 /* LearnDetailViewController.h */,
+				2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */,
 			);
 			name = StudyGroups;
+			sourceTree = "<group>";
+		};
+		2C6CAB7D1C919C1C008CCDB9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2C6CAB7E1C919C58008CCDB9 /* LearnCell.h */,
+				2C6CAB7F1C919C58008CCDB9 /* LearnCell.m */,
+				2C6CAB811C919C8C008CCDB9 /* PracticeCell.h */,
+				2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		B648DF3E1C8AC7FE003DAF4D = {
@@ -1257,11 +1280,13 @@
 				B648E0BF1C8ACE3C003DAF4D /* UIImageView+AFNetworking.m in Sources */,
 				B648E26A1C8AD7DC003DAF4D /* Operate_DetailEntiey.m in Sources */,
 				2E2BA2231C8E9BDA009432E7 /* MyIntroduceViewController.m in Sources */,
+				2C6CAB831C919C8C008CCDB9 /* PracticeCell.m in Sources */,
 				B648E1301C8ACFE1003DAF4D /* UIImageView+WebCache.m in Sources */,
 				B648E1B91C8AD302003DAF4D /* Utilies.m in Sources */,
 				B648E2791C8AD830003DAF4D /* NewsViewController.m in Sources */,
 				B648E1F91C8AD6D2003DAF4D /* XYDatePicker.m in Sources */,
 				B648E2A61C8AD911003DAF4D /* Operate_manage_listViewController.m in Sources */,
+				2C6CAB801C919C58008CCDB9 /* LearnCell.m in Sources */,
 				B648E2921C8AD8E7003DAF4D /* Information_baseViewController.m in Sources */,
 				B648E12B1C8ACFE1003DAF4D /* UIButton+WebCache.m in Sources */,
 				B648E0B11C8ACE3C003DAF4D /* NSObject+MJKeyValue.m in Sources */,
@@ -1301,6 +1326,7 @@
 				B648E0AB1C8ACE3C003DAF4D /* MJFoundation.m in Sources */,
 				B648E1311C8ACFE1003DAF4D /* UIView+WebCacheOperation.m in Sources */,
 				2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */,
+				2C6CAB861C91BCAC008CCDB9 /* LearnDetailViewController.m in Sources */,
 				B648E26D1C8AD7DC003DAF4D /* Remuneration_Entity.m in Sources */,
 				B648E0B71C8ACE3C003DAF4D /* AFHTTPRequestOperation.m in Sources */,
 				B648E2831C8AD886003DAF4D /* MBProgressHUD.m in Sources */,

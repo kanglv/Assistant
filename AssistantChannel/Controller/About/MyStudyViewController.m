@@ -8,7 +8,7 @@
 
 #import "MyStudyViewController.h"
 
-#define MAINSCROLLHEIGHT SCREEN_HEIGHT - 156
+#define MAINSCROLLHEIGHT SCREEN_HEIGHT - 186
 
 @interface MyStudyViewController ()<UIScrollViewDelegate>
 

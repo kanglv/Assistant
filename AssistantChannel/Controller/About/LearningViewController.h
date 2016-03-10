@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LearnDetailViewController.h"
 #import "tableViewHeader.h"
 @interface LearningViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,tableViewHeaderDelegate,MBProgressHUDDelegate,UITextFieldDelegate>
 {
@@ -19,13 +20,6 @@
 }
 @property (strong, nonatomic) UITableView *tableview;
 @property(nonatomic, assign) int currentPage;
-
-@property (nonatomic, strong) NSMutableArray *arrayContact;
-@property (nonatomic, strong) NSMutableArray *arrayCustomerTemp;
-
-@property (nonatomic, strong) NSMutableArray *ArrayDepartment;
-@property (nonatomic, strong) NSMutableArray *ArrayDepartmentTemp;
-
 
 
 @end

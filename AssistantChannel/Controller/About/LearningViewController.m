@@ -7,12 +7,13 @@
 //
 
 #import "LearningViewController.h"
+#import "LearnCell.h"
 
 @interface LearningViewController ()
 {
     UserEntity *userEntity;
 }
-
+@property (strong , nonatomic) NSMutableArray *dataArr;
 @end
 
 @implementation LearningViewController
@@ -24,74 +25,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     cateArr = [[NSMutableArray alloc]init];
-    self.arrayContact = [[NSMutableArray alloc]init];
-    self.arrayCustomerTemp = [[NSMutableArray alloc]init];
-    self.ArrayDepartment = [[NSMutableArray alloc]init];
-    self.ArrayDepartmentTemp = [[NSMutableArray alloc]init];
+    _dataArr = [[NSMutableArray alloc]init];
     
     userEntity = [UserEntity sharedInstance];
     
     [cateArr addObject:@"所有类型"];
     
+    _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableview.delegate = self;
+    _tableview.dataSource = self;
+    _tableview.separatorStyle = NO;
+    [self.view addSubview:_tableview];
+    
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.delegate = self;
     HUD.labelText = @"努力加载中...";
     
-    [self addRefreshView];
-    
     [self reloadTableViewHeader];
-    
     [self typesData];
+    [self getData:self.currentPage andWithPage:0 andWithPageSize:3];
 }
 
-- (void)addRefreshView
-{
-    __weak typeof(self) weakSelf = self;
-    
-    _header = [MJRefreshHeaderView header];
-    _header.scrollView = _tableview;
-    _header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
-        [weakSelf getData:weakSelf.currentPage andWithPage:0 andWithPageSize:20];
-    };
-    
+- (void)reloadTableViewHeader{
+    tableViewheader = [[tableViewHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40) andPages:cateArr];
+    tableViewheader.searchText.placeholder = @"标题";
+    tableViewheader.delegate = self;
+    tableViewheader.searchText.delegate = self;
+    self.tableview.tableHeaderView = tableViewheader;
+    [tableViewheader.searchBtn addTarget:self action:@selector(seachBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)reloadTableViewHeader
-{
-        tableViewheader = [[tableViewHeader alloc] initWithFrameanSearch:CGRectMake(0, 0, SCREEN_WIDTH, 38)];
-        tableViewheader.delegate = self;
-        tableViewheader.searchText.delegate = self;
-        self.tableview.tableHeaderView = tableViewheader;
-        
-        [tableViewheader.searchBtn addTarget:self action:@selector(seachBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        
-        
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    return 0;
+    return [_dataArr count];
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ([userEntity.roles isEqualToString:@"11"]) {
-        
-    }else if([userEntity.roles isEqualToString:@"12"]){
-       
-    }
-    return 0;
+    return SCREEN_HEIGHT/5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return nil;
+    static NSString *str = @"tab1";
+    LearnCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    if(cell == nil){
+        cell = [[LearnCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+    }
+    NSDictionary *dic = _dataArr[indexPath.row];
+    cell.title.text = [dic objectForKey:@"title"];
+    cell.personName.text = [dic objectForKey:@"nickname"];
+    cell.time.text = @"1";
+    cell.type1.text = [dic objectForKey:@"ntype_name"];
+    return cell;
 }
 
 - (void)tableViewHeaderrDateView:(tableViewHeader *)view didSelectCateIndex:(int)index{
@@ -102,8 +96,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    LearnDetailViewController *ldvc = [[LearnDetailViewController alloc]init];
+    ldvc.url = [_dataArr[indexPath.row] objectForKey:@"url"];
+   [app.hVC setNavigationBarHidden:YES animated:YES];
+    [app.hVC pushViewController:ldvc animated:YES];
     
 }
 
@@ -139,7 +136,7 @@
     
     CommonService *service = [[CommonService alloc] init];
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
-                           @"channel",@"m",
+                           @"knowledge",@"m",
                            @"types",@"a",
                            userEntity.sn,@"sn",
                            nil
@@ -163,9 +160,7 @@
             [self reloadTableViewHeader];
             
         }else{
-            
         }
-        
     } Failed:^(int errorCode, NSString *message) {
         
     }];
@@ -173,23 +168,18 @@
 
 
 - (void)getData:(int)type andWithPage:(int)page andWithPageSize:(int)pagesize{
-    
-    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
     CommonService *service = [[CommonService alloc] init];
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
-                           @"channel",@"m",
+                           @"knowledge",@"m",
                            @"list",@"a",
                            userEntity.sn,@"sn",
                            userEntity.dep_id,@"dep_id",
-                           [userDefaultes objectForKey:@"ref_type"],@"ref_type",
-                           @(type),@"type_id",
-                           @"",@"name",
+                           userEntity.roles,@"role",
+                           @(type),@"ntype",
                            @(page),@"page",
                            @(pagesize),@"page_size",
                            nil
                            ];
-    
-    
     [service getNetWorkData:param Successed:^(id entity) {
         
         NSNumber *state = [entity valueForKeyPath:@"success"];
@@ -197,22 +187,8 @@
         
         if ([strState isEqualToString:@"1"]) {
             NSMutableDictionary *dic = [entity objectForKey:@"data"];
-            NSNumber *total = [dic valueForKeyPath:@"total"];
-            NSString *totalState = [NSString stringWithFormat:@"%d", [total intValue]];
-            
-            [self.arrayContact removeAllObjects];
-            [self.arrayCustomerTemp removeAllObjects];
-            
-            if ([totalState isEqualToString:@"0"]) {
-                
-            }else{
-                
-                
-            }
-            
+             _dataArr = [dic objectForKey:@"ls"];
             [self.tableview reloadData];
-            
-        }else{
             
         }
         [_header endRefreshing];
