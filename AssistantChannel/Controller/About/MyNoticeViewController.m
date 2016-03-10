@@ -46,10 +46,7 @@
         NSNumber *state = [entity valueForKeyPath:@"success"];
         NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
         if ([strState isEqualToString:@"1"]) {
-            NSNumber *num = [[entity objectForKey:@"data"] objectForKey:@"total"];
-            _numberOfNotice = [num intValue];
             _dataArr = [[entity objectForKey:@"data"] objectForKey:@"ls"];
-            
             _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
             _myTable.tableFooterView = [[UITableView alloc]init];
             _myTable.dataSource=self;
@@ -67,7 +64,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _numberOfNotice;
+    return [_dataArr count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
