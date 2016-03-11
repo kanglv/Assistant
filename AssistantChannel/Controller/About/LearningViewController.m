@@ -34,7 +34,7 @@
     
     [cateArr addObject:@"所有类型"];
     
-    _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, WIDTH, HEIGHT) style:UITableViewStylePlain];
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.separatorStyle = NO;
@@ -45,16 +45,33 @@
     HUD.labelText = @"努力加载中...";
     
     [self reloadTableViewHeader];
+    [self addRefreshView];
+    
     [self typesData];
-    [self getData:self.currentPage andWithPage:0 andWithPageSize:3];
+    [self getData:self.currentPage andWithPage:0 andWithPageSize:20];
+}
+
+- (void)addRefreshView
+{
+    __weak typeof(self) weakSelf = self;
+    
+    _header = [MJRefreshHeaderView header];
+    _header.scrollView = _tableview;
+    _header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+        [weakSelf getData:weakSelf.currentPage andWithPage:0 andWithPageSize:20];
+    };
+    
 }
 
 - (void)reloadTableViewHeader{
+    self.titleview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+    
     tableViewheader = [[tableViewHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40) andPages:cateArr];
     tableViewheader.searchText.placeholder = @"标题";
     tableViewheader.delegate = self;
     tableViewheader.searchText.delegate = self;
-    self.tableview.tableHeaderView = tableViewheader;
+    [self.titleview addSubview:tableViewheader];
+    [self.view addSubview:self.titleview];
     [tableViewheader.searchBtn addTarget:self action:@selector(seachBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -96,10 +113,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     LearnDetailViewController *ldvc = [[LearnDetailViewController alloc]init];
     ldvc.url = [_dataArr[indexPath.row] objectForKey:@"url"];
-   [app.hVC setNavigationBarHidden:YES animated:YES];
+ 
     [app.hVC pushViewController:ldvc animated:YES];
     
 }

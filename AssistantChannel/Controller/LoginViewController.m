@@ -18,6 +18,7 @@
     MBProgressHUD *HUD;
     NewsViewController *newsVC;
     InformationViewController *inforVC;
+    UITabBarController *tb;
 }
 @end
 
@@ -135,23 +136,20 @@
     mvc.tabBarItem.image = [UIImage imageNamed:@"wode_normal"];
     
     //a.初始化一个tabBar控制器
-    UITabBarController *tb=[[UITabBarController alloc]init];
+    tb=[[UITabBarController alloc]init];
     tb.delegate = self;
     //设置控制器为Window的根控制器
 //    [tb.tabBar setTintColor:[UIColor colorWithRed:0.28 green:0.51 blue:0.98 alpha:1]];
     tb.view.backgroundColor = [UIColor whiteColor];
     
-    UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:inforVC];
-    UINavigationController *nvc1 = [[UINavigationController alloc]initWithRootViewController:cvc];
+    tb.navigationItem.title = @"渠道信息";
+    [tb.navigationItem.backBarButtonItem setTitle:@""];
+    [tb.navigationItem setHidesBackButton:YES];
     
-    UINavigationController *nvc2 = [[UINavigationController alloc]initWithRootViewController:avc];
-    UINavigationController *newsNvc = [[UINavigationController alloc]initWithRootViewController:newsVC];
-    UINavigationController *nvc4 = [[UINavigationController alloc]initWithRootViewController:mvc];
     //b.创建子控制器
-    tb.viewControllers=@[nvc,nvc1,nvc2,newsNvc,nvc4];
+    tb.viewControllers=@[inforVC,cvc,avc,newsVC,mvc];
     
     [self.navigationController pushViewController:tb animated:YES];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
@@ -159,20 +157,20 @@
     NSUInteger index = tabBarController.selectedIndex;
     
     if(index == 0){
-        
+        tb.navigationItem.title = @"渠道信息";
         
     }else if(index == 1){
         
-        
+        tb.navigationItem.title = @"巡检走访";
     }else if(index == 2){
         
-        
+        tb.navigationItem.title = @"物料支撑";
     }else if(index == 3){
-        
+        tb.navigationItem.title = @"公告";
         [newsVC loadData];
         
     }else if(index == 4){
-        
+        tb.navigationItem.title = @"我的";
         
     }
 }

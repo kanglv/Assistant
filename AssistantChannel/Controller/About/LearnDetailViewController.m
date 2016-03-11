@@ -24,8 +24,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSLog(@"%@",_url);
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    [app.hVC setNavigationBarHidden:NO animated:YES];
     
     UIButton *backBtn = [self setNaviCommonBackBtn];
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -70,8 +68,7 @@
 }
 - (void)backBtnClicked:(id)sender
 {
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    [app.hVC setNavigationBarHidden:YES animated:NO];
+
     [self.navigationController popViewControllerAnimated:YES];
         
 }

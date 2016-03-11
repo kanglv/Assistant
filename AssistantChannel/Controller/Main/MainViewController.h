@@ -10,4 +10,7 @@
 
 @interface MainViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray *arrayContact;
+@property (nonatomic, strong) NSMutableArray *arrayCustomerTemp;
+
 @end
