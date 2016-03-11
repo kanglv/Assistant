@@ -19,7 +19,7 @@
     tableViewHeader *tableViewheader;
 }
 @property (strong, nonatomic) UITableView *tableview;
-@property(nonatomic, assign) int currentPage;
-
+@property (nonatomic, assign) int currentPage;
+@property (nonatomic, strong) UIView *titleview;
 
 @end

@@ -30,7 +30,7 @@
     _titleScrollView.contentSize=CGSizeMake(self.view.frame.size.width,self.view.frame.size.height ); //设置滚动范围
     [self.view addSubview:_titleScrollView];
     
-    _mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+    _mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, MAINSCROLLHEIGHT + 40)];
     _mainScrollView.delegate=self;
     _mainScrollView.pagingEnabled=YES; //分页效果
     _mainScrollView.showsHorizontalScrollIndicator=NO; //隐藏水平滚动条
@@ -51,7 +51,7 @@
 - (void)addMyViews
 {
     
-    _learnview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+    _learnview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT + 40)];
     _practiceview = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
     _testView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
     
@@ -75,9 +75,8 @@
     }
     
     _learnTableView = [[LearningViewController alloc]init];
-    [_learnTableView.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+    [_learnTableView.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT + 40)];
     [_learnview addSubview:_learnTableView.view];
-    
     
     _practiceTableView = [[PracticeViewController alloc]init];
                           

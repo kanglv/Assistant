@@ -23,6 +23,7 @@
     _title.textAlignment = NSTextAlignmentLeft;
     _title.lineBreakMode = NSLineBreakByTruncatingTail;
     _title.textColor = [UIColor blackColor];
+    _title.numberOfLines = 0;
     _title.font = [UIFont fontWithName:@"Arial" size:18];
     [self.contentView addSubview:_title];
     
