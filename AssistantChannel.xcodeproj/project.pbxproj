@@ -40,6 +40,8 @@
 		2E2BA2261C8E9F9D009432E7 /* btn_back1_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2251C8E9F9D009432E7 /* btn_back1_normal.png */; };
 		2E2BA22A1C8EAD07009432E7 /* MyFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */; };
 		2E2BA22B1C8EAD07009432E7 /* MyFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */; };
+		2E2EA32B1C92C09800BF18B9 /* Text_exam_listEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */; };
+		2E2EA32C1C92C09800BF18B9 /* Text_exam_gradeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -237,6 +239,10 @@
 		2E2BA2271C8EAD07009432E7 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
 		2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
 		2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFeedbackViewController.xib; sourceTree = "<group>"; };
+		2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text_exam_listEntity.h; sourceTree = "<group>"; };
+		2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text_exam_listEntity.m; sourceTree = "<group>"; };
+		2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text_exam_gradeEntity.h; sourceTree = "<group>"; };
+		2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text_exam_gradeEntity.m; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -758,6 +764,10 @@
 				B648E27B1C8AD839003DAF4D /* MainViewController.h */,
 				B648E27C1C8AD839003DAF4D /* MainViewController.m */,
 				B648E27D1C8AD839003DAF4D /* MainViewController.xib */,
+				2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */,
+				2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */,
+				2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */,
+				2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1264,6 +1274,7 @@
 				B648E0BE1C8ACE3C003DAF4D /* AFXMLRequestOperation.m in Sources */,
 				B648E2971C8AD8E7003DAF4D /* information_manager_listViewController.m in Sources */,
 				B648E12E1C8ACFE1003DAF4D /* UIImage+WebP.m in Sources */,
+				2E2EA32C1C92C09800BF18B9 /* Text_exam_gradeEntity.m in Sources */,
 				B648E0B41C8ACE3C003DAF4D /* AFHTTPClient+Synchronous.m in Sources */,
 				B648E22B1C8AD6ED003DAF4D /* Channel_infortationTableViewCell.m in Sources */,
 				2C51A3451C905E2F0029D0B1 /* PracticeViewController.m in Sources */,
@@ -1331,6 +1342,7 @@
 				B648E0B71C8ACE3C003DAF4D /* AFHTTPRequestOperation.m in Sources */,
 				B648E2831C8AD886003DAF4D /* MBProgressHUD.m in Sources */,
 				B648E1231C8ACFE1003DAF4D /* NSData+ImageContentType.m in Sources */,
+				2E2EA32B1C92C09800BF18B9 /* Text_exam_listEntity.m in Sources */,
 				B648E23E1C8AD6ED003DAF4D /* Remuneration_Detail_2TableViewCell.m in Sources */,
 				B648E0BA1C8ACE3C003DAF4D /* AFJSONRequestOperation.m in Sources */,
 				B648E1281C8ACFE1003DAF4D /* SDWebImageDownloaderOperation.m in Sources */,
