@@ -63,7 +63,7 @@
     _type .lineBreakMode = NSLineBreakByTruncatingTail;
     [_type  setTextColor:[UIColor blackColor]];
     _type .font = [UIFont fontWithName:@"Arial" size:15];
-    _type.text =   @"发      布 :";
+    _type.text =   @"发       布 :";
     [self.contentView addSubview:_type];
     
     _type1 = [[UILabel alloc]init];

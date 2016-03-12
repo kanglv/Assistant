@@ -10,6 +10,7 @@
 #import "Text_exam_listEntity.h"
 #import "Text_exam_gradeEntity.h"
 #import "PracticeCell.h"
+#import "DetailViewController.h"
 @interface TestViewController ()
 {
     UserEntity *userEntity;
@@ -26,34 +27,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     cateArr = [[NSMutableArray alloc]init];
     _dataArr = [[NSMutableArray alloc]init];
-    
     userEntity = [UserEntity sharedInstance];
-    
     [cateArr addObject:@"类型"];
-    
+    [cateArr addObject:@"待考"];
+    [cateArr addObject:@"已考"];
+    [cateArr addObject:@"过期"];
     testHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     testHUD.delegate = self;
     testHUD.labelText = @"努力加载中...";
-    [self typesData];
     [self getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil];
+    
+}
+- (void)addRefreshView
+{
+    __weak typeof(self) weakSelf = self;
+    
+    _testHeader = [MJRefreshHeaderView header];
+    _testHeader.scrollView = _table;
+    _testHeader.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+        [weakSelf getExam_list:@"1" andWithFrom_time:nil andWithToTime:nil];
+    };
     
 }
 
 - (void)reloadTableViewHeader{
+    self.titleview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
     tableViewheader = [[tableViewHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40) andPages:cateArr];
     tableViewheader.searchText.placeholder = @"标题";
     tableViewheader.delegate = self;
     tableViewheader.searchText.delegate = self;
-    self.table.tableHeaderView = tableViewheader;
+    [self.titleview addSubview:tableViewheader];
+    [self.view addSubview:self.titleview];
     [tableViewheader.searchBtn addTarget:self action:@selector(seachBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -67,6 +80,10 @@
     return SCREEN_HEIGHT/5;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+     return 50;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *str = @"tab1";
@@ -78,8 +95,10 @@
     NSLog(@"%@",dic);
     cell.title.text = [dic objectForKey:@"title"];
     cell.personName.text = [dic objectForKey:@"nickname"];
-    cell.time.text = @"1";
-    cell.eTime.text = @"2";
+    NSString *begin = [dic objectForKey:@"begin_time"];
+    NSString *end = [dic objectForKey:@"end_time"];
+    cell.time.text = [self transTime:begin];
+    cell.eTime.text = [self transTime:end];
     return cell;
 }
 
@@ -91,8 +110,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
+    DetailViewController *dvc = [[DetailViewController alloc]init];
+    dvc.dic = _dataArr[indexPath.row];
+    [self.navigationController pushViewController:dvc animated:YES];
 }
 
 - (void) textFieldDidChange:(UITextField *) textField{
@@ -120,41 +140,6 @@
     [tableViewheader.searchText resignFirstResponder];
     [tableViewheader.dropDown hideDropDown:tableViewheader.cateBtn];
     tableViewheader.dropDown = nil;
-}
-
-//获取下拉列表数据
-- (void)typesData{
-    
-    CommonService *service = [[CommonService alloc] init];
-    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
-                           @"knowledge",@"m",
-                           @"types",@"a",
-                           userEntity.sn,@"sn",
-                           nil
-                           ];
-    
-    [service getNetWorkData:param Successed:^(id entity) {
-        
-        NSNumber *state = [entity valueForKeyPath:@"success"];
-        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
-        
-        if ([strState isEqualToString:@"1"]) {
-            NSMutableDictionary *dic = [entity objectForKey:@"data"];
-            NSMutableArray *typesArr = [dic objectForKey:@"ls"];
-            
-            for (NSDictionary* attributes in typesArr) {
-                
-                [cateArr addObject:[attributes objectForKey:@"name"]];
-                
-            }
-            
-            [self reloadTableViewHeader];
-            
-        }else{
-        }
-    } Failed:^(int errorCode, NSString *message) {
-        
-    }];
 }
 
 
@@ -203,28 +188,41 @@
                     [self.arrayContact addObject:entity];
                     [self.arrayCustomerTemp addObject:entity];
                 }
-                _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, WIDTH, HEIGHT) style:UITableViewStylePlain];
+                _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
                 _table.delegate = self;
                 _table.dataSource = self;
                 _table.separatorStyle = NO;
                 [self.view addSubview:_table];
                 [self reloadTableViewHeader];
+                [self addRefreshView];
             }
             
             
         }else{
             
         }
+        [_testHeader endRefreshing];
+        [testHUD hide:YES];
     } Failed:^(int errorCode, NSString *message) {
-        
-        
+        [_testHeader endRefreshing];
+        [testHUD hide:YES];
     }];
-    
 }
 
 - (void)getDepartmentData{
     
     
+}
+
+//时间戳转时间
+-(NSString *)transTime:(NSString *)timeStamp{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
+    NSDate *datea = [NSDate dateWithTimeIntervalSince1970:[timeStamp doubleValue]];
+    NSString *dateString = [formatter stringFromDate:datea];
+    return dateString;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

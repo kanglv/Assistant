@@ -8,7 +8,7 @@
 
 #import "MyStudyViewController.h"
 
-#define MAINSCROLLHEIGHT SCREEN_HEIGHT - 104
+#define MAINSCROLLHEIGHT SCREEN_HEIGHT - 102
 
 @interface MyStudyViewController ()<UIScrollViewDelegate>
 
@@ -44,50 +44,27 @@
     
     [self addMyButtons];
     [self addMyViews];
-    [self addMyTables];
     [self.view addSubview:self.lineLabel];
 }
 
 - (void)addMyViews
 {
+    _learnTableView = [[LearningViewController alloc]init];
+    _learnTableView.view .frame = CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT);
     
-    _learnview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    _practiceview = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
+     _practiceTableView = [[PracticeViewController alloc]init];
+    _practiceTableView.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT);
+    
     _testView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
     
     
-    [_mainScrollView addSubview:_learnview];
-    [_mainScrollView addSubview:_practiceview];
-    [_mainScrollView addSubview:_testView];
-    
-}
-
-- (void)addMyTables
-{
-    
-    
-    UserEntity *userEntity = [UserEntity sharedInstance];
-    
-    NSLog(@"%@",userEntity.roles);
-    if ([userEntity.roles isEqualToString:@"13"]) {
-        
-        
-    }
-    
-    _learnTableView = [[LearningViewController alloc]init];
-    [_learnTableView.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT + 40)];
-    [_learnview addSubview:_learnTableView.view];
-    
-    _practiceTableView = [[PracticeViewController alloc]init];
-                          
-     [_practiceTableView.view setFrame:  CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    [_practiceview addSubview:_practiceTableView.view];
-    
     _testTableView = [[TestViewController alloc]init];
-    [_testTableView.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT)];
-    [_testView addSubview:_testTableView.view];
+    _testTableView.view .frame = CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, MAINSCROLLHEIGHT);
+    [_mainScrollView addSubview:_learnTableView.view];
+    [_mainScrollView addSubview:_practiceTableView.view];
+    [_mainScrollView addSubview:_testTableView.view];
+    
 }
-
 
 - (void)addMyButtons
 {

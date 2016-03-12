@@ -21,5 +21,5 @@
 @property(nonatomic, assign) int currentPage;
 @property (nonatomic, strong) NSMutableArray *arrayContact;
 @property (nonatomic, strong) NSMutableArray *arrayCustomerTemp;
-
+@property (nonatomic, strong) UIView *titleview;
 @end

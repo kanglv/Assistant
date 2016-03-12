@@ -89,7 +89,9 @@
     
     return SCREEN_HEIGHT/5;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 50;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *str = @"tab1";
@@ -101,7 +103,7 @@
     cell.title.text = [dic objectForKey:@"title"];
     cell.personName.text = [dic objectForKey:@"nickname"];
     NSString *time =[dic objectForKey:@"create_time"];
-    cell.time.text = [NSString stringWithFormat:@"%@",[self transTime:time]];
+    cell.time.text = [self transTime:time];
     cell.type1.text = [dic objectForKey:@"ntype_name"];
     return cell;
 }
@@ -116,13 +118,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     LearnDetailViewController *ldvc = [[LearnDetailViewController alloc]init];
     ldvc.url = [_dataArr[indexPath.row] objectForKey:@"url"];
- 
     [app.hVC pushViewController:ldvc animated:YES];
-    
 }
 
 - (void) textFieldDidChange:(UITextField *) textField{
@@ -229,14 +228,13 @@
 
 
 //时间戳转时间
--(NSDate *)transTime:(NSString *)timeStamp{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-  
-    NSDate *dateString  = [dateFormatter dateFromString:timeStamp];
-    NSLog(@"%@",dateString);
+-(NSString *)transTime:(NSString *)timeStamp{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:MM:ss"];
+    NSDate *datea = [NSDate dateWithTimeIntervalSince1970:[timeStamp doubleValue]];
+    NSString *dateString = [formatter stringFromDate:datea];
     return dateString;
 }
 

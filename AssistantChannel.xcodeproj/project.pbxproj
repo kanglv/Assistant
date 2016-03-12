@@ -31,6 +31,9 @@
 		2C6CAB801C919C58008CCDB9 /* LearnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB7F1C919C58008CCDB9 /* LearnCell.m */; };
 		2C6CAB831C919C8C008CCDB9 /* PracticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */; };
 		2C6CAB861C91BCAC008CCDB9 /* LearnDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */; };
+		2C8544451C94006600023B1E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8544441C94006600023B1E /* DetailViewController.m */; };
+		2C8544481C9410F500023B1E /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8544471C9410F500023B1E /* DetailTableViewCell.m */; };
+		2C85444B1C94253300023B1E /* BeginTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85444A1C94253300023B1E /* BeginTestViewController.m */; };
 		2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */; };
 		2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BA21A1C8E906A009432E7 /* MyNoticeTableViewCell.m */; };
 		2E2BA21D1C8E906A009432E7 /* MyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA21B1C8E906A009432E7 /* MyNoticeTableViewCell.xib */; };
@@ -226,6 +229,12 @@
 		2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeCell.m; sourceTree = "<group>"; };
 		2C6CAB841C91BCAC008CCDB9 /* LearnDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnDetailViewController.h; sourceTree = "<group>"; };
 		2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnDetailViewController.m; sourceTree = "<group>"; };
+		2C8544431C94006600023B1E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2C8544441C94006600023B1E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2C8544461C9410F500023B1E /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		2C8544471C9410F500023B1E /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		2C8544491C94253300023B1E /* BeginTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginTestViewController.h; sourceTree = "<group>"; };
+		2C85444A1C94253300023B1E /* BeginTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeginTestViewController.m; sourceTree = "<group>"; };
 		2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeViewController.h; sourceTree = "<group>"; };
 		2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNoticeViewController.m; sourceTree = "<group>"; };
 		2E2BA2191C8E906A009432E7 /* MyNoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -569,16 +578,11 @@
 		2C51A33F1C905D5B0029D0B1 /* StudyGroups */ = {
 			isa = PBXGroup;
 			children = (
+				2C85444C1C94256100023B1E /* Controller */,
 				2CD2EC221C9313DF00CB5517 /* test */,
 				2C6CAB7D1C919C1C008CCDB9 /* views */,
-				2C51A3401C905DBD0029D0B1 /* LearningViewController.h */,
-				2C51A3411C905DBD0029D0B1 /* LearningViewController.m */,
-				2C51A3431C905E2F0029D0B1 /* PracticeViewController.h */,
-				2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */,
-				2C51A3461C905E920029D0B1 /* TestViewController.h */,
-				2C51A3471C905E920029D0B1 /* TestViewController.m */,
-				2C6CAB841C91BCAC008CCDB9 /* LearnDetailViewController.h */,
-				2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */,
+				2C8544491C94253300023B1E /* BeginTestViewController.h */,
+				2C85444A1C94253300023B1E /* BeginTestViewController.m */,
 			);
 			name = StudyGroups;
 			sourceTree = "<group>";
@@ -590,8 +594,35 @@
 				2C6CAB7F1C919C58008CCDB9 /* LearnCell.m */,
 				2C6CAB811C919C8C008CCDB9 /* PracticeCell.h */,
 				2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */,
+				2C8544461C9410F500023B1E /* DetailTableViewCell.h */,
+				2C8544471C9410F500023B1E /* DetailTableViewCell.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		2C85444C1C94256100023B1E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C85444D1C94258500023B1E /* pushController */,
+				2C51A3401C905DBD0029D0B1 /* LearningViewController.h */,
+				2C51A3411C905DBD0029D0B1 /* LearningViewController.m */,
+				2C51A3431C905E2F0029D0B1 /* PracticeViewController.h */,
+				2C51A3441C905E2F0029D0B1 /* PracticeViewController.m */,
+				2C51A3461C905E920029D0B1 /* TestViewController.h */,
+				2C51A3471C905E920029D0B1 /* TestViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2C85444D1C94258500023B1E /* pushController */ = {
+			isa = PBXGroup;
+			children = (
+				2C6CAB841C91BCAC008CCDB9 /* LearnDetailViewController.h */,
+				2C6CAB851C91BCAC008CCDB9 /* LearnDetailViewController.m */,
+				2C8544431C94006600023B1E /* DetailViewController.h */,
+				2C8544441C94006600023B1E /* DetailViewController.m */,
+			);
+			name = pushController;
 			sourceTree = "<group>";
 		};
 		2CD2EC221C9313DF00CB5517 /* test */ = {
@@ -1279,6 +1310,7 @@
 				2E2BA21C1C8E906A009432E7 /* MyNoticeTableViewCell.m in Sources */,
 				B648E2A31C8AD911003DAF4D /* Operate_DetailViewController.m in Sources */,
 				2C4E28551C8C059600B10378 /* MyInformationTableViewCell.m in Sources */,
+				2C8544451C94006600023B1E /* DetailViewController.m in Sources */,
 				B648E0BE1C8ACE3C003DAF4D /* AFXMLRequestOperation.m in Sources */,
 				B648E2971C8AD8E7003DAF4D /* information_manager_listViewController.m in Sources */,
 				B648E12E1C8ACFE1003DAF4D /* UIImage+WebP.m in Sources */,
@@ -1323,10 +1355,12 @@
 				B648E2511C8AD76C003DAF4D /* dateChange.m in Sources */,
 				B648E2441C8AD6ED003DAF4D /* Remuneration_listTableViewCell.m in Sources */,
 				B648E2771C8AD830003DAF4D /* NewsContentViewController.m in Sources */,
+				2C8544481C9410F500023B1E /* DetailTableViewCell.m in Sources */,
 				B648E2701C8AD811003DAF4D /* ZXYBaseViewController.m in Sources */,
 				2C4E28581C8C1E8A00B10378 /* UIAlertView+Blocks.m in Sources */,
 				B648E0B01C8ACE3C003DAF4D /* NSObject+MJCoding.m in Sources */,
 				B648E26C1C8AD7DC003DAF4D /* Remuneration_DetailEntity.m in Sources */,
+				2C85444B1C94253300023B1E /* BeginTestViewController.m in Sources */,
 				B648E12A1C8ACFE1003DAF4D /* SDWebImagePrefetcher.m in Sources */,
 				B648E12D1C8ACFE1003DAF4D /* UIImage+MultiFormat.m in Sources */,
 				B648E22E1C8AD6ED003DAF4D /* Infortiong_Detail_1TableViewCell.m in Sources */,
