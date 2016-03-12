@@ -239,10 +239,10 @@
 		2E2BA2271C8EAD07009432E7 /* MyFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedbackViewController.h; sourceTree = "<group>"; };
 		2E2BA2281C8EAD07009432E7 /* MyFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedbackViewController.m; sourceTree = "<group>"; };
 		2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFeedbackViewController.xib; sourceTree = "<group>"; };
-		2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text_exam_listEntity.h; sourceTree = "<group>"; };
-		2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text_exam_listEntity.m; sourceTree = "<group>"; };
-		2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text_exam_gradeEntity.h; sourceTree = "<group>"; };
-		2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text_exam_gradeEntity.m; sourceTree = "<group>"; };
+		2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text_exam_listEntity.h; path = ../Main/Text_exam_listEntity.h; sourceTree = "<group>"; };
+		2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text_exam_listEntity.m; path = ../Main/Text_exam_listEntity.m; sourceTree = "<group>"; };
+		2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text_exam_gradeEntity.h; path = ../Main/Text_exam_gradeEntity.h; sourceTree = "<group>"; };
+		2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text_exam_gradeEntity.m; path = ../Main/Text_exam_gradeEntity.m; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -569,6 +569,7 @@
 		2C51A33F1C905D5B0029D0B1 /* StudyGroups */ = {
 			isa = PBXGroup;
 			children = (
+				2CD2EC221C9313DF00CB5517 /* test */,
 				2C6CAB7D1C919C1C008CCDB9 /* views */,
 				2C51A3401C905DBD0029D0B1 /* LearningViewController.h */,
 				2C51A3411C905DBD0029D0B1 /* LearningViewController.m */,
@@ -591,6 +592,17 @@
 				2C6CAB821C919C8C008CCDB9 /* PracticeCell.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		2CD2EC221C9313DF00CB5517 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */,
+				2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */,
+				2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */,
+				2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */,
+			);
+			name = test;
 			sourceTree = "<group>";
 		};
 		B648DF3E1C8AC7FE003DAF4D = {
@@ -764,10 +776,6 @@
 				B648E27B1C8AD839003DAF4D /* MainViewController.h */,
 				B648E27C1C8AD839003DAF4D /* MainViewController.m */,
 				B648E27D1C8AD839003DAF4D /* MainViewController.xib */,
-				2E2EA3271C92C09800BF18B9 /* Text_exam_listEntity.h */,
-				2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */,
-				2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */,
-				2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";

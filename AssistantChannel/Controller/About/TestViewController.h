@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "tableViewHeader.h"
-@interface TestViewController : UIViewController<tableViewHeaderDelegate,MBProgressHUDDelegate,UITextFieldDelegate>
+@interface TestViewController : UIViewController<tableViewHeaderDelegate,MBProgressHUDDelegate,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     
-    MBProgressHUD *HUD;
-    MJRefreshHeaderView *_header;
+    MBProgressHUD *testHUD;
+    MJRefreshHeaderView *_testHeader;
     
     NSMutableArray *cateArr;
     tableViewHeader *tableViewheader;
 }
-@property (strong, nonatomic) UITableView *tableview;
+@property (strong, nonatomic) UITableView *table;
 @property(nonatomic, assign) int currentPage;
+@property (nonatomic, strong) NSMutableArray *arrayContact;
+@property (nonatomic, strong) NSMutableArray *arrayCustomerTemp;
 
 @end

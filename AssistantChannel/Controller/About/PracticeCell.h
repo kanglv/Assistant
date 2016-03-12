@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PracticeCell : UITableViewCell
-
+@property (nonatomic, strong)UILabel *title,*person,*personName,*craetTime,*time,*endTime,*eTime,*lineLabel, *scorelabel,*score;
+@property (nonatomic, strong)UIImageView *arrowView;
 @end

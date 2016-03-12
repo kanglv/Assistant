@@ -100,7 +100,8 @@
     NSDictionary *dic = _dataArr[indexPath.row];
     cell.title.text = [dic objectForKey:@"title"];
     cell.personName.text = [dic objectForKey:@"nickname"];
-    cell.time.text = @"1";
+    NSString *time =[dic objectForKey:@"create_time"];
+    cell.time.text = [NSString stringWithFormat:@"%@",[self transTime:time]];
     cell.type1.text = [dic objectForKey:@"ntype_name"];
     return cell;
 }
@@ -227,7 +228,17 @@
 }
 
 
-
+//时间戳转时间
+-(NSDate *)transTime:(NSString *)timeStamp{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+  
+    NSDate *dateString  = [dateFormatter dateFromString:timeStamp];
+    NSLog(@"%@",dateString);
+    return dateString;
+}
 
 
 - (void)didReceiveMemoryWarning {
