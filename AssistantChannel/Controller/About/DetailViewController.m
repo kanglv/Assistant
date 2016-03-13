@@ -27,6 +27,7 @@
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.title = _hastitle;
+//    _dataDic = [[NSMutableDictionary alloc]init];
 
     [self initData];
     _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, WIDTH, HEIGHT) style:UITableViewStylePlain];
@@ -35,8 +36,13 @@
     _table.separatorStyle = NO;
     _table.scrollEnabled = NO;
     [self.view addSubview:_table];
-    
+}
 
+- (BOOL)hadTest{
+    if(_dataDic){
+        return YES;
+    }
+    return NO;
 }
 
 - (void)initData{
@@ -47,7 +53,13 @@
     [_defaultArr addObject:@"结束时间 :"];
     [_defaultArr addObject:@"考试时长 :"];
     [_defaultArr addObject:@"题       数 :"];
-    
+    if(_test){
+        [_defaultArr addObject:@"正       确 :"];
+        [_defaultArr addObject:@"错       误 :"];
+        [_defaultArr addObject:@"得       分 :"];
+        [_defaultArr addObject:@"排       名 :"];
+    }
+
     _dataArr = [[NSMutableArray alloc]init];
     [_dataArr addObject:[_dic objectForKey:@"title"]];
     [_dataArr addObject:[_dic objectForKey:@"nickname"]];
@@ -56,27 +68,40 @@
     NSString *time = [NSString stringWithFormat:@"%d",[[_dic objectForKey:@"seconds"] intValue]/60];
     [_dataArr addObject:time];
     [_dataArr addObject:[NSString stringWithFormat:@"%@", [_dic objectForKey:@"num"]]];
+    if(_test){
+        [_dataArr addObject:[NSString stringWithFormat:@"%i",[[_dataDic objectForKey:@"right_num"] intValue]] ];
+        [_dataArr addObject:[NSString stringWithFormat:@"%i",[[_dataDic objectForKey:@"error_num"] intValue]]];
+        [_dataArr addObject:[NSString stringWithFormat:@"%i",[[_dataDic objectForKey:@"total_grade"] intValue]]];
+        if ([[_dataDic objectForKey:@"rank_status"]intValue] == 0) {
+            NSString *str1 = [NSString stringWithFormat:@"%@",[_dataDic objectForKey:@"grade_rank"]];
+            NSString * str = [str1 stringByAppendingString:@"[临时排名]"];
+            [_dataArr addObject:str];
+        }else{
+            [_dataArr addObject:[NSString stringWithFormat:@"%@",[_dataDic objectForKey:@"grade_rank"]]];
+        }
+    }
 }
 - (void)backBtnClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];    
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if([self comparetime:[_dic objectForKey:@"end_time"]]){
-        return 80;
-    }else {
-        return 0;
-    }
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    if([self comparetime:[_dic objectForKey:@"end_time"]]){
+//        return 0;
+//    }else {
+//        return 0;
+//    }
+//}
 
 
 //如果可以考试，显示foot
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = nil;
-    if([self comparetime:[_dic objectForKey:@"end_time"]]){
+    
+    if([self comparetime:[_dic objectForKey:@"end_time"]]&&![self hadTest]){
         view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*50/667)];
         self.button=[[UIButton alloc]initWithFrame:CGRectMake(view.frame.size.width/3, 40, view.frame.size.width/3, view.frame.size.height-10)];
-        [self.button setTitle:@"开始练习" forState:UIControlStateNormal];
+        [self.button setTitle:_btnText forState:UIControlStateNormal];
         [self.button setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1] forState:UIControlStateNormal];
         [self.button setBackgroundColor:[UIColor colorWithRed:0.28 green:0.51 blue:0.98 alpha:1]];
         [self.button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
@@ -117,7 +142,7 @@
         AppDelegate *app = [[UIApplication sharedApplication] delegate];
         btvc.testId  = [[_dic objectForKey:@"id" ] intValue];
         btvc.hastitle = [_dic objectForKey:@"title" ];
-        btvc.topTitle = @"练习";
+        btvc.topTitle = _topText;
         [app.hVC pushViewController:btvc animated:YES];
     }else {
         ALERT_ERR_MSG(@"不具备考试资格");

@@ -14,8 +14,10 @@
 @interface TestViewController ()
 {
     UserEntity *userEntity;
+    NSMutableDictionary *dataDic;
 }
 @property (strong , nonatomic) NSMutableArray *dataArr;
+@property (strong , nonatomic) NSMutableArray *seachArr;
 @end
 
 @implementation TestViewController
@@ -29,6 +31,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     cateArr = [[NSMutableArray alloc]init];
     _dataArr = [[NSMutableArray alloc]init];
+    _seachArr = [[NSMutableArray alloc]init];
+    dataDic= [[NSMutableDictionary alloc]init];
     userEntity = [UserEntity sharedInstance];
     [cateArr addObject:@"类型"];
     [cateArr addObject:@"待考"];
@@ -99,7 +103,18 @@
     NSString *end = [dic objectForKey:@"end_time"];
     cell.time.text = [self transTime:begin];
     cell.eTime.text = [self transTime:end];
+    [self getscore:[NSString stringWithFormat:@"%@",[dic objectForKey:@"id"]] andSuccess:^(NSMutableDictionary *dic) {
+        cell.scorelabel.text = @"考试成绩";
+        cell.score.text = [NSString stringWithFormat:@"%i",[[dic objectForKey:@"total_grade"] intValue]];
+        
+    }];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSDictionary *dic = _dataArr[indexPath.row];
+    [self getScore:[NSString stringWithFormat:@"%@",[dic objectForKey:@"id"]] andIndex:indexPath.row];
 }
 
 - (void)tableViewHeaderrDateView:(tableViewHeader *)view didSelectCateIndex:(int)index{
@@ -109,11 +124,6 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DetailViewController *dvc = [[DetailViewController alloc]init];
-    dvc.dic = _dataArr[indexPath.row];
-    [self.navigationController pushViewController:dvc animated:YES];
-}
 
 - (void) textFieldDidChange:(UITextField *) textField{
     
@@ -123,16 +133,38 @@
 
 - (void)searchData:(NSString *)string{
     
+    if (string == nil || string.length == 0) {
+        
+    }else{
+        [_dataArr removeAllObjects];
+        for (int i = 0; i < [_seachArr count]; i++) {
+            
+            NSRange range = [[[_seachArr objectAtIndex:i] objectForKey:@"title"] rangeOfString:string];//判断字符串是否包含
+            
+            if (range.length > 0)//包含
+            {
+                [_dataArr addObject:[_seachArr objectAtIndex:i] ];
+            } else//不包含
+            {
+            }
+        }
+        
+    }
+    
+    
+    [self.table reloadData];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
+    [self searchData:textField.text];
     return YES;
 }
 
 - (void)seachBtnClick{
     
     [tableViewheader.searchText resignFirstResponder];
+    [self searchData:tableViewheader.searchText.text];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -141,6 +173,76 @@
     [tableViewheader.dropDown hideDropDown:tableViewheader.cateBtn];
     tableViewheader.dropDown = nil;
 }
+
+- (void)getscore:(NSString *)testId andSuccess:(void (^)(NSMutableDictionary *))success{
+    CommonService *service = [[CommonService alloc] init];
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"study",@"m",
+                           @"exam_grade",@"a",
+                           userEntity.sn,@"sn",
+                           testId ,@"id",
+                           nil
+                           ];
+    __block NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [service getNetWorkData:param Successed:^(id entity) {
+        
+        NSNumber *state = [entity valueForKeyPath:@"success"];
+        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+        if ([strState isEqualToString:@"1"]) {
+            dic = [entity objectForKey:@"data"];
+            success(dic);
+        }else{
+            
+        }
+    } Failed:^(int errorCode, NSString *message) {
+        
+    }];
+    
+}
+
+
+- (void)getScore:(NSString *)testId andIndex:(NSInteger)index{
+    CommonService *service = [[CommonService alloc] init];
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"study",@"m",
+                           @"exam_grade",@"a",
+                           userEntity.sn,@"sn",
+                           testId ,@"id",
+                           nil
+                           ];
+    __block NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [service getNetWorkData:param Successed:^(id entity) {
+        
+        NSNumber *state = [entity valueForKeyPath:@"success"];
+        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+        if ([strState isEqualToString:@"1"]) {
+            dic = [entity objectForKey:@"data"];
+            AppDelegate *app = [[UIApplication sharedApplication] delegate];
+            DetailViewController *dvc = [[DetailViewController alloc]init];
+            NSDictionary *dic1 = _dataArr[index];
+            dvc.dic = dic1;
+            dvc.test = YES;
+            dvc.dataDic = dic;
+            dvc.hastitle = @"考试详情";
+            dvc.btnText = @"开始考试";
+            dvc.topText = @"考试";
+            [app.hVC pushViewController:dvc animated:YES];
+        }else{
+            AppDelegate *app = [[UIApplication sharedApplication] delegate];
+            DetailViewController *dvc = [[DetailViewController alloc]init];
+            dvc.dic = _dataArr[index];
+            dvc.hastitle = @"考试详情";
+            dvc.test = NO;
+            dvc.btnText = @"开始考试";
+            dvc.topText = @"考试";
+            [app.hVC pushViewController:dvc animated:YES];
+        }
+    } Failed:^(int errorCode, NSString *message) {
+        
+    }];
+    
+}
+
 
 
 - (void)getExam_list:(NSString*)tflag andWithFrom_time:(NSString *)from_time andWithToTime:(NSString *)to_time andStatus:(NSString *)status{
@@ -180,7 +282,12 @@
                 
             }else{
                 
-                _dataArr = [dic objectForKey:@"ls"];
+                [_dataArr removeAllObjects];
+                [_seachArr removeAllObjects];
+                
+                [_dataArr addObjectsFromArray: [dic objectForKey:@"ls"]];
+                [_seachArr addObjectsFromArray: [dic objectForKey:@"ls"]];
+                
                 for (NSDictionary* attributes in _dataArr) {
                     
                     Text_exam_listEntity *entity = [[Text_exam_listEntity alloc] init];

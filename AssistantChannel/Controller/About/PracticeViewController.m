@@ -17,6 +17,7 @@
     UserEntity *userEntity;
 }
 @property (strong , nonatomic) NSMutableArray *dataArr;
+@property (strong , nonatomic) NSMutableArray *seachArr;
 @end
 
 @implementation PracticeViewController
@@ -31,6 +32,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     _dataArr = [[NSMutableArray alloc]init];
+     _seachArr = [[NSMutableArray alloc]init];
     
     userEntity = [UserEntity sharedInstance];
     
@@ -112,6 +114,9 @@
     DetailViewController *dvc = [[DetailViewController alloc]init];
     dvc.dic = _dataArr[indexPath.row];
     dvc.hastitle = @"练习详情";
+    dvc.test = NO;
+    dvc.btnText = @"开始练习";
+    dvc.topText = @"练习";
     [app.hVC pushViewController:dvc animated:YES];
 }
 
@@ -133,16 +138,38 @@
 
 - (void)searchData:(NSString *)string{
     
+     if (string == nil || string.length == 0) {
+        
+    }else{
+        [_dataArr removeAllObjects];
+        for (int i = 0; i < [_seachArr count]; i++) {
+            
+            NSRange range = [[[_seachArr objectAtIndex:i] objectForKey:@"title"] rangeOfString:string];//判断字符串是否包含
+            
+            if (range.length > 0)//包含
+            {
+                [_dataArr addObject:[_seachArr objectAtIndex:i] ];
+            } else//不包含
+            {
+            }
+        }
+        
+    }
+    
+    
+    [self.table reloadData];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
+    [self searchData:textField.text];
     return YES;
 }
 
 - (void)seachBtnClick{
     
     [tableViewheader.searchText resignFirstResponder];
+    [self searchData:tableViewheader.searchText.text];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -188,8 +215,12 @@
             if ([totalState isEqualToString:@"0"]) {
                 
             }else{
+                [_dataArr removeAllObjects];
+                [_seachArr removeAllObjects];
                 
-                _dataArr = [dic objectForKey:@"ls"];
+                [_dataArr addObjectsFromArray: [dic objectForKey:@"ls"]];
+                [_seachArr addObjectsFromArray: [dic objectForKey:@"ls"]];
+                
                 for (NSDictionary* attributes in _dataArr) {
                     
                     Text_exam_listEntity *entity = [[Text_exam_listEntity alloc] init];

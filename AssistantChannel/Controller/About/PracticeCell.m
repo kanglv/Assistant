@@ -120,9 +120,10 @@
     _arrowView.frame = CGRectMake(width-30, (height-10)/2, 10, 10);
     
     _scorelabel.frame = CGRectMake(width-expectSize.width-35, actualHeight*2/5, expectSize.width, actualHeight/5);
-    _scorelabel.frame = CGRectMake(width-expectSize.width-35, actualHeight*3/5, expectSize.width, actualHeight*2/5);
-    
-    
+    _score.frame = CGRectMake(width-expectSize.width-35, actualHeight*3/5, expectSize.width, actualHeight*2/5);
+   
 }
+
+
 
 @end

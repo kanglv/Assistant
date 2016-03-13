@@ -14,6 +14,7 @@
     UserEntity *userEntity;
 }
 @property (strong , nonatomic) NSMutableArray *dataArr;
+@property (strong , nonatomic) NSMutableArray *seachArr;
 @end
 
 @implementation LearningViewController
@@ -29,6 +30,7 @@
     
     cateArr = [[NSMutableArray alloc]init];
     _dataArr = [[NSMutableArray alloc]init];
+    _seachArr = [[NSMutableArray alloc]init];
     
     userEntity = [UserEntity sharedInstance];
     
@@ -72,7 +74,6 @@
     tableViewheader.searchText.delegate = self;
     [self.titleview addSubview:tableViewheader];
     [self.view addSubview:self.titleview];
-    [tableViewheader.searchBtn addTarget:self action:@selector(seachBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -132,17 +133,34 @@
 
 - (void)searchData:(NSString *)string{
     
+    if (string == nil || string.length == 0) {
+
+    }else{
+        [_dataArr removeAllObjects];
+        for (int i = 0; i < [_seachArr count]; i++) {
+            
+            NSRange range = [[[_seachArr objectAtIndex:i] objectForKey:@"title"] rangeOfString:string];//判断字符串是否包含
+            
+            if (range.length > 0)//包含
+            {
+                [_dataArr addObject:[_seachArr objectAtIndex:i] ];
+            } else//不包含
+            {
+            }
+        }
+
+    }
+    
+    
+    [self.tableview reloadData];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
+    [self searchData:textField.text];
     return YES;
 }
 
-- (void)seachBtnClick{
-    
-    [tableViewheader.searchText resignFirstResponder];
-}
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
@@ -206,8 +224,12 @@
         NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
         
         if ([strState isEqualToString:@"1"]) {
+            [_dataArr removeAllObjects];
+            [_seachArr removeAllObjects];
+            
             NSMutableDictionary *dic = [entity objectForKey:@"data"];
-             _dataArr = [dic objectForKey:@"ls"];
+             [_dataArr addObjectsFromArray: [dic objectForKey:@"ls"]];
+            [_seachArr addObjectsFromArray: [dic objectForKey:@"ls"]];
             [self.tableview reloadData];
             
         }

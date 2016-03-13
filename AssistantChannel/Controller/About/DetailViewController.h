@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : ZXYBaseViewController
-@property (strong , nonatomic) NSDictionary *dic;
+@property (strong , nonatomic) NSDictionary *dic,*dataDic;
 @property (strong , nonatomic)NSString *hastitle;
 @property (strong ,nonatomic)NSMutableArray *defaultAdd,*dataAdd;
+@property BOOL test;
+@property NSString *topText,*btnText;
 @end

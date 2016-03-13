@@ -159,6 +159,55 @@
     return cell;
 }
 
+//获取考试结果
+- (void)getScore:(NSString *)testId{
+    CommonService *service = [[CommonService alloc] init];
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"study",@"m",
+                           @"exam_grade",@"a",
+                           userEntity.sn,@"sn",
+                           testId ,@"id",
+                           nil
+                           ];
+    
+    [service getNetWorkData:param Successed:^(id entity) {
+        
+        NSNumber *state = [entity valueForKeyPath:@"success"];
+        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+        if ([strState isEqualToString:@"1"]) {
+            NSMutableDictionary *dic = [entity objectForKey:@"data"];
+        }
+    } Failed:^(int errorCode, NSString *message) {
+        
+    }];
+
+}
+
+
+//提交答案
+- (void)postAnswer:(NSString *)testId andAnswer:(NSString *)answer{
+    CommonService *service = [[CommonService alloc] init];
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"study",@"m",
+                           @"answer_exam",@"a",
+                           userEntity.sn,@"sn",
+                           testId ,@"id",
+                           answer,@"answer",
+                           nil
+                           ];
+    
+    [service getNetWorkData:param Successed:^(id entity) {
+        
+        NSNumber *state = [entity valueForKeyPath:@"success"];
+        NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
+        if ([strState isEqualToString:@"1"]) {
+            NSMutableDictionary *dic = [entity objectForKey:@"data"];
+        }
+    } Failed:^(int errorCode, NSString *message) {
+        
+    }];
+
+}
 
 //获取试卷题目
 - (void)getTestQuestions:(NSString *)testId{
