@@ -8,9 +8,11 @@
 
 #import "BeginTestViewController.h"
 #import "BottomView.h"
+#import "TestTableViewCell.h"
 @interface BeginTestViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UserEntity *userEntity;
+    TestTableViewCell *cell;
 }
 
 @property (strong,nonatomic)UITableView *table;
@@ -29,6 +31,7 @@
     [backBtn addTarget:self action:@selector(backBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.title = _topTitle;
     
+    userEntity = [UserEntity sharedInstance];
     //获取练习信息
     NSString * str = [NSString stringWithFormat:@"%i",_testId];
     [self getTestQuestions:str];
@@ -49,13 +52,8 @@
     
     [self reflashGetKeyBt:@"3600"];
     
-    _numberOfPages = ceilf(_dataArr.count/5);
-    _currentPage = 1;
     
-//    _bottomView = [[BottomView alloc]initViewWithOneBtn:CGRectMake(0,self.view.frame.size.height-105, self.view.frame.size.width, 40)];
-//    [_bottomView.nextBtn addTarget:self action:@selector(nextClick) forControlEvents:UIControlEventTouchDragInside];
-//    _bottomView.totalLabel.text = [NSString stringWithFormat:@"%i",_numberOfPages];
-//    [self.view addSubview:_bottomView];
+
 }
 
 - (void)initSubviews{
@@ -65,9 +63,6 @@
     _table.separatorStyle = NO;
     [self.view addSubview:_table];
     
-    _bottomView = [[BottomView alloc]initViewWithOneBtn:CGRectMake(0, self.view.frame.size.height-105, self.view.frame.size.width, 40)];
-    [_bottomView.nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchDragInside];
-    [self.view addSubview:_bottomView];
 }
 
 - (void)initBottomView :(int)indexpage{
@@ -75,12 +70,14 @@
         [_bottomView removeFromSuperview];
     }
     if(indexpage == 1){
-        _bottomView = [[BottomView alloc]initViewWithOneBtn:CGRectMake(0, self.view.frame.size.height-105, self.view.frame.size.width, 40)];
+        _bottomView = [[BottomView alloc]initViewWithOneBtn:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 40)];
         [_bottomView.nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
+        _bottomView.totalLabel.text = [NSString stringWithFormat:@"%i",_numberOfPages];
         [self.view addSubview:_bottomView];
     }else{
-        _bottomView = [[BottomView alloc]initViewWithTwoBtn:CGRectMake(0, self.view.frame.size.height-105, self.view.frame.size.width, 40)];
+        _bottomView = [[BottomView alloc]initViewWithTwoBtn:CGRectMake(0, self.view.frame.size.height-40, self.view.frame.size.width, 40)];
         _bottomView.indexLabel.text = [NSString stringWithFormat:@"%i",_currentPage];
+        _bottomView.totalLabel.text = [NSString stringWithFormat:@"%i",_numberOfPages];
         [_bottomView.lastBtn addTarget:self action:@selector(lastClick) forControlEvents:UIControlEventTouchUpInside];
         [_bottomView.nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
         if(_currentPage == _numberOfPages){
@@ -137,17 +134,34 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger ret = 5;
     if (_currentPage == _numberOfPages) {
-        ret = _dataArr.count%5;
+        if(_dataArr.count%5 == 0){
+            ret=5;
+        }else{
+            ret = _dataArr.count%5;
+        }
     }
     return ret;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 250;
 }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *str = @"tab1";
+    cell = [tableView dequeueReusableCellWithIdentifier:str];
+    if(cell == nil){
+        cell = [[TestTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+    }
+    NSInteger actualIndex = indexPath.row+(_currentPage-1)*5;
+    cell.dic = _dataArr[actualIndex];
+    cell.index =(int) actualIndex;
+    [cell.table reloadData];
+    return cell;
+}
+
 
 //获取试卷题目
 - (void)getTestQuestions:(NSString *)testId{
-    
     CommonService *service = [[CommonService alloc] init];
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:
                            @"study",@"m",
@@ -161,12 +175,18 @@
         
         NSNumber *state = [entity valueForKeyPath:@"success"];
         NSString *strState = [NSString stringWithFormat:@"%d", [state intValue]];
-        NSLog(@"%@",entity);
         if ([strState isEqualToString:@"1"]) {
             NSMutableDictionary *dic = [entity objectForKey:@"data"];
             _dataArr = [dic objectForKey:@"ls"];
-            NSLog(@"%ld",[_dataArr count]);
+            NSLog(@"----------%@",_dataArr[0]);
+            if(_dataArr.count%5==0){
+                _numberOfPages = (int)[_dataArr count]/5 ;
+            }else{
+                _numberOfPages = ceilf(_dataArr.count/5)+1;
+            }
+            _currentPage = 1;
             [self initSubviews];
+            [self initBottomView:_currentPage];
          
         }else{
         }

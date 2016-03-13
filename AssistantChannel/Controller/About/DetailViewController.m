@@ -10,7 +10,9 @@
 #import "DetailTableViewCell.h"
 #import "BeginTestViewController.h"
 @interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+{
+    UserEntity *userEntity;
+}
 @property (strong,nonatomic)UITableView *table;
 @property (strong,nonatomic)NSMutableArray *defaultArr,*dataArr;
 @property (strong,nonatomic)UIButton *button;
@@ -109,14 +111,17 @@
 
 
 - (void)click{
-    BeginTestViewController *btvc = [[BeginTestViewController alloc]init];
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    btvc.testId  = [[_dic objectForKey:@"id" ] intValue];
-    btvc.hastitle = [_dic objectForKey:@"title" ];
-    btvc.topTitle = @"练习";
-    [app.hVC pushViewController:btvc animated:YES];
-
-    
+    userEntity = [UserEntity sharedInstance];
+    if([userEntity.roles isEqualToString:@"12"]){
+        BeginTestViewController *btvc = [[BeginTestViewController alloc]init];
+        AppDelegate *app = [[UIApplication sharedApplication] delegate];
+        btvc.testId  = [[_dic objectForKey:@"id" ] intValue];
+        btvc.hastitle = [_dic objectForKey:@"title" ];
+        btvc.topTitle = @"练习";
+        [app.hVC pushViewController:btvc animated:YES];
+    }else {
+        ALERT_ERR_MSG(@"不具备考试资格");
+    }
 }
 
 //时间戳转时间

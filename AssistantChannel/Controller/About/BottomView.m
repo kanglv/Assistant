@@ -34,7 +34,7 @@
         _totalLabel.font = [UIFont fontWithName:@"Arial" size:18];
         [self addSubview:_totalLabel];
 
-        _nextBtn = [[UIButton alloc]initWithFrame:CGRectMake(50, 10, self.frame.size.width-60, self.frame.size.height-10)];
+        _nextBtn = [[UIButton alloc]initWithFrame:CGRectMake(50, 5, self.frame.size.width-60, self.frame.size.height-10)];
         _nextBtn.backgroundColor= [UIColor colorWithRed:0.28 green:0.51 blue:0.98 alpha:1];
         [_nextBtn setTitle:@"下一页" forState:UIControlStateNormal];
         _nextBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:18];
@@ -67,7 +67,7 @@
         _lineLabel.textAlignment = NSTextAlignmentCenter;
         _lineLabel.textColor = [UIColor blackColor];
         _lineLabel.font = [UIFont fontWithName:@"Arial" size:18];
-        [self addSubview:_indexLabel];
+        [self addSubview:_lineLabel];
         
         _totalLabel = [[UILabel alloc]initWithFrame:CGRectMake((self.frame.size.width-65)/2+35, 5, 10, self.frame.size.height-10)];
         _totalLabel.textAlignment = NSTextAlignmentCenter;
