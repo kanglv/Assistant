@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BeginTestViewController : UIViewController
-
+@interface BeginTestViewController : ZXYBaseViewController
+@property (strong , nonatomic)NSString *hastitle,*topTitle;
+@property (assign,nonatomic)int testId;
 @end

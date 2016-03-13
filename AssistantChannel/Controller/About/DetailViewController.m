@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "DetailTableViewCell.h"
+#import "BeginTestViewController.h"
 @interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong,nonatomic)UITableView *table;
@@ -108,6 +109,13 @@
 
 
 - (void)click{
+    BeginTestViewController *btvc = [[BeginTestViewController alloc]init];
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    btvc.testId  = [[_dic objectForKey:@"id" ] intValue];
+    btvc.hastitle = [_dic objectForKey:@"title" ];
+    btvc.topTitle = @"练习";
+    [app.hVC pushViewController:btvc animated:YES];
+
     
 }
 

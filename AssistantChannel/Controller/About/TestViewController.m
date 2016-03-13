@@ -37,8 +37,9 @@
     testHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     testHUD.delegate = self;
     testHUD.labelText = @"努力加载中...";
-    [self getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil];
-    
+    [self getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil andStatus:@"0"];
+    [self reloadTableViewHeader];
+    [self addRefreshView];
 }
 - (void)addRefreshView
 {
@@ -47,9 +48,8 @@
     _testHeader = [MJRefreshHeaderView header];
     _testHeader.scrollView = _table;
     _testHeader.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
-        [weakSelf getExam_list:@"1" andWithFrom_time:nil andWithToTime:nil];
+        [weakSelf getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil andStatus:@"0"];
     };
-    
 }
 
 - (void)reloadTableViewHeader{
@@ -105,7 +105,7 @@
 - (void)tableViewHeaderrDateView:(tableViewHeader *)view didSelectCateIndex:(int)index{
     
     self.currentPage = index;
-//    [self getData:index andWithPage:0 andWithPageSize:20];
+    [self getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil andStatus:[NSString stringWithFormat:@"%i",index]];
     
 }
 
@@ -143,7 +143,7 @@
 }
 
 
-- (void)getExam_list:(NSString*)tflag andWithFrom_time:(NSString *)from_time andWithToTime:(NSString *)to_time{
+- (void)getExam_list:(NSString*)tflag andWithFrom_time:(NSString *)from_time andWithToTime:(NSString *)to_time andStatus:(NSString *)status{
     
     CommonService *service = [[CommonService alloc] init];
     
@@ -152,7 +152,7 @@
                            @"exam_list",@"a",
                            userEntity.sn,@"sn",
                            userEntity.dep_id,@"dep_id",
-                           @"0",@"answer_status",
+                           status,@"answer_status",
                            tflag,@"tflag",
                            @"0",@"page",
                            @"20",@"page_size",
@@ -193,7 +193,6 @@
                 _table.dataSource = self;
                 _table.separatorStyle = NO;
                 [self.view addSubview:_table];
-                [self reloadTableViewHeader];
                 [self addRefreshView];
             }
             
