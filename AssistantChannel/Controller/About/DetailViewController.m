@@ -85,19 +85,18 @@
     [self.navigationController popViewControllerAnimated:YES];    
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    if([self comparetime:[_dic objectForKey:@"end_time"]]){
-//        return 0;
-//    }else {
-//        return 0;
-//    }
-//}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if([self comparetime:[_dic objectForKey:@"end_time"]]){
+        return 60;
+    }else {
+        return 0;
+    }
+}
 
 
 //如果可以考试，显示foot
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = nil;
-    
     if([self comparetime:[_dic objectForKey:@"end_time"]]&&![self hadTest]){
         view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*50/667)];
         self.button=[[UIButton alloc]initWithFrame:CGRectMake(view.frame.size.width/3, 40, view.frame.size.width/3, view.frame.size.height-10)];

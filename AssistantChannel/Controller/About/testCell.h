@@ -1,14 +1,14 @@
 //
-//  TestSubTableViewCell.h
+//  testCell.h
 //  AssistantChannel
 //
-//  Created by lvkang on 16/3/13.
+//  Created by bqmm-lk on 16/3/14.
 //  Copyright © 2016年 dxw. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TestSubTableViewCell : UITableViewCell
+@interface testCell : UITableViewCell
 @property (strong , nonatomic)UIButton *btn;
 @property (strong , nonatomic)UILabel *answerLabel;
 @end

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C15595C1C9539E7003B0A2C /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C15595B1C9539E7003B0A2C /* TestTableViewCell.m */; };
-		2C15595F1C954122003B0A2C /* TestSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C15595E1C954122003B0A2C /* TestSubTableViewCell.m */; };
 		2C4E28341C8C054C00B10378 /* arrows_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E282A1C8C054C00B10378 /* arrows_right.png */; };
 		2C4E28351C8C054C00B10378 /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E282B1C8C054C00B10378 /* feedback.png */; };
 		2C4E28361C8C054C00B10378 /* img_setting_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E282C1C8C054C00B10378 /* img_setting_image.jpg */; };
@@ -48,6 +46,7 @@
 		2E2BA22B1C8EAD07009432E7 /* MyFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2BA2291C8EAD07009432E7 /* MyFeedbackViewController.xib */; };
 		2E2EA32B1C92C09800BF18B9 /* Text_exam_listEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */; };
 		2E2EA32C1C92C09800BF18B9 /* Text_exam_gradeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */; };
+		508876261C96BE7900F27D62 /* testCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 508876251C96BE7900F27D62 /* testCell.m */; };
 		B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4B1C8AC7FE003DAF4D /* main.m */; };
 		B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B648DF4E1C8AC7FE003DAF4D /* AppDelegate.m */; };
 		B648DF551C8AC7FE003DAF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B648DF531C8AC7FE003DAF4D /* Main.storyboard */; };
@@ -194,10 +193,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C15595A1C9539E7003B0A2C /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
-		2C15595B1C9539E7003B0A2C /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
-		2C15595D1C954122003B0A2C /* TestSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSubTableViewCell.h; sourceTree = "<group>"; };
-		2C15595E1C954122003B0A2C /* TestSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSubTableViewCell.m; sourceTree = "<group>"; };
 		2C4E282A1C8C054C00B10378 /* arrows_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows_right.png; sourceTree = "<group>"; };
 		2C4E282B1C8C054C00B10378 /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		2C4E282C1C8C054C00B10378 /* img_setting_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_setting_image.jpg; sourceTree = "<group>"; };
@@ -261,6 +256,8 @@
 		2E2EA3281C92C09800BF18B9 /* Text_exam_listEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text_exam_listEntity.m; path = ../Main/Text_exam_listEntity.m; sourceTree = "<group>"; };
 		2E2EA3291C92C09800BF18B9 /* Text_exam_gradeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Text_exam_gradeEntity.h; path = ../Main/Text_exam_gradeEntity.h; sourceTree = "<group>"; };
 		2E2EA32A1C92C09800BF18B9 /* Text_exam_gradeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Text_exam_gradeEntity.m; path = ../Main/Text_exam_gradeEntity.m; sourceTree = "<group>"; };
+		508876241C96BE7900F27D62 /* testCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testCell.h; sourceTree = "<group>"; };
+		508876251C96BE7900F27D62 /* testCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testCell.m; sourceTree = "<group>"; };
 		B648DF471C8AC7FE003DAF4D /* AssistantChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssistantChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B648DF4B1C8AC7FE003DAF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B648DF4D1C8AC7FE003DAF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -607,10 +604,8 @@
 				2C8544471C9410F500023B1E /* DetailTableViewCell.m */,
 				2C85444E1C944EC500023B1E /* BottomView.h */,
 				2C85444F1C944EC500023B1E /* BottomView.m */,
-				2C15595A1C9539E7003B0A2C /* TestTableViewCell.h */,
-				2C15595B1C9539E7003B0A2C /* TestTableViewCell.m */,
-				2C15595D1C954122003B0A2C /* TestSubTableViewCell.h */,
-				2C15595E1C954122003B0A2C /* TestSubTableViewCell.m */,
+				508876241C96BE7900F27D62 /* testCell.h */,
+				508876251C96BE7900F27D62 /* testCell.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -1192,7 +1187,6 @@
 				TargetAttributes = {
 					B648DF461C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = C2QBXRMTCP;
 					};
 					B648DF5F1C8AC7FE003DAF4D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1370,7 +1364,6 @@
 				2CA7F13F1C8DADF20088F102 /* MyNoticeViewController.m in Sources */,
 				B648E2511C8AD76C003DAF4D /* dateChange.m in Sources */,
 				B648E2441C8AD6ED003DAF4D /* Remuneration_listTableViewCell.m in Sources */,
-				2C15595F1C954122003B0A2C /* TestSubTableViewCell.m in Sources */,
 				B648E2771C8AD830003DAF4D /* NewsContentViewController.m in Sources */,
 				2C8544481C9410F500023B1E /* DetailTableViewCell.m in Sources */,
 				B648E2701C8AD811003DAF4D /* ZXYBaseViewController.m in Sources */,
@@ -1393,6 +1386,7 @@
 				B648E0791C8ACAE0003DAF4D /* LoginViewController.m in Sources */,
 				B648DF4F1C8AC7FE003DAF4D /* AppDelegate.m in Sources */,
 				B648E0B81C8ACE3C003DAF4D /* AFHTTPRequestOperationLogger.m in Sources */,
+				508876261C96BE7900F27D62 /* testCell.m in Sources */,
 				B648E0AB1C8ACE3C003DAF4D /* MJFoundation.m in Sources */,
 				B648E1311C8ACFE1003DAF4D /* UIView+WebCacheOperation.m in Sources */,
 				2C4E28541C8C059600B10378 /* MyTableViewCell.m in Sources */,
@@ -1413,7 +1407,6 @@
 				B648E2671C8AD7DC003DAF4D /* Channel_infortation_DirectorEntity.m in Sources */,
 				B648E23A1C8AD6ED003DAF4D /* Operate_listTableViewCell.m in Sources */,
 				B648DF4C1C8AC7FE003DAF4D /* main.m in Sources */,
-				2C15595C1C9539E7003B0A2C /* TestTableViewCell.m in Sources */,
 				B648E2681C8AD7DC003DAF4D /* Infortion_DetailEntity.m in Sources */,
 				B648E2AD1C8AD91A003DAF4D /* Remuneration_DetailViewController.m in Sources */,
 				B648E1FA1C8AD6D2003DAF4D /* XYStartEndDatePicker.m in Sources */,
@@ -1558,7 +1551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
@@ -1574,7 +1567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;

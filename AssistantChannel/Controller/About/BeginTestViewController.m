@@ -8,11 +8,11 @@
 
 #import "BeginTestViewController.h"
 #import "BottomView.h"
-#import "TestTableViewCell.h"
+#import "testCell.h"
 @interface BeginTestViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UserEntity *userEntity;
-    TestTableViewCell *cell;
+   
 }
 
 @property (strong,nonatomic)UITableView *table;
@@ -37,7 +37,7 @@
     [self getTestQuestions:str];
     
     
-    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30) ];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.text = _hastitle;
@@ -57,7 +57,7 @@
 }
 
 - (void)initSubviews{
-    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height-90)];
+    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height-90) style:UITableViewStyleGrouped];
     _table.delegate = self;
     _table.dataSource = self;
     _table.separatorStyle = NO;
@@ -129,9 +129,6 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger ret = 5;
     if (_currentPage == _numberOfPages) {
         if(_dataArr.count%5 == 0){
@@ -142,21 +139,73 @@
     }
     return ret;
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"section:%ld",section);
+    NSInteger actualSection = (_currentPage-1)*5+section;
+    NSMutableDictionary *dic1 = _dataArr[actualSection];
+    NSArray *answer = [dic1 objectForKey:@"content"];
+    NSLog(@"rows:%ld",(long)answer.count);
+    return answer.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width , 10)];
+    view.backgroundColor = [UIColor whiteColor];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 120;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+     NSInteger actualSection = (_currentPage-1)*5+section;
+    NSLog(@"actualSection: %ld",(long)actualSection);
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width , 120)];
+    view.backgroundColor = [UIColor whiteColor];
+    UILabel *left = [[UILabel alloc]initWithFrame:CGRectMake(10,10 ,60, 30)];
+    left .textAlignment = NSTextAlignmentLeft;
+    left .lineBreakMode = NSLineBreakByTruncatingTail;
+    [ left  setTextColor:[UIColor blackColor]];
+    left .font = [UIFont fontWithName:@"Arial" size:18];
+    left.text = [NSString stringWithFormat:@"第%ld题 :",(long)actualSection+1];
+    [view addSubview: left];
+    
+    UILabel *right = [[UILabel alloc]initWithFrame: CGRectMake(80,10 ,view.frame.size.width-60, 100)];
+    right .textAlignment = NSTextAlignmentLeft;
+    right.numberOfLines = 0;
+    right .lineBreakMode = NSLineBreakByWordWrapping;
+    [ right  setTextColor:[UIColor blackColor]];
+    right .font = [UIFont fontWithName:@"Arial" size:18];
+    right.text = [NSString stringWithFormat:@"%@", [_dataArr[actualSection] objectForKey:@"title"]];
+    [view addSubview: right];
+    return view;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 250;
+    return 25;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *str = @"tab1";
-    cell = [tableView dequeueReusableCellWithIdentifier:str];
+    static NSString *str = @"test";
+    testCell  *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if(cell == nil){
-        cell = [[TestTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+        cell = [[testCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
-    NSInteger actualIndex = indexPath.row+(_currentPage-1)*5;
-    cell.dic = _dataArr[actualIndex];
-    cell.index =(int) actualIndex;
-    [cell.table reloadData];
+    NSLog(@"index %ld",(long)indexPath.section);
+    NSInteger actualsection = indexPath.section+(_currentPage-1)*5;
+    NSMutableDictionary *dic = _dataArr[actualsection];
+    NSArray * arr = [dic objectForKey:@"content"];
+    cell.answerLabel.text = [NSString stringWithFormat:@"%@",[[arr objectAtIndex:indexPath.row] objectForKey:@"option_title"]] ;
+    [cell.btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)click:(UIButton *)sender{
+    NSLog(@"rgaerh");
 }
 
 //获取考试结果
