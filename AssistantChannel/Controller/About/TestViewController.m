@@ -34,7 +34,7 @@
     _seachArr = [[NSMutableArray alloc]init];
     dataDic= [[NSMutableDictionary alloc]init];
     userEntity = [UserEntity sharedInstance];
-    [cateArr addObject:@"类型"];
+    [cateArr addObject:@"所有"];
     [cateArr addObject:@"待考"];
     [cateArr addObject:@"已考"];
     [cateArr addObject:@"过期"];
@@ -88,6 +88,15 @@
      return 50;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view = nil;
+    
+    view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*50/667)];
+    view.backgroundColor = [UIColor whiteColor];
+    return view;
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *str = @"tab1";
@@ -103,11 +112,19 @@
     NSString *end = [dic objectForKey:@"end_time"];
     cell.time.text = [self transTime:begin];
     cell.eTime.text = [self transTime:end];
+    cell.scorelabel.text =@"";
+    cell.score.text = @"";
     [self getscore:[NSString stringWithFormat:@"%@",[dic objectForKey:@"id"]] andSuccess:^(NSMutableDictionary *dic) {
         cell.scorelabel.text = @"考试成绩";
         cell.score.text = [NSString stringWithFormat:@"%i",[[dic objectForKey:@"total_grade"] intValue]];
         
     }];
+    if([userEntity.roles isEqualToString: @"11"]&&[self comparetime:[dic objectForKey:@"end_time"]]){
+        cell.title.textColor = [UIColor greenColor];
+        
+    }else{
+        cell.title.textColor = [UIColor blackColor];
+    }
     return cell;
 }
 
@@ -123,7 +140,15 @@
     [self getExam_list:@"0" andWithFrom_time:nil andWithToTime:nil andStatus:[NSString stringWithFormat:@"%i",index]];
     
 }
-
+- (BOOL)comparetime:(NSString *)date{
+    BOOL ret = NO;
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970];
+    if([date doubleValue] > a){
+        ret = YES;
+    }
+    return ret;
+}
 
 - (void) textFieldDidChange:(UITextField *) textField{
     

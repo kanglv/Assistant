@@ -19,12 +19,10 @@
 }
 
 - (void)commonInit {
-    _btn = [[UIButton alloc]initWithFrame:CGRectMake(15, (self.frame.size.height-16)/2, 16, 16)];
+    _btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, self.frame.size.height)];
     _btn.backgroundColor = [UIColor whiteColor];
-    _btn.layer.masksToBounds = YES;
-    _btn.layer.borderWidth = 1;
-    _btn.layer.borderColor = [UIColor blackColor].CGColor;
-    _btn.layer.cornerRadius = 8;
+    [_btn setBackgroundImage:[UIImage imageNamed:@"ico_norinform"] forState:UIControlStateNormal];
+    [_btn setBackgroundImage:[UIImage imageNamed:@"ico_inform"] forState:UIControlStateHighlighted];
     [self.contentView addSubview:_btn];
     
     _answerLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 0, self.frame.size.width-55, self.frame.size.height)];

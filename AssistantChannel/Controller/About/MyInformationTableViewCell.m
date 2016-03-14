@@ -39,7 +39,7 @@
     [self.contentView addSubview:_rightLabel];
     
     _bottomLine = [[UILabel alloc]init];
-    _bottomLine.backgroundColor = [UIColor grayColor];
+    _bottomLine.backgroundColor = [UIColor colorWithRed:211/255.0 green:211/255.0 blue:211/255.0 alpha:0.8];
     _bottomLine.text = @"";
     [self.contentView addSubview:_bottomLine];
     

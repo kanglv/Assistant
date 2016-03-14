@@ -560,8 +560,6 @@
 		2C4E28291C8C052E00B10378 /* MyController */ = {
 			isa = PBXGroup;
 			children = (
-				2C4E28411C8C058A00B10378 /* MyViewController.h */,
-				2C4E28421C8C058A00B10378 /* MyViewController.m */,
 				2C4E28431C8C058A00B10378 /* MyDetailInformationViewController.h */,
 				2C4E28441C8C058A00B10378 /* MyDetailInformationViewController.m */,
 				2E2BA2271C8EAD07009432E7 /* MyFeedbackViewController.h */,
@@ -570,12 +568,14 @@
 				2E2BA2201C8E9BDA009432E7 /* MyIntroduceViewController.h */,
 				2E2BA2211C8E9BDA009432E7 /* MyIntroduceViewController.m */,
 				2E2BA2221C8E9BDA009432E7 /* MyIntroduceViewController.xib */,
-				2C4E28491C8C058A00B10378 /* MyResetViewController.h */,
-				2C4E284A1C8C058A00B10378 /* MyResetViewController.m */,
 				2CA7F13D1C8DADF10088F102 /* MyNoticeViewController.h */,
 				2CA7F13E1C8DADF10088F102 /* MyNoticeViewController.m */,
+				2C4E28491C8C058A00B10378 /* MyResetViewController.h */,
+				2C4E284A1C8C058A00B10378 /* MyResetViewController.m */,
 				2C51A33C1C90473E0029D0B1 /* MyStudyViewController.h */,
 				2C51A33D1C90473E0029D0B1 /* MyStudyViewController.m */,
+				2C4E28411C8C058A00B10378 /* MyViewController.h */,
+				2C4E28421C8C058A00B10378 /* MyViewController.m */,
 				2C51A33F1C905D5B0029D0B1 /* StudyGroups */,
 			);
 			name = MyController;
@@ -1551,8 +1551,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yong Zheng (PKLC2RJ6A8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 康 吕 (M5S8RMT6KC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 康 吕 (M5S8RMT6KC)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1567,8 +1567,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Suzhou Avatek Information Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: lvkang5201314@icloud.com (6N4334SYF9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: lvkang5201314@icloud.com (6N4334SYF9)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AssistantChannel/PrefixHeader.pch";
 				INFOPLIST_FILE = AssistantChannel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

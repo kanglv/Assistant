@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AssistantChannel/Controller/About/LearningViewController.m"
-            timestampString = "479573194.351137"
+            filePath = "AssistantChannel/Controller/About/BeginTestViewController.m"
+            timestampString = "479655826.521383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "-searchData:"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "-postAnswer:andAnswer:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AssistantChannel/Controller/About/LearningViewController.m"
-            timestampString = "479573221.704158"
+            filePath = "AssistantChannel/Controller/About/BeginTestViewController.m"
+            timestampString = "479655826.521383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-textFieldDidChange:"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
+            landmarkName = "-postAnswer:andAnswer:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AssistantChannel/Controller/About/LearningViewController.m"
-            timestampString = "479574081.803339"
+            filePath = "AssistantChannel/Controller/About/BeginTestViewController.m"
+            timestampString = "479655826.521383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "-searchData:"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
+            landmarkName = "-postAnswer:andAnswer:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BeginTestViewController postAnswer:andAnswer:]"
+                  moduleName = "AssistantChannel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hulijie/Assistant/AssistantChannel/Controller/About/BeginTestViewController.m"
+                  timestampString = "479658018.89537"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "468">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[BeginTestViewController postAnswer:andAnswer:]_block_invoke"
+                  moduleName = "AssistantChannel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hulijie/Assistant/AssistantChannel/Controller/About/BeginTestViewController.m"
+                  timestampString = "479658018.895676"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AssistantChannel/Controller/About/BeginTestViewController.m"
+            timestampString = "479655826.521383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "-getScore:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BeginTestViewController getScore:]"
+                  moduleName = "AssistantChannel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hulijie/Assistant/AssistantChannel/Controller/About/BeginTestViewController.m"
+                  timestampString = "479658018.919198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "344"
+                  endingLineNumber = "344"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[BeginTestViewController getScore:]_block_invoke"
+                  moduleName = "AssistantChannel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hulijie/Assistant/AssistantChannel/Controller/About/BeginTestViewController.m"
+                  timestampString = "479658018.919928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "344"
+                  endingLineNumber = "344"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AssistantChannel/Controller/About/BeginTestViewController.m"
+            timestampString = "479655826.521383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "-getScore:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -42,7 +42,7 @@
     
     _lineLabel = [[UILabel alloc]init];
     _lineLabel.text = @"";
-    _lineLabel.backgroundColor = [UIColor grayColor];
+    _lineLabel.backgroundColor = [UIColor colorWithRed:211/255.0 green:211/255.0 blue:211/255.0 alpha:0.6];
     [self.contentView addSubview:_lineLabel];
     
     _cacheLabel = [[UILabel alloc]init];
