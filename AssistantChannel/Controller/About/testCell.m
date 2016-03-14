@@ -1,14 +1,15 @@
 //
-//  TestSubTableViewCell.m
+//  testCell.m
 //  AssistantChannel
 //
-//  Created by lvkang on 16/3/13.
+//  Created by bqmm-lk on 16/3/14.
 //  Copyright © 2016年 dxw. All rights reserved.
 //
 
-#import "TestSubTableViewCell.h"
+#import "testCell.h"
 
-@implementation TestSubTableViewCell
+@implementation testCell
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
